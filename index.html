@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hľadač slov</title>
+  <meta name="description" content="Vyhľadávanie slovenských slov podľa písmen, ich polohy a počtu výskytov.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Hľadač slov</h1>
+    <p class="sub">Slovenské slová podľa písmen, ich polohy a počtu</p>
+  </header>
+
+  <main>
+    <form id="filters" autocomplete="off">
+      <section class="card">
+        <h2>Písmená, ktoré slovo musí obsahovať</h2>
+        <div id="rules"></div>
+        <button type="button" id="add-rule" class="ghost">+ pridať písmeno</button>
+      </section>
+
+      <section class="card grid2">
+        <label>
+          <span>Písmená, ktoré slovo nesmie obsahovať</span>
+          <input id="exclude" placeholder="napr. xyzq">
+        </label>
+        <label>
+          <span>Vzor <small>(? = ľubovoľné písmeno)</small></span>
+          <input id="pattern" placeholder="napr. ?a??a">
+        </label>
+        <div class="len">
+          <span>Dĺžka slova</span>
+          <div class="row">
+            <input id="len-min" type="number" min="1" placeholder="od">
+            <span>–</span>
+            <input id="len-max" type="number" min="1" placeholder="do">
+          </div>
+        </div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="ignore-diacritics"> ignorovať diakritiku (a = á = ä)</label>
+          <label class="check"><input type="checkbox" id="only-lower" checked> bez vlastných mien a skratiek</label>
+          <label class="check"><input type="checkbox" id="only-defs"> iba slová s výkladom</label>
+          <label class="check"><input type="checkbox" id="no-spaces" checked> iba jednoslovné</label>
+        </div>
+      </section>
+
+      <div class="actions">
+        <select id="sort" aria-label="Zoradenie">
+          <option value="alpha">abecedne</option>
+          <option value="len">od najkratších</option>
+          <option value="len-desc">od najdlhších</option>
+        </select>
+        <button type="button" id="clear-filters" class="ghost">Vymazať filtre</button>
+      </div>
+    </form>
+
+    <section class="results">
+      <div class="results-head">
+        <strong id="count">Načítavam slovník…</strong>
+      </div>
+      <ul id="list"></ul>
+      <button type="button" id="more" class="ghost" hidden>Zobraziť ďalšie</button>
+    </section>
+  </main>
+
+  <dialog id="detail">
+    <form method="dialog">
+      <button class="close" aria-label="Zavrieť">×</button>
+    </form>
+    <h3 id="detail-word"></h3>
+    <p id="detail-pos" class="muted"></p>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <template id="rule-tpl">
+    <div class="rule">
+      <input class="r-letter" maxlength="3" placeholder="písm." aria-label="Písmeno">
+      <select class="r-where" aria-label="Poloha">
+        <option value="any">kdekoľvek</option>
+        <option value="start">na začiatku</option>
+        <option value="end">na konci</option>
+        <option value="middle">v strede</option>
+        <option value="not-start">nie na začiatku</option>
+        <option value="not-end">nie na konci</option>
+        <option value="pos">na pozícii…</option>
+      </select>
+      <input class="r-pos" type="number" min="1" placeholder="č." aria-label="Pozícia" hidden>
+      <select class="r-cmp" aria-label="Počet">
+        <option value="min">aspoň</option>
+        <option value="eq">presne</option>
+        <option value="max">najviac</option>
+      </select>
+      <input class="r-count" type="number" min="1" value="1" aria-label="Koľkokrát">
+      <span class="times">×</span>
+      <button type="button" class="r-del" aria-label="Odstrániť">✕</button>
+    </div>
+  </template>
+
+  <footer>
+    Dáta: <a href="https://github.com/sk-spell/hunspell-sk">hunspell-sk</a> (MPL 2.0),
+    <a href="https://sk.wiktionary.org">Wikislovník</a> a
+    <a href="https://kaikki.org/dictionary/Slovak/">kaikki.org / Wiktionary</a> (CC BY-SA)
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
