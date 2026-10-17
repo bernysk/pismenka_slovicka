@@ -26,6 +26,9 @@ Slovenského národného korpusu (SNK) a s frekvenciou zo SNK.
 - po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, počet slabík, frekvencia a výklad (Wikislovník, anglický Wiktionary
   a prvá veta článku slovenskej Wikipédie s odkazom na celý článok) a **významové vzťahy** – synonymá, antonymá,
   nadradené a podradené pojmy (strom → drevina; lipa, dub…), na ktoré sa dá kliknúť
+- **tabuľka tvarov** pri bežných slovách (~28 000 slov s 1 000+ výskytmi v SNK): skloňovanie podstatných a
+  prídavných mien (6 pádov s otázkami, čísla, rody, stupňovanie) a časovanie slovies (prítomný, minulý čas,
+  rozkazovací spôsob)
 
 ## Spustenie
 
@@ -46,11 +49,12 @@ a otvor http://localhost:8765.
 | `index.html`, `style.css`, `app.js` | aplikácia |
 | `data/slova.tsv` | slová pre aplikáciu (formát 2, popis v hlavičke `app.js` a `skripty/build_web.py`): slovo, kód slovného druhu, príznak výkladu, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné), frekvencie (SNK, knihy, hovorená reč, Wikipédia), počet slabík |
 | `data/vyklady/<písmeno>.json`, `data/synonyma/<písmeno>.json` | výklady a významové vzťahy rozdelené podľa prvého písmena – detail slova načíta len jeden malý súbor |
+| `data/tvary/<písmeno>.json`, `data/tvary/znacky.json` | tvary bežných slov pre tabuľku skloňovania a časovania (`skripty/tvary_web.py`, spolu ~0,4 MB po gzip) |
 | `slova.json`, `slova_s_vykladom.json`, `slova.txt` | úplný zoznam slov s vlastnosťami na ďalšie použitie |
 | `synonyma.json` | synonymá, antonymá, nadradené a podradené pojmy ~45 000 slov so zdrojom každej položky (aj slová mimo aplikácie) |
 | `morfflex/morfflex-sk.tsv.xz` | **všetky tvary** overených slov z MorfFlex SK s gramatickými značkami (zbalené, pozri nižšie) |
 | `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`); všetko naraz: `skripty/zostav.py` |
-| `docs/plan-tvary.md` | plán ďalšieho rozvoja: tabuľka tvarov, hľadanie v tvaroch, anglické ekvivalenty z WordNetu |
+| `docs/plan-tvary.md` | plán ďalšieho rozvoja: tabuľka tvarov (hotové), hľadanie v tvaroch, anglické ekvivalenty z WordNetu |
 | `LICENSE` | licencie: kód MIT, dáta CC BY-NC-SA 4.0 |
 
 ### Tvary slov (MorfFlex SK)

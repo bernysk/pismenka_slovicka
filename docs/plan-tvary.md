@@ -1,18 +1,36 @@
 # Plán: sekcia A – tvary slov a ďalšie využitie stiahnutých dát
 
-Stav: **príprava, zatiaľ neimplementované.** Dokument popisuje, čo sa má spraviť, z akých dát a v akom formáte,
-aby sa dalo pokračovať bez ďalšieho prieskumu.
+Stav: **A1 hotové** (2026-10-17), A2–A4 zatiaľ neimplementované. Dokument popisuje, čo sa má spraviť, z akých dát
+a v akom formáte, aby sa dalo pokračovať bez ďalšieho prieskumu.
 
 ## Prehľad
 
 | # | Funkcia | Dáta, ktoré už máme | Kde sa prejaví |
 |---|---|---|---|
-| A1 | Tabuľka tvarov (skloňovanie, časovanie) v detaile slova | `morfflex/morfflex-sk.tsv.xz` | detail slova, miesto je označené komentárom v `app.js` (`openDetail`) |
+| A1 | Tabuľka tvarov (skloňovanie, časovanie) v detaile slova – **hotové** | `morfflex/morfflex-sk.tsv.xz` | detail slova (`renderForms` v `app.js`) |
 | A2 | Hľadanie v tvaroch slov („slová, ktoré majú tvar na -ami“) | to isté | nový prepínač pri filtroch |
 | A3 | Anglický ekvivalent z WordNetu | `zdroje/snk/sk-wn-2013-01-23.txt.gz` (druhý záznam každého riadku) | detail slova, sekcia „Po anglicky“ |
 | A4 | Označenia synoným (hovorovo, archaizmus, nesprávne…) | `synonyma.json` – pole `zdroj` a text v zátvorke | detail slova, prípadne skrytie „nesprávne“ |
 
-## A1 – tabuľka tvarov
+## A1 – tabuľka tvarov (hotové)
+
+**Výsledok:** `skripty/tvary_web.py` (krok `tvary` v `zostav.py`) → `data/tvary/`, v aplikácii `loadForms` a
+`renderForms` v `app.js`. 27 713 slov, 671 000 tvarov, 7,6 MB surové / **0,39 MB gzip spolu** (najväčší súbor
+`p.json` 56 kB gzip) – oveľa menej, ako odhadovala tabuľka nižšie, takže je rezerva napr. na zníženie hranice SNK.
+Odchýlky od pôvodného plánu:
+
+- **6 pádov namiesto 7** – vokatív sa v slovenskej školskej gramatike ako pád neuvádza (a v MorfFlexe sa
+  takmer vždy zhoduje s nominatívom). Podstatné mená majú teda 12 tvarov.
+- Prídavné mená: stĺpce mužský / stredný / ženský (stredný hneď za mužským, aby sa rovnaké bunky zlúčili);
+  životný a neživotný mužský rod sú v jednej bunke a rozpíšu sa len tam, kde sa líšia (pekného / pekný).
+- Slovesá: navyše jednoslovný budúci čas (len byť: budem, budeš…). Vid v MorfFlexe nie je spoľahlivý
+  (urobiť má značku IPFV), preto sa prítomný čas dokonavých slovies neoznačuje ako budúci – pod tabuľkou je poznámka.
+- Varianty v bunke (psi, psy; dievčatá, dievčence): najprv tvary hlavného rodu (s najviac tvarmi), potom podľa
+  frekvencie tvaru (titulky + Wikipédia).
+- Homonymá: `tisíc` má v SNK frekvenciu len 108 (je tam ako číslovka), preto tabuľku nemá; `obor` zlučuje tvary
+  oboch významov (obra / oboru) – MorfFlex ich má aj v jednej leme.
+
+### Pôvodný návrh
 
 ### Veľkosť dát (zmerané 2026-10-17)
 

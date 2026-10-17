@@ -5,7 +5,7 @@
 #   python -I skripty/zostav.py --od web         # začni od kroku „web“ (predchádzajúce sa preskočia)
 #   python -I skripty/zostav.py --len synonyma   # len jeden krok
 #
-# Kroky: hunspell → vyklady → wiki → web → synonyma → morfflex (pozri KROKY nižšie a skripty/README.md).
+# Kroky: hunspell → vyklady → wiki → web → synonyma → morfflex → tvary (pozri KROKY nižšie a skripty/README.md).
 # Spúšťa sa z koreňa repozitára (priečinok s index.html).
 import argparse, bz2, lzma, os, shutil, subprocess, sys, time, urllib.request
 
@@ -85,6 +85,10 @@ KROKY = [
     ("morfflex", "zbalené tvary slov → morfflex/morfflex-sk.tsv.xz (~8 min)",
      [s("morfflex_zbal.py"), os.path.join(Z, "slk"), os.path.join(KOREN, "data", "slova.tsv"),
       os.path.join(KOREN, "morfflex", "morfflex-sk.tsv.xz")]),
+    ("tvary", "tabuľky tvarov bežných slov → data/tvary/",
+     [s("tvary_web.py"), os.path.join(KOREN, "morfflex", "morfflex-sk.tsv.xz"), os.path.join(KOREN, "data", "slova.tsv"),
+      os.path.join(KOREN, "data", "tvary"), "--freq", os.path.join(Z, "sk_full.txt"),
+      "--freq", os.path.join(Z, "sk_wiki_freq.txt")]),
 ]
 
 def main():

@@ -1,7 +1,7 @@
 # Skripty na zostavenie slovníka
 
-**Všetko naraz:** `python -I skripty/zostav.py` – stiahne chýbajúce zdroje (nižšie) a spustí kroky 1–6 v poradí
-(`--bez-stahovania`, `--od <krok>`, `--len <krok>`; kroky: hunspell, vyklady, wiki, web, synonyma, morfflex).
+**Všetko naraz:** `python -I skripty/zostav.py` – stiahne chýbajúce zdroje (nižšie) a spustí kroky 1–7 v poradí
+(`--bez-stahovania`, `--od <krok>`, `--len <krok>`; kroky: hunspell, vyklady, wiki, web, synonyma, morfflex, tvary).
 Pomocné moduly: `spolocne.py` (kódy slovných druhov, rozdelenie dát podľa písmen), `slabiky.py` (počet slabík,
 `python -I skripty/slabiky.py` spustí testy).
 
@@ -30,6 +30,7 @@ python -I skripty/merge.py zdroje/skwiktionary-latest-pages-articles.xml zdroje/
 python -I skripty/wiki_freq.py zdroje/skwiki-latest-pages-articles.xml.bz2 zdroje/sk_wiki_freq.txt zdroje/sk_wiki_vety.json
 python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt --freq-wiki zdroje/sk_wiki_freq.txt --wiki-vety zdroje/sk_wiki_vety.json --snk zdroje/snk --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
 python -I skripty/morfflex_zbal.py zdroje/slk data/slova.tsv morfflex/morfflex-sk.tsv.xz
+python -I skripty/tvary_web.py morfflex/morfflex-sk.tsv.xz data/slova.tsv data/tvary --freq zdroje/sk_full.txt --freq zdroje/sk_wiki_freq.txt
 python -I skripty/synonyma.py --wordnet zdroje/snk/sk-wn-2013-01-23.txt.gz --thesaurus zdroje/th_sk_SK_v2.dat --wikt zdroje/skwiktionary-latest-pages-articles.xml --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --slova data/slova.tsv --out .
 ```
 
@@ -48,5 +49,11 @@ python -I skripty/synonyma.py --wordnet zdroje/snk/sk-wn-2013-01-23.txt.gz --the
 
 6. `synonyma.py` – synonymá, antonymá, nadradené a podradené pojmy zo Slovenského WordNetu (prednosť), OpenThesaurus-SK, Wikislovníka a Wiktionary + dvojice so záporom ne-
    → `synonyma.json` (úplné, so zdrojmi) a `data/synonyma.json` (pre aplikáciu).
+
+7. `tvary_web.py` – z `morfflex/morfflex-sk.tsv.xz` vyberie tvary bežných slov (SNK ≥ 1 000, `--min-snk`) pre tabuľku
+   v detaile slova: podstatné mená 6 pádov × 2 čísla, prídavné mená 1. stupeň v pádoch + nominatív 2. a 3. stupňa,
+   slovesá neurčitok, prítomný čas, jednoslovný budúci čas (budem), minulý čas (robil, robila…), rozkazovací spôsob;
+   bez záporu. Homonymné lemy (`obor-1`, ``tisíc`1000-2``) zlúči, varianty zoradí podľa hlavného rodu a frekvencie tvaru
+   (`--freq`). Zapíše `data/tvary/znacky.json` a `data/tvary/<písmeno>.json` (~28 000 slov, 670 000 tvarov, ~0,4 MB gzip).
 
 `nevhodne.txt` – regulárne výrazy slov nevhodných pre deti; riadky s `!` sú výnimky.

@@ -9,6 +9,7 @@
  *   0 slovo · 1 kód slovného druhu (POS_FROM_CODE) · 2 „1“ ak má výklad · 3 príznaky ·
  *   4 frekvencia SNK · 5 v knihách · 6 v hovorenej reči · 7 vo Wikipédii · 8 počet slabík
  * Príznaky: m/f/s rod (aj viac naraz), A/I životné/neživotné, P pomnožné, N nevhodné pre deti.
+ * Tabuľky tvarov (skloňovanie, časovanie) sa načítajú z data/tvary/<x>.json – pozri loadForms().
  */
 "use strict";
 
@@ -255,7 +256,10 @@ async function openDetail(e) {
   if (!$("detail").open) $("detail").showModal();  // pri preklikaní na synonymum je okno už otvorené
   $("detail").scrollTop = 0;
   body.textContent = "Načítavam…";
-  const [defs, rels] = await Promise.all([e.def ? loadShard("vyklady", e.w) : {}, loadShard("synonyma", e.w)]);
+  const [defs, rels, forms] = await Promise.all([
+    e.def ? loadShard("vyklady", e.w) : {}, loadShard("synonyma", e.w),
+    FORM_POS.has(e.pos) ? loadForms(e.w) : null,
+  ]);
   if ($("detail-word").textContent !== e.w) return;  // medzitým sa otvorilo iné slovo
   body.replaceChildren();
 
@@ -284,7 +288,7 @@ async function openDetail(e) {
     body.appendChild(p);
   }
   renderRelations(e, rels[e.w], body);
-  // Miesto pre budúcu tabuľku tvarov (skloňovanie/časovanie) – pozri docs/plan-tvary.md
+  if (forms) renderForms(e, forms, body);
   const p = document.createElement("p");
   p.appendChild(link("https://slovnik.juls.savba.sk/?w=" + encodeURIComponent(e.w), "Hľadať v slovníkoch JÚĽŠ SAV ↗"));
   body.appendChild(p);
@@ -333,6 +337,147 @@ function renderRelations(e, r, body) {
   if (hyper.length) row("Nadradené pojmy", [hyper]);
   if (hypo.length) row("Podradené pojmy", [hypo]);
   body.appendChild(dl);
+}
+
+// ---------- tvary slova: skloňovanie a časovanie (data/tvary/, generuje skripty/tvary_web.py) ----------
+// data/tvary/znacky.json = zoznam značiek (index = ID), data/tvary/<x>.json = {slovo: [[ID značky, rozdiel], …]}.
+// Rozdiel: "=" rovnaký tvar ako slovo, "2sa" = odober 2 posledné znaky a pridaj „sa“ (pes → psa).
+// Viac tvarov s rovnakou značkou sú varianty (psi, psy), prvý je hlavný.
+const FORM_POS = new Set(["noun", "adjective", "verb", "name"]);
+let formTags = null;  // Promise<["N;NOM;SG", …]>
+async function loadForms(w) {
+  formTags ??= fetch("data/tvary/znacky.json").then((r) => (r.ok ? r.json() : [])).catch(() => []);
+  const [tags, shard] = await Promise.all([formTags, loadShard("tvary", w)]);
+  const rows = shard[w];
+  if (!rows || !tags.length) return null;
+  const m = new Map();  // značka → [tvar, …]
+  for (const [id, d] of rows) {
+    const [, cut, add] = d === "=" ? [, "", ""] : d.match(/^(\d*)(.*)$/);
+    const form = (cut ? w.slice(0, w.length - +cut) : w) + add;
+    if (!m.has(tags[id])) m.set(tags[id], []);
+    m.get(tags[id]).push(form);
+  }
+  return m;
+}
+
+const CASES = [  // poradie a otázky ako v škole; vokatív sa ako pád neuvádza
+  ["NOM", "N", "nominatív", "kto? čo?"], ["GEN", "G", "genitív", "(bez) koho? čoho?"],
+  ["DAT", "D", "datív", "komu? čomu?"], ["ACC", "A", "akuzatív", "koho? čo?"],
+  ["ESS", "L", "lokál", "(o) kom? čom?"], ["INS", "I", "inštrumentál", "(s) kým? čím?"],
+];
+// stredný rod hneď za mužským: v jednotnom čísle má s ním rovnaké tvary v G, D, L, I a bunky sa zlúčia
+const ADJ_GENDERS = [["MASC", "mužský"], ["NEUT", "stredný"], ["FEM", "ženský"]];
+const PERSONS = [["1;SG", "ja"], ["2;SG", "ty"], ["3;SG", "on, ona, ono"], ["1;PL", "my"], ["2;PL", "vy"], ["3;PL", "oni, ony"]];
+
+function el(tag, cls, text) {
+  const x = document.createElement(tag);
+  if (cls) x.className = cls;
+  if (text != null) x.textContent = text;
+  return x;
+}
+// hlavička riadku s pádom: „nominatív“ + otázka; na úzkej obrazovke len „N“ (CSS .case-short)
+function caseHeader([, short, name, q]) {
+  const th = el("th");
+  th.scope = "row";
+  th.title = `${name} – ${q}`;
+  th.append(el("span", "case-short", short), el("span", "case-long", name), el("small", "case-q", q));
+  return th;
+}
+// tabuľka: hlavičky stĺpcov + riadky [hlavička riadku alebo null, [text bunky, …]]; susedné rovnaké bunky sa zlúčia
+function formTable(cols, rows, cls) {
+  const wrap = el("div", "forms-wrap");
+  const t = el("table", "forms " + (cls || ""));
+  const heads = rows.some(([head]) => head !== null);
+  if (cols) {
+    const tr = el("tr");
+    if (heads) tr.appendChild(el("td"));
+    for (const c of cols) { const th = el("th", "", c); th.scope = "col"; tr.appendChild(th); }
+    t.createTHead().appendChild(tr);
+  }
+  const tb = t.createTBody();
+  for (const [head, cells] of rows) {
+    const tr = el("tr");
+    if (typeof head === "string") { const th = el("th", "", head); th.scope = "row"; tr.appendChild(th); }
+    else if (head) tr.appendChild(head);
+    for (let i = 0; i < cells.length; i++) {
+      let span = 1;
+      while (i + span < cells.length && JSON.stringify(cells[i + span]) === JSON.stringify(cells[i])) span++;
+      const td = el("td", cells[i] ? "" : "muted", typeof cells[i] === "string" ? cells[i] || "–" : null);
+      if (Array.isArray(cells[i])) {  // viac riadkov s menovkou: [["živ.", "pekného"], ["neživ.", "pekný"]]
+        cells[i].forEach(([label, text], j) => { if (j) td.append(el("br")); td.append(el("small", "muted", label + " "), text); });
+      }
+      if (span > 1) td.colSpan = span;
+      tr.appendChild(td);
+      i += span - 1;
+    }
+    tb.appendChild(tr);
+  }
+  wrap.appendChild(t);
+  return wrap;
+}
+
+function renderForms(e, m, body) {
+  const get = (tag) => (m.get(tag) || []).join(", ");
+  const section = (title) => { const h = el("h4", "", title); body.appendChild(h); };
+  const sub = (title) => body.appendChild(el("p", "forms-sub", title));
+
+  // podstatné mená: riadky = pády, stĺpce = jednotné a množné číslo (pomnožné majú len množné)
+  if (CASES.some(([c]) => m.has(`N;${c};SG`) || m.has(`N;${c};PL`))) {
+    section("Skloňovanie");
+    const nums = [["SG", "jednotné číslo"], ["PL", "množné číslo"]].filter(([n]) => CASES.some(([c]) => m.has(`N;${c};${n}`)));
+    body.appendChild(formTable(nums.map(([, x]) => x), CASES.map((c) => [caseHeader(c), nums.map(([n]) => get(`N;${c[0]};${n}`))])));
+  }
+
+  // prídavné mená: pre každé číslo tabuľka riadky = pády, stĺpce = rody
+  if (CASES.some(([c]) => m.has(`ADJ;MASC;ANIM;${c};SG`))) {
+    section("Skloňovanie");
+    for (const [n, title] of [["SG", "Jednotné číslo"], ["PL", "Množné číslo"]]) {
+      sub(title);
+      body.appendChild(formTable(ADJ_GENDERS.map(([, x]) => x),
+        CASES.map((c) => [caseHeader(c), ADJ_GENDERS.map(([g]) => {
+          if (g !== "MASC") return get(`ADJ;${g};${c[0]};${n}`);
+          // mužský rod: životné a neživotné sa líšia len v niektorých pádoch (pekného / pekný)
+          const an = get(`ADJ;MASC;ANIM;${c[0]};${n}`), inan = get(`ADJ;MASC;INAN;${c[0]};${n}`);
+          return an === inan ? an : [["živ.", an], ["neživ.", inan]];
+        })]), "adj"));
+    }
+    const cmp = get("ADJ;MASC;ANIM;NOM;SG;CMPR"), sup = get("ADJ;MASC;ANIM;NOM;SG;SPRL");
+    if (cmp || sup) {
+      section("Stupňovanie");
+      body.appendChild(formTable(["1. stupeň", "2. stupeň", "3. stupeň"], [[null, [e.w, cmp, sup]]], "compare"));
+    }
+  }
+
+  // slovesá
+  if (m.has("V;NFIN") || PERSONS.some(([p]) => m.has(`V;PRS;IND;${p}`))) {
+    section("Časovanie");
+    const persons = (tense) => {
+      const sg = PERSONS.slice(0, 3), pl = PERSONS.slice(3);
+      return formTable(["jednotné číslo", "množné číslo"], [0, 1, 2].map((i) => [
+        `${i + 1}. osoba`, [sg[i], pl[i]].map(([p, pron]) => { const f = get(`V;${tense};IND;${p}`); return f ? [[pron, f]] : ""; }),
+      ]), "verb");
+    };
+    if (m.has("V;NFIN")) body.appendChild(el("p", "forms-line", "")).append(el("span", "muted", "neurčitok: "), get("V;NFIN"));
+    if (PERSONS.some(([p]) => m.has(`V;PRS;IND;${p}`))) {
+      sub("Prítomný čas");
+      body.appendChild(persons("PRS"));
+      body.appendChild(el("p", "muted forms-note", "Pri dokonavých slovesách (urobiť, prísť) majú tieto tvary význam budúceho času."));
+    }
+    if (PERSONS.some(([p]) => m.has(`V;FUT;IND;${p}`))) { sub("Budúci čas"); body.appendChild(persons("FUT")); }
+    const past = ["V;PST;IND;3;SG;MASC", "V;PST;IND;3;SG;FEM", "V;PST;IND;3;SG;NEUT", "V;PST;IND;3;PL"].map(get);
+    if (past.some(Boolean)) {
+      sub("Minulý čas");
+      body.appendChild(formTable(["on", "ona", "ono", "oni, ony"], [[null, past]], "verb past"));
+    }
+    const imp = [["V;IMP;2;SG", "ty"], ["V;IMP;1;PL", "my"], ["V;IMP;2;PL", "vy"]].map(([t]) => get(t));
+    if (imp.some(Boolean)) {
+      sub("Rozkazovací spôsob");
+      body.appendChild(formTable(["(ty)", "(my)", "(vy)"], [[null, imp.map((f) => (f ? f + "!" : ""))]], "verb imp"));
+    }
+  }
+  if (body.querySelector(".forms")) {
+    body.appendChild(el("p", "muted forms-note", "Tvary podľa morfologického slovníka MorfFlex SK (ÚFAL MFF UK), CC BY-NC-SA 4.0."));
+  }
 }
 
 // ---------- udalosti ----------

@@ -136,3 +136,24 @@ dialog ol { margin: 0; padding-left: 22px; }
 
 footer { color: var(--muted); font-size: .85rem; padding-top: 24px; padding-bottom: 32px; }
 footer a, dialog a { color: var(--accent); }
+
+/* tabuľka tvarov v detaile slova (renderForms v app.js) */
+.forms-sub { margin: 10px 0 4px; font-weight: 600; font-size: .9rem; }
+.forms-line { margin: 4px 0; }
+.forms-note { font-size: .8rem; margin: 6px 0 0; }
+.forms-wrap { overflow-x: auto; }  /* poistka pre veľmi dlhé tvary; bežne sa tabuľka zmestí */
+table.forms { border-collapse: collapse; width: 100%; font-size: .95rem; }
+table.forms th, table.forms td { border: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+table.forms td { overflow-wrap: anywhere; hyphens: auto; }
+table.forms thead th { background: var(--chip); font-size: .8rem; font-weight: 600; color: var(--muted); }
+table.forms tbody th { font-weight: 600; white-space: nowrap; width: 1%; }
+table.forms td.muted { text-align: center; }
+table.forms.adj td, table.forms.compare td, table.forms.past td, table.forms.imp td { text-align: center; }
+.case-short { display: none; }
+.case-q { display: block; font-weight: 400; color: var(--muted); font-size: .75rem; }
+@media (max-width: 520px) {
+  table.forms { font-size: .85rem; }
+  table.forms th, table.forms td { padding: 3px 5px; }
+  table.forms.adj .case-long, table.forms.adj .case-q { display: none; }
+  table.forms.adj .case-short { display: inline; }
+}
