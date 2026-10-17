@@ -127,12 +127,14 @@ function run() {
   const rodSet = checked("rod");
   const zivSet = checked("ziv");
   const pomn = checked("pomn")[0] || "";
+  const minFreq = +(checked("minfreq")[0] || 0);
 
   results = words.filter((e) => {
     if (onlyLower && (e.w !== e.lower || e.pos === "acronym" || e.pos === "name" || e.w.includes("."))) return false;
     if (noSpaces && /[\s-]/.test(e.w)) return false;
     if (onlyDefs && !e.def) return false;
     if (kids && e.bad) return false;
+    if (minFreq && e.freq + e.wfreq < minFreq) return false;
     if (posSet.size && !posSet.has(e.pos)) return false;
     if (rodSet.length && !rodSet.some((r) => e.rod.includes(r))) return false;
     if (zivSet.length && !zivSet.includes(e.ziv)) return false;

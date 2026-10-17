@@ -14,6 +14,8 @@ Obsahuje ~90 000 slov v **základnom tvare** s gramatickými vlastnosťami z mor
 - **vzor** – napr. `m??ka` (`?` = jedno ľubovoľné písmeno, `*` = čokoľvek)
 - **dĺžka slova** od–do
 - **slovný druh** – podstatné mená, prídavné mená, slovesá, príslovky, zámená, číslovky, predložky, spojky, častice, citoslovcia
+- **ako bežné slovo** – všetky / aj zriedkavé (1+ výskyt) / bežné (10+, predvolené) / veľmi bežné (100+);
+  počíta sa súčet výskytov v titulkoch a vo Wikipédii, takže zmiznú napr. „fiťfiriť“ či „kresťanskosť“
 - **rod** (mužský / ženský / stredný), **životnosť** (životné / neživotné) a **pomnožné** podstatné mená
 - **zoradenie podľa častosti používania** – spolu, v hovorovej reči (titulky) alebo vo Wikipédii; abecedne alebo podľa dĺžky
 - **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách
