@@ -86,7 +86,7 @@ abnormný	adjective
 abnormálne	adverb		7		7
 abnormálnosť	noun	1	1	f	
 abnormálny	adjective	1	157		216
-abolicionista	noun		3	m	17
+abolicionista	noun	1	3	m	17
 abolicionistický	adjective	1			
 abolicionistov	adjective		3		6
 abolicionizmus	noun	1		m	9
@@ -197,7 +197,7 @@ absorpčný	adjective		6		205
 abstencia	noun			f	
 abstenovať	verb				
 abstinencia	noun	1	56	f	40
-abstinent	noun		36	mA	24
+abstinent	noun	1	36	mA	24
 abstinentka	noun		1	f	
 abstinentný	adjective				
 abstinentov	adjective		2		3
@@ -221,7 +221,7 @@ abstraktivista	noun			m
 abstraktivizmus	noun			m	
 abstraktne	adverb		4		28
 abstraktno	noun	1		s	4
-abstraktnosť	noun			f	11
+abstraktnosť	noun	1		f	11
 abstraktný	adjective	1	76		790
 abstraktum	noun			s	5
 abstrakčný	adjective				
@@ -229,7 +229,7 @@ abstrúzny	adjective
 absurdita	noun	1	26	f	70
 absurdne	adverb		77		11
 absurdno	noun	1		s	3
-absurdnosť	noun		22	f	16
+absurdnosť	noun	1	22	f	16
 absurdný	adjective	1	1084		258
 absurdum	noun	1	3	s	22
 absúrd	noun				
@@ -310,7 +310,7 @@ Adamcová	noun	1			29
 Adamec	name	1	2		260
 Adamech	name	1			
 Adamecová	name	1			
-adamita	noun			mA	5
+adamita	noun	1		mA	5
 adamitizmus	noun			m	
 adamitka	noun			f	
 adamitov	adjective				3
@@ -425,7 +425,7 @@ Ado	name	1	8		51
 adogmatický	adjective				
 adogmatizmus	noun			m	
 adolescencia	noun	1	9	f	33
-adolescent	noun		38	mA	60
+adolescent	noun	1	38	mA	60
 adolescentka	noun		4	f	2
 adolescentný	adjective		9		7
 adolescentov	adjective		7		4
@@ -500,7 +500,7 @@ adventný	adjective	1	12		120
 adventívny	adjective				4
 adverbializovať	verb				
 adverbializácia	noun			f	
-adverbium	noun			s	
+adverbium	noun	1		s	
 adverbiálne	adverb				1
 adverbiálny	adjective	1			9
 adverbálny	adjective	1			
@@ -843,7 +843,7 @@ akcionár	noun	1	232	mA	410
 akcionárka	noun		7	f	
 akcionárov	adjective		4		3
 akcionársky	adjective		5		13
-akciovka	noun		5	f	6
+akciovka	noun	1	5	f	6
 akciovo	adverb				
 akciový	adjective		82		708
 akcíz	noun			mI	
@@ -2007,7 +2007,7 @@ antiklerikálne	adverb				5
 antiklimax	noun	1	1	m	5
 antiklinála	noun	1		f	9
 antikolonializmus	noun	1		m	2
-antikomunista	noun		1	mA	28
+antikomunista	noun	1	1	mA	28
 antikomunisticky	adverb		1		
 antikomunistický	adjective		3		57
 antikomunistka	noun			f	2
@@ -2369,7 +2369,7 @@ apsidálny	adjective	1
 apík	noun		1	m	
 apíkov	adjective				
 apória	noun	1		f	13
-aquapark	noun		18	mI	44
+aquapark	noun	1	18	mI	44
 ara	noun		31	f	276
 arab	noun		351	mA	1197
 arab.	acronym	1			
@@ -2513,7 +2513,7 @@ Ardovský	adjective				12
 areka	noun	1		f	7
 arekový	adjective	1			2
 areocentrický	adjective				
-areometer	noun			mI	
+areometer	noun	1		mI	
 aretačný	adjective		1		5
 aretácia	noun		1	f	
 areál	noun		207	mI	5275
@@ -2617,7 +2617,7 @@ Arnoldová	adjective		1		7
 Arnutovce	noun	1		fP	12
 arogancia	noun	1	196	f	58
 arogantne	adverb		35		16
-arogantnosť	noun		2	f	2
+arogantnosť	noun	1	2	f	2
 arogantný	adjective	1	545		98
 arogovať	verb				
 aromatickosť	noun			f	2
@@ -2710,7 +2710,7 @@ ascendentný	adjective		1		10
 ascídia	noun			f	12
 aseizmický	adjective				
 asekurovať	verb				
-asekurácia	noun			f	
+asekurácia	noun	1		f	
 asembler	noun	1		mI	12
 asentimentálny	adjective	1			
 asentírka	noun			f	
@@ -2834,7 +2834,7 @@ astrachánsky	adjective				35
 astrionika	noun			f	
 astrochémia	noun	1		f	5
 astrofyzický	adjective				
-astrofyzik	noun		36	mA	207
+astrofyzik	noun	1	36	mA	207
 astrofyzikov	adjective		2		8
 astrol.	acronym	1			
 astrologicky	adverb		2		2
@@ -2854,7 +2854,7 @@ astronomicky	adverb		8		10
 astronomický	adjective	1	67		1574
 astronóm	noun	1	74	mA	10582
 astronómia	noun	1	68	f	1636
-astronómka	noun		9	f	240
+astronómka	noun	1	9	f	240
 astronómov	adjective		8		191
 astrový	adjective	1			31
 astrálne	adverb		3		3
@@ -3072,7 +3072,7 @@ augustový	adjective	1	30		215
 Augustín	noun	1	9	m	653
 Augustínov	adjective				4
 Augustínová	adjective	1			9
-aukcia	noun		474	f	180
+aukcia	noun	1	474	f	180
 aukcionár	noun			mA	
 aukcionárov	adjective				
 aukčný	adjective	1	58		65
@@ -3089,7 +3089,7 @@ Aurélia	noun	1	5	f	44
 Auróra	noun			f	16
 ausburgský	adjective				4
 auskultačný	adjective				5
-auskultácia	noun			f	9
+auskultácia	noun	1		f	9
 austenit	noun	1		mI	51
 austenitizácia	noun	1		f	2
 australopitek	noun	1		m	89
@@ -3108,7 +3108,7 @@ autarkný	adjective	1
 autarktický	adjective				
 autarktný	adjective				
 autenticita	noun	1	21	f	161
-autentickosť	noun		24	f	112
+autentickosť	noun	1	24	f	112
 autenticky	adverb		13		33
 autentický	adjective		139		507
 autentifikačný	adjective		4		18
@@ -4246,7 +4246,7 @@ bažantský	adjective		1
 bažantí	adjective		3		17
 baženie	noun		3	s	2
 bažiaci	adjective		26		10
-bažina	noun		207	f	55
+bažina	noun	1	207	f	55
 bažinatý	adjective		3		20
 bažinný	adjective		7		3
 bažinový	adjective		5		
@@ -5113,7 +5113,7 @@ bibliograf	noun	1	1	mA	78
 bibliografia	noun	1	5	f	722
 bibliograficky	adverb				
 bibliografický	adjective				373
-bibliografka	noun			f	13
+bibliografka	noun	1		f	13
 bibliografov	adjective				7
 bibliopedagogika	noun	1		f	4
 bibliotekár	noun			mA	8
@@ -5322,7 +5322,7 @@ biocentrum	noun	1		s	47
 biocenóza	noun	1		f	17
 biochemicky	adverb		1		19
 biochemický	adjective	1	52		303
-biochemik	noun		20	mA	395
+biochemik	noun	1	20	mA	395
 biochemikov	adjective		1		2
 biochemička	noun		5	f	31
 biochémia	noun	1	47	f	432
@@ -5526,7 +5526,7 @@ blahonosný	adjective
 blahoprajne	adverb				
 blahoprajnosť	noun			f	
 blahoprajný	adjective		8		10
-blahoprianie	noun		18	s	
+blahoprianie	noun	1	18	s	
 blahoprianý	adjective		1		
 blahopriať	verb		6		3
 blahorečenie	noun	1	5	s	185
@@ -5933,8 +5933,8 @@ bodík	noun		8	mI	15
 Bodíky	noun	1	4	mIP	1
 bodôčka	noun		1	f	
 bodľavý	adjective				
-bodľač	noun		1	f	
-bodľačie	noun			s	
+bodľač	noun	1	1	f	
+bodľačie	noun	1		s	
 bogandža	noun			f	
 Bogdalický	adjective				4
 Bogdan	name	1	10		122
@@ -5975,7 +5975,7 @@ bohemizácia	noun			f
 Boheľov	noun	1		mI	10
 bohorodička	noun	1	9	f	1097
 bohorovne	adverb		1		
-bohorovnosť	noun			f	
+bohorovnosť	noun	1		f	
 bohorovný	adjective		1		
 bohorúhanie	noun			s	
 bohorúhavý	adjective				
@@ -6307,7 +6307,7 @@ Bot	name	1	11		60
 bot.	acronym	1	2		
 botanicky	adverb	1	2		58
 botanický	adjective	1	72		750
-botanik	noun		32	mA	854
+botanik	noun	1	32	mA	854
 botanika	noun	1	35	f	643
 botanikov	adjective		3		31
 botanizovať	verb	1			4
@@ -6439,7 +6439,7 @@ brahmanizmus	noun	1		mI	17
 brahmanka	noun	1		f	7
 brahmanov	adjective				7
 brahmanský	adjective	1	2		9
-brahmanstvo	noun			s	
+brahmanstvo	noun	1		s	
 Braille	noun		1	mA	31
 Braillov	adjective		23		71
 brainstorming	noun	1	10	mI	14
@@ -6576,9 +6576,9 @@ brehovitý	adjective
 brehovský	adjective				
 brehový	adjective				120
 Brehuv	name	1			
-brehuľa	noun			f	36
-brehár	noun			mA	14
-brehárik	noun			mA	7
+brehuľa	noun	1		f	36
+brehár	noun	1		mA	14
+brehárik	noun	1		mA	7
 Brejcha	name	1			3
 brejk	noun		3	mI	31
 brejkbal	noun	1			5
@@ -6605,7 +6605,7 @@ brezie	noun			s	13
 brezina	noun			f	267
 brezinový	adjective				2
 brezinský	adjective				42
-brezivosť	noun			f	20
+brezivosť	noun	1		f	20
 brezivá	noun		2	f	
 brezivý	adjective				
 brezička	noun			f	
@@ -6854,7 +6854,7 @@ brusička	noun			f
 brusičov	adjective		1		2
 brusičský	adjective				2
 brusne	adverb				15
-brusnica	noun		41	f	155
+brusnica	noun	1	41	f	155
 brusnický	adjective				3
 brusnicový	adjective		104		16
 Brusno	noun			s	156
@@ -7070,7 +7070,7 @@ Budvar	noun		1	mI	28
 Budyšín	noun	1		m	20
 budyšínsky	adjective				6
 Budziňáková	noun	1			
-budzogáň	noun		1	m	18
+budzogáň	noun	1	1	m	18
 Budzák	name	1			9
 budík	noun		226	mI	56
 budíček	noun		148	mI	19
@@ -7088,7 +7088,7 @@ bufetár	noun			mA	2
 bufetárka	noun		3	f	
 bufetárov	adjective				
 buffa	noun		195	f	126
-buffer	noun		10	mI	46
+buffer	noun	1	10	mI	46
 Bug	noun		44	m	140
 bugina	noun		5	f	4
 Buglovce	noun	1		fP	7
@@ -7288,7 +7288,7 @@ Buza	name	1	1		7
 buzerovať	verb		30		
 Buzga	name	1			
 Buzitka	noun	1		f	19
-buzogáň	noun			m	
+buzogáň	noun	1		m	
 Buzogáňová	noun	1			
 buzola	noun	1	1	f	8
 buzolový	adjective				3
@@ -7328,7 +7328,7 @@ bydlo	noun		4	s	2
 bylina	noun	1	82	f	1070
 bylinka	noun		173	f	124
 bylinkový	adjective		84		22
-bylinkár	noun		17	mA	30
+bylinkár	noun	1	17	mA	30
 bylinkárka	noun		3	f	5
 bylinkárov	adjective		1		2
 bylinkársky	adjective		1		
@@ -7469,7 +7469,7 @@ bádavý	adjective				2
 bádať	verb	1	26		24
 Bádensko-Württembersko	name	1			282
 Báhoň	noun	1		f	39
-báj	noun		8	f	309
+báj	noun	1	8	f	309
 báječne	adverb		63		
 báječnosť	noun		8	f	
 báječný	adjective		379		75
@@ -7882,7 +7882,7 @@ celoživotný	adjective		259		1038
 celta	noun	1	7	f	58
 celtovina	noun			f	
 celtový	adjective				
-celula	noun			f	15
+celula	noun	1		f	15
 celulinký	adjective				
 celulitída	noun		9	f	12
 celuloid	noun	1	10	mI	31
@@ -7944,7 +7944,7 @@ cennosť	noun		105	f	141
 cenník	noun	1	12	mI	26
 cenníkový	adjective				
 cenný	adjective		1457		2101
-cenotvorba	noun			f	6
+cenotvorba	noun	1		f	6
 cenotvorný	adjective				
 cenovka	noun	1	78	f	
 cenovo	adverb		40		124
@@ -8777,13 +8777,13 @@ chriaknuť	verb
 chriašteľ	noun		3	mI	56
 chripieť	verb				
 chripot	noun		1	m	
-chripľavka	noun			f	17
+chripľavka	noun	1		f	17
 chripľavo	adverb				
 chripľavý	adjective				2
 Chris	noun		3131	mA	1862
 Chrisov	adjective		37		2
 christianizačný	adjective				
-christianizmus	noun			m	
+christianizmus	noun	1		m	
 christianizácia	noun			f	33
 Chrkavá	name	1			
 Chrkavý	name	1			2
@@ -8946,7 +8946,7 @@ chudobnenie	noun			s	2
 chudobnieť	verb		3		10
 chudobnosť	noun			f	2
 chudobný	adjective	1	1548		2368
-chudokrvnosť	noun		10	f	20
+chudokrvnosť	noun	1	10	f	20
 chudokrvný	adjective		13		
 Chudomel	name	1			
 chudorľavo	adverb				
@@ -9257,7 +9257,7 @@ cieliť	verb		49		92
 cienička	noun			f	
 cieva	noun	1	186	f	692
 cievka	noun	1	98	f	411
-cievkovanie	noun		2	s	7
+cievkovanie	noun	1	2	s	7
 cievkovať	verb				
 cievkovitý	adjective				
 cievkový	adjective				23
@@ -9285,7 +9285,7 @@ ciferne	adverb
 ciferník	noun	1	49	mI	84
 ciferníkový	adjective				
 ciferný	adjective		13		24
-cifra	noun		32	f	123
+cifra	noun	1	32	f	123
 cifraňa	noun			f	
 cifrička	noun			f	
 cifrovane	adverb		1		
@@ -9595,7 +9595,7 @@ cookies	noun	1	43		126
 cop	noun	1	93		63
 copatý	adjective		1		
 copiapit	noun	1		mI	7
-copyright	noun		22	mI	54
+copyright	noun	1	22	mI	54
 Copáková	noun	1			
 coquimbit	noun			mI	2
 cordierit	noun			mI	6
@@ -9607,7 +9607,7 @@ coulomb	noun	1		m	27
 countryový	adjective				
 countyový	adjective				
 COVID-19	noun	1			
-cowboy	noun		130	mA	98
+cowboy	noun	1	130	mA	98
 Cpinová	noun	1			
 crescendo	noun	1	7	s	20
 cripľavý	adjective				
@@ -9682,11 +9682,11 @@ cudzoložníkov	adjective		1
 cudzoložný	adjective		5		4
 cudzoložstvo	noun	1	99	s	99
 cudzonárodný	adjective				
-cudzopasenie	noun			s	2
+cudzopasenie	noun	1		s	2
 cudzopasiť	verb				
 cudzopasne	adverb				2
 cudzopasnícky	adjective				
-cudzopasníctvo	noun			s	3
+cudzopasníctvo	noun	1		s	3
 cudzopasník	noun	1	2	mA	15
 cudzopasný	adjective	1	1		12
 cudzorečový	adjective				
@@ -9967,7 +9967,7 @@ cárstvo	noun		3	s	185
 cédeprehrávač	noun			m	
 céder	noun	1	16	mI	59
 céderom	noun			m	
-cédečko	noun		31	s	10
+cédečko	noun	1	31	s	10
 cédečkáreň	noun			f	
 cédrový	adjective	1	12		39
 cér	noun	1	2		24
@@ -9985,7 +9985,7 @@ céčkarov	adjective
 céčko	noun		16	s	8
 cíb	noun			m	
 Cíbik	name	1			25
-cíbik	noun			m	25
+cíbik	noun	1		m	25
 cíbový	adjective				
 cícer	noun		13	mI	75
 cícerok	noun		4	mI	3
@@ -10223,7 +10223,7 @@ dav	noun	1	3078	mI	1950
 David	noun		3446	m	6021
 Davidov	adjective		17		39
 daviscupový	adjective				59
-davista	noun			m	
+davista	noun	1		m	
 davistický	adjective				
 davistov	adjective				23
 davoský	adjective				
@@ -10303,7 +10303,7 @@ debilne	adverb		27	N
 debilnosť	noun		1	fN	2
 debilný	adjective	1	612	N	3
 debilov	adjective		3	N	3
-debitor	noun			mA	
+debitor	noun	1		mA	
 deblista	noun			mA	
 deblistka	noun			f	2
 deblokačný	adjective				
@@ -10377,7 +10377,7 @@ decimovať	verb		8		21
 decimálka	noun			f	2
 decimálny	adjective	1	2		9
 decizívny	adjective				
-decko	noun		6533	s	71
+decko	noun	1	6533	s	71
 decovka	noun			f	
 decový	adjective				
 decrescendo	noun	1		s	7
@@ -10500,7 +10500,7 @@ deflorovať	verb		8
 deflorácia	noun	1	1	f	2
 deflácia	noun	1	10	f	36
 defoliácia	noun			f	
-deforestácia	noun			f	
+deforestácia	noun	1		f	
 deformačný	adjective		4		81
 deformita	noun		1	f	25
 deformovane	adverb		1		
@@ -11028,7 +11028,7 @@ dep.	acronym	1	1
 depalatalizácia	noun			f	
 depalatizácia	noun			f	
 depandancia	noun			f	
-departement	noun			m	518
+departement	noun	1		m	518
 department	noun	1	33	mI	2436
 departmán	noun	1		m	10
 dependencia	noun			f	65
@@ -12226,7 +12226,7 @@ diplomatár	noun			m	12
 diplomatárov	adjective				
 diplomovaný	adjective		7		27
 diplomovať	verb		4		
-diplomovka	noun		5	f	3
+diplomovka	noun	1	5	f	3
 diplomový	adjective	1	26		331
 diplopia	noun			f	5
 diplégia	noun	1			3
@@ -12384,7 +12384,7 @@ dispenzár	noun	1
 dispergovaný	adjective				6
 disperzia	noun		2	f	102
 disperzný	adjective		3		45
-dispečer	noun		110	mA	105
+dispečer	noun	1	110	mA	105
 dispečerka	noun		6	f	
 dispečerov	adjective		5		7
 dispečersky	adverb				
@@ -12418,7 +12418,7 @@ distingvovane	adverb		2
 distingvovanosť	noun			f	2
 distingvovaný	adjective		7		2
 distonovať	verb				
-distorzia	noun			f	5
+distorzia	noun	1		f	5
 distrakcia	noun			f	
 distribuovane	adverb		1		
 distribuovanie	noun			s	8
@@ -12541,7 +12541,7 @@ dizajn	noun	1	463	mI	3772
 dizajnovo	adverb		3		41
 dizajnový	adjective		13		126
 dizajnér	noun	1	149	mA	815
-dizajnérka	noun		36	f	94
+dizajnérka	noun	1	36	f	94
 dizajnérov	adjective		15		1
 dizajnérsky	adjective		20		125
 dizajnérstvo	noun			s	
@@ -13045,7 +13045,7 @@ dogmatizovať	verb
 dogniaviť	verb				
 dogrilovať	verb		1		
 dogúľať	verb				
-dohad	noun		161	mI	164
+dohad	noun	1	161	mI	164
 dohadný	adjective				2
 dohadovanie	noun		26	s	7
 dohadovaný	adjective				
@@ -13251,7 +13251,7 @@ dokonalý	adjective	1	3583		1345
 dokonane	adverb				3
 dokonanie	noun		1	s	7
 dokonaný	adjective		1		4
-dokonavosť	noun			f	2
+dokonavosť	noun	1		f	2
 dokonavý	adjective				66
 dokonať	verb		121		92
 dokonca	adverb		10170		8310
@@ -13521,7 +13521,7 @@ domeraný	adjective
 domerať	verb				
 domeriavanie	noun			s	
 domeriavať	verb				
-domestifikácia	noun			f	2
+domestifikácia	noun	1		f	2
 domestik	noun			m	2
 domestikačný	adjective	1			
 domestikovanie	noun			s	
@@ -13558,7 +13558,7 @@ dominový	adjective		15		2
 dominujúci	adjective		10		136
 dominácia	noun		3	f	
 domisko	noun		2	s	
-domkár	noun			mA	8
+domkár	noun	1		mA	8
 domkárka	noun			f	
 domkárov	adjective				4
 domkársky	adjective				6
@@ -13629,7 +13629,7 @@ domôcť	verb		4		7
 domýšľanie	noun		1	s	4
 domýšľaný	adjective				2
 domýšľavo	adverb		3		
-domýšľavosť	noun		15	f	8
+domýšľavosť	noun	1	15	f	8
 domýšľavý	adjective		86		7
 domýšľať	verb		37		14
 domček	noun		637	mI	362
@@ -14619,7 +14619,7 @@ dramatizovaný	adjective				2
 dramatizovať	verb	1	85		33
 dramatizujúci	adjective		3		2
 dramatizácia	noun	1	13	f	129
-dramatička	noun		1	f	118
+dramatička	noun	1	1	f	118
 dramatičnosť	noun		5	f	14
 dramaturg	noun	1	7	mA	770
 dramaturgia	noun	1	8	f	400
@@ -14902,7 +14902,7 @@ drobizg	noun		2	mI
 drobiť	verb		13		19
 drobkový	adjective				
 drobky	noun		24	mIP	3
-drobnička	noun			f	2
+drobnička	noun	1		f	2
 drobno	adverb		4		20
 drobnochov	noun			m	2
 drobnochovateľ	noun			mA	9
@@ -14993,7 +14993,7 @@ drsnatý	adjective
 drsne	adverb		174		22
 drsnieť	verb				
 drsno	adverb		9		16
-drsnokožec	noun		1	mI	65
+drsnokožec	noun	1	1	mI	65
 drsnosť	noun		9	f	54
 drsný	adjective		1347		651
 drtenie	noun		4	s	4
@@ -15284,7 +15284,7 @@ Dudková	adjective				26
 dudlavý	adjective				
 dudlať	verb				
 Dudo	name	1	1		23
-dudok	noun		7	mA	103
+dudok	noun	1	7	mA	103
 dudravosť	noun			f	
 dudravý	adjective				
 dudrať	verb		1		
@@ -16442,11 +16442,11 @@ dôverník	noun		49	mA	203
 dôverníkov	adjective		5		1
 dôverníčka	noun		13	f	25
 dôverný	adjective		581		216
-dôverovanie	noun		3	s	
+dôverovanie	noun	1	3	s	
 dôverovať	verb	1	2567		262
 dôverujúci	adjective		6		
 dôveryhodne	adverb		38		22
-dôveryhodnosť	noun		166	f	117
+dôveryhodnosť	noun	1	166	f	117
 dôveryhodný	adjective		405		225
 dôveryplný	adjective				
 dôverčivo	adverb		10		8
@@ -16531,7 +16531,7 @@ dňový	adjective		61		201
 dŕžava	noun	1	9	f	420
 dž	noun	1	3		86
 Džak	noun	1			
-džamahírija	noun			f	2
+džamahírija	noun	1		f	2
 džamija	noun	1			7
 džavot	noun		2	m	3
 džavotanie	noun			s	
@@ -16689,7 +16689,7 @@ efektívnosť	noun	1	35	f	273
 efektívny	adjective	1	573		2060
 efemerický	adjective				
 efeminácia	noun	1		f	2
-efeméra	noun			f	22
+efeméra	noun	1		f	22
 efemérnosť	noun			f	
 efemérny	adjective		1		32
 efendi	noun	1	2		16
@@ -16917,7 +16917,7 @@ elektrodynamický	adjective		1		56
 elektrodynamika	noun	1	3	f	45
 elektroencefalograf	noun	1	3	mI	4
 elektroencefalografia	noun	1	1	f	5
-elektroencefalogram	noun		1	mI	6
+elektroencefalogram	noun	1	1	mI	6
 elektroenergetický	adjective				4
 elektroenergetika	noun	1		f	19
 elektroerozívne	adverb				1
@@ -16990,7 +16990,7 @@ elektropneumatický	adjective				9
 elektropozitívny	adjective				
 elektropriemysel	noun			mI	3
 elektroskop	noun		2	mI	2
-elektrospotrebič	noun		3	mI	25
+elektrospotrebič	noun	1	3	mI	25
 elektrostaticky	adverb		1		12
 elektrostatický	adjective		20		153
 elektrostatika	noun	1	1	f	18
@@ -17066,7 +17066,7 @@ elokventný	adjective
 elongácia	noun			f	13
 eloxovanie	noun	1		s	26
 eloxácia	noun	1		f	
-elpéčko	noun			s	2
+elpéčko	noun	1		s	2
 eluviácia	noun			f	
 Elvíra	noun	1	12	f	31
 elyzejský	adjective				7
@@ -17121,7 +17121,7 @@ emfaticky	adverb
 emfatický	adjective				2
 emfyzém	noun		18	mI	42
 emfáza	noun	1		f	
-emigrant	noun		57	mA	477
+emigrant	noun	1	57	mA	477
 emigrantka	noun		8	f	15
 emigrantov	adjective		1		19
 emigrantský	adjective		2		41
@@ -17170,7 +17170,7 @@ emotívny	adjective		107		132
 emočne	adverb		51		31
 emočnosť	noun			f	
 emočný	adjective	1	93		155
-empatia	noun		91	f	100
+empatia	noun	1	91	f	100
 empaticky	adverb		4		6
 empatický	adjective		44		32
 empirickosť	noun			f	2
@@ -17273,7 +17273,7 @@ enigmatický	adjective				2
 enkapsulácia	noun			f	2
 enkaustika	noun	1		f	5
 enklitický	adjective				
-enklitika	noun			f	
+enklitika	noun	1		f	
 enkláva	noun	1	11	f	487
 enkulturácia	noun	1		f	7
 enoftalmus	noun			m	
@@ -17543,7 +17543,7 @@ eskamotáž	noun		1	f
 eskamotér	noun		2	mA	5
 eskamotérov	adjective		1		
 eskamotérsky	adjective				
-eskamotérstvo	noun		1	s	
+eskamotérstvo	noun	1	1	s	
 eskimo	noun		13	s	18
 eskimácky	adjective		15		20
 Eskimák	noun		64	mA	54
@@ -17589,7 +17589,7 @@ esterový	adjective				30
 estetickosť	noun		1	f	9
 esteticky	adverb		9		113
 estetický	adjective		32		931
-estetik	noun			mA	153
+estetik	noun	1		mA	153
 estetika	noun	1	28	f	601
 estetikov	adjective				5
 estetizmus	noun			mI	6
@@ -17680,7 +17680,7 @@ etnocentrizmus	noun	1		m	5
 etnofóbia	noun	1			
 etnogenéza	noun	1		f	25
 etnograf	noun	1	2	mA	284
-etnografia	noun			f	237
+etnografia	noun	1		f	237
 etnograficky	adverb				7
 etnografický	adjective		3		408
 etnografka	noun	1		f	73
@@ -17708,7 +17708,7 @@ etuda	noun		5	f	137
 etuvovanie	noun			s	
 etyl	noun	1	4	mI	10
 etylacetát	noun	1		mI	26
-etylalkohol	noun		1	mI	23
+etylalkohol	noun	1	1	mI	23
 etylalkoholový	adjective				
 etylbenzén	noun			mI	4
 etylchlorid	noun	1		mI	2
@@ -17987,7 +17987,7 @@ exhaláty	noun		3	mIP	32
 exhaustor	noun			mI	5
 exhaustácia	noun			f	
 exheredácia	noun			f	
-exhibicionista	noun		18	mA	1
+exhibicionista	noun	1	18	mA	1
 exhibicionistický	adjective		3		2
 exhibicionistka	noun		7	f	2
 exhibicionistov	adjective		3		1
@@ -18191,7 +18191,7 @@ expresívny	adjective	1	13		326
 exprezident	noun		3	mA	35
 exprezidentka	noun		4	f	
 exprezidentov	adjective				2
-expropriácia	noun			f	
+expropriácia	noun	1		f	
 exsangvinácia	noun			f	
 exsekrácia	noun			f	
 exspiračný	adjective		1		15
@@ -18307,7 +18307,7 @@ ešus	noun		4	mI	4
 f	noun	1	340		14673
 f.	acronym	1	183		
 Fabian	noun	1	141	mA	205
-fabianizmus	noun			m	
+fabianizmus	noun	1		m	
 Fabianová	noun		5	f	20
 Fabián	noun	1	2	mA	179
 Fabiánov	adjective				9
@@ -18316,7 +18316,7 @@ fabiónový	adjective	1
 Fabov	adjective		1		156
 fabricky	adverb				
 fabrický	adjective		1		25
-fabrika	noun		325	f	396
+fabrika	noun	1	325	f	396
 fabrikant	noun			mA	22
 fabrikantov	adjective				
 fabrikantský	adjective				
@@ -18494,7 +18494,7 @@ falzifikát	noun	1	165	mI	99
 falzifikátor	noun		4	mA	7
 falzifikátorov	adjective		2		
 falzifikátorský	adjective				
-falzum	noun			s	13
+falzum	noun	1		s	13
 falzátor	noun			mA	
 falér	noun			mI	9
 falš	noun		9	m	
@@ -18557,7 +18557,7 @@ fanúšik	noun	1	2425	mA	2760
 fanúšikov	adjective		15		117
 fanúšikovať	verb				
 fanúšikovský	adjective		26		202
-fanúšička	noun		79	f	17
+fanúšička	noun	1	79	f	17
 fanúškovstvo	noun			s	
 Fapšo	name	1			3
 fara	noun		100	f	1083
@@ -18609,7 +18609,7 @@ Farkas	name	1	8		125
 Farkaš	name	1	2		226
 Farkašovský	name	1			16
 farma	noun		2033	f	1181
-farmaceut	noun		19	mA	96
+farmaceut	noun	1	19	mA	96
 farmaceuticky	adverb				4
 farmaceutický	adjective		237		473
 farmaceutikum	noun		18	s	34
@@ -18794,7 +18794,7 @@ Fejérpataky	noun			mA	5
 Fekete	noun	1		mA	106
 Feketeová	noun			f	3
 Fekišovce	noun	1		fP	9
-fekundácia	noun			f	
+fekundácia	noun	1		f	
 fekália	noun		16	f	11
 fekálny	adjective	1	50		22
 feloplastika	noun			f	
@@ -18852,7 +18852,7 @@ fenotyp	noun	1	6	mI	72
 fenotypický	adjective				
 fentanyl	noun		59	mI	40
 fentermín	noun			mI	2
-fenyl	noun		3	mI	28
+fenyl	noun	1	3	mI	28
 fenylacetón	noun			mI	
 fenylhydrazín	noun	1		mI	15
 fenyloctový	adjective				2
@@ -18925,7 +18925,7 @@ feudalista	noun			mA
 feudalistický	adjective	1			
 feudalistov	adjective				
 feudalizmus	noun	1	3	mI	223
-feudál	noun		1	mA	128
+feudál	noun	1	1	mA	128
 feudálne	adverb		2		1
 feudálno-kapitalistický	adjective				
 feudálny	adjective	1	9		555
@@ -19036,7 +19036,7 @@ fiktus	noun			m
 fiktívne	adverb		1		3
 fiktívnosť	noun			f	2
 fiktívny	adjective		147		1466
-fikus	noun		15	mI	6
+fikus	noun	1	15	mI	6
 fikusový	adjective				
 fikčný	adjective		1		10
 fil.	acronym	1	1		
@@ -19334,7 +19334,7 @@ flirtovanie	noun	1	140	s	13
 flirtovať	verb	1	622		33
 flirtujúci	adjective		13		2
 float	noun		5	mI	16
-floating	noun		4	mI	38
+floating	noun	1	4	mI	38
 flobertka	noun			f	
 flogopit	noun			mI	16
 flok	noun		1	mI	
@@ -19541,7 +19541,7 @@ formula	noun	1	126	f	2846
 formulačne	adverb				
 formulačný	adjective				2
 formulka	noun		31	f	35
-formulovanie	noun		1	s	61
+formulovanie	noun	1	1	s	61
 formulovaný	adjective		1		44
 formulovať	verb	1	47		606
 formulujúci	adjective		1		
@@ -19720,7 +19720,7 @@ foxtrotový	adjective				2
 foyer	noun	1	12	mI	96
 fošňa	noun		3	f	16
 fošňový	adjective		1		
-foťák	noun		301	m	
+foťák	noun	1	301	m	
 fr.	acronym	1	18		
 fragilný	adjective	1			
 fragment	noun	1	141	mI	1683
@@ -19869,7 +19869,7 @@ frenštátska	noun			f
 freska	noun	1	39	f	1629
 freskovitý	adjective				
 freskový	adjective				252
-fretka	noun		81	f	37
+fretka	noun	1	81	f	37
 freudizmus	noun	1		m	2
 freón	noun	1	18	mI	37
 freónový	adjective		3		
@@ -20036,7 +20036,7 @@ fujarový	adjective
 fujaráš	noun			m	
 fujarášov	adjective				
 fujarôčka	noun			f	
-fujavica	noun		44	f	11
+fujavica	noun	1	44	f	11
 fujazdiť	verb				
 Fujdová	noun	1			
 Fuják	name	1			6
@@ -20190,7 +20190,7 @@ fylogenetický	adjective		2		150
 fylogenéza	noun	1		f	17
 fyloxéra	noun			f	6
 fytobiológia	noun			f	
-fytocenóza	noun			f	5
+fytocenóza	noun	1		f	5
 fytochémia	noun			f	
 fytofarmácia	noun			f	
 fytoftóra	noun			f	3
@@ -20199,7 +20199,7 @@ fytogeograficky	adverb				23
 fytogeografický	adjective				56
 fytogénny	adjective				
 fytokrém	noun			m	
-fytológia	noun			f	4
+fytológia	noun	1		f	4
 fytonymum	noun	1			
 fytopaleontológia	noun	1		f	3
 fytopatologický	adjective				2
@@ -20210,7 +20210,7 @@ fytopatológička	noun			f
 fytopatológov	adjective				
 fytosanitárny	adjective				10
 fytoterapia	noun	1		f	10
-fytotómia	noun			f	
+fytotómia	noun	1		f	
 fyz.	acronym	1			
 fyziatria	noun	1		f	29
 fyzickosť	noun		1	f	
@@ -20615,7 +20615,7 @@ garnizóna	noun		3	f	2
 garniža	noun		5	f	
 garnát	noun		66	mI	4
 garnírovať	verb				
-garsoniéra	noun			f	
+garsoniéra	noun	1		f	
 garsón	noun			m	
 garsónka	noun	1	13	f	6
 garsónov	adjective				
@@ -20878,7 +20878,7 @@ genuínny	adjective	1
 genéza	noun	1	5	f	122
 genóm	noun	1	56	mI	361
 Genčúrová	noun	1			
-geobiocenóza	noun			f	15
+geobiocenóza	noun	1		f	15
 geobiochémia	noun			f	
 geobotanika	noun			f	6
 geocentrický	adjective		1		61
@@ -21129,7 +21129,7 @@ glasifikácia	noun			f
 glasnosť	noun	1	2	f	34
 glaukonit	noun	1			17
 glaukonitový	adjective	1			
-glaukóm	noun		6	mI	59
+glaukóm	noun	1	6	mI	59
 glazovanie	noun			s	4
 glazovaný	adjective		10		47
 glazovať	verb				
@@ -21423,7 +21423,7 @@ grambľavosť	noun			f
 grambľavý	adjective		2		
 gramofón	noun	1	85	mI	72
 gramofónový	adjective		3		171
-gramoplatňa	noun		2	f	30
+gramoplatňa	noun	1	2	f	30
 gramorádio	noun	1		s	4
 gramotne	adverb				
 gramotnosť	noun	1	27	f	343
@@ -21483,9 +21483,9 @@ gratulantov	adjective
 gratulantský	adjective				
 gratulačný	adjective		5		35
 gratulovať	verb		3270		21
-gratulácia	noun		117	f	14
+gratulácia	noun	1	117	f	14
 gravidita	noun	1	10	f	191
-gravidnosť	noun			f	
+gravidnosť	noun	1		f	
 gravidný	adjective	1	11		45
 gravimetria	noun			f	15
 gravimetrický	adjective		10		4
@@ -21519,7 +21519,7 @@ Gregorka	noun			f
 Gregorovce	noun	1		fP	20
 Gregorová	adjective	1			87
 Greguš	name	1			274
-grejder	noun			mI	
+grejder	noun	1		mI	
 grejderový	adjective				
 Grek	noun		15	mA	12
 Grell	name	1			2
@@ -21676,7 +21676,7 @@ guinnessovský	adjective
 Gujda	name	1			
 Gula	name	1	39		34
 gulag	noun	1	28	mI	217
-gulden	noun		24	mI	79
+gulden	noun	1	24	mI	79
 gulečníkový	adjective		3		
 guliar	noun	1		mA	13
 guliarka	noun			f	2
@@ -21955,7 +21955,7 @@ hackovať	verb		13
 Hacková	noun	1			9
 had	noun	1	1863	mA	1477
 Hadačová	adjective				
-hadec	noun			mI	33
+hadec	noun	1		mI	33
 hadiar	noun			mA	17
 hadica	noun	1	389	f	172
 hadicový	adjective	1	4		12
@@ -22750,7 +22750,7 @@ heroizovať	verb
 herostratizmus	noun			m	
 heroín	noun	1	795	mI	197
 heroínový	adjective	1	21		4
-herpes	noun		110	m	75
+herpes	noun	1	110	m	75
 herpetický	adjective		3		40
 Hertník	noun	1	1	mI	104
 hertz	noun		44	mI	99
@@ -22846,7 +22846,7 @@ Hindka	noun		1	f
 hindov	adjective		3		3
 hindsky	adverb		8		57
 hindský	adjective		6		56
-hinduista	noun		72	mA	97
+hinduista	noun	1	72	mA	97
 hinduisticky	adverb		1		
 hinduistický	adjective		39		219
 hinduistov	adjective		15		1
@@ -23027,7 +23027,7 @@ hlavový	adjective		8		197
 hlavový nerv	noun	1			
 hlavybolenie	noun		1	s	
 hlavátka	noun	1		f	25
-hlaváč	noun		13	mA	136
+hlaváč	noun	1	13	mA	136
 hlaváček	noun			mI	167
 hlaváčik	noun			m	51
 hlaváčikov	adjective				
@@ -23160,7 +23160,7 @@ hlučno	adverb		28
 hlučnosť	noun		8	f	97
 hlučný	adjective	1	570		136
 Hlučínsko	noun			s	20
-hlušina	noun		3	f	17
+hlušina	noun	1	3	f	17
 hlušinový	adjective	1			
 hlušiť	verb		1		
 hlásajúci	adjective		4		47
@@ -23265,7 +23265,7 @@ hmoždinka	noun	1	1	f	28
 hmyz	noun	1	717	mI	2221
 hmyzový	adjective				
 hmyzožravec	noun		3	mA	45
-hmyzožravosť	noun			f	2
+hmyzožravosť	noun	1		f	2
 hmyzožravý	adjective	1			26
 hmyzí	adjective		38		69
 hmýrenie	noun			s	
@@ -23284,7 +23284,7 @@ hnať	verb	1	561		212
 hnedasto	adverb				6
 hnedastý	adjective		7		125
 hnedavý	adjective				
-hnedeľ	noun			mI	
+hnedeľ	noun	1		mI	
 hnedkastý	adjective				2
 hnedkavý	adjective				32
 hnednutie	noun		1	s	4
@@ -23397,7 +23397,7 @@ hnusoba	noun		30	f
 hnusota	noun		1	f	
 hnusák	noun		76	mA	
 hnusákov	adjective		3		
-hnuteľnosť	noun			f	8
+hnuteľnosť	noun	1		f	8
 hnuteľný	adjective	1	6		109
 hnutie	noun	1	342	s	8234
 hnutý	adjective				
@@ -23509,7 +23509,7 @@ hodnototvorný	adjective
 hodnotovo	adverb				21
 hodnotový	adjective		8		167
 hodnoverne	adverb		2		19
-hodnovernosť	noun		7	f	48
+hodnovernosť	noun	1	7	f	48
 hodnoverný	adjective		43		161
 hodný	adjective		1362		243
 hodokvas	noun		1	mI	25
@@ -23936,13 +23936,13 @@ horolezecky	adverb				21
 horolezecký	adjective		23		522
 horolezectvo	noun	1	36	s	310
 horolezkyňa	noun		4	f	40
-horopis	noun			mI	
+horopis	noun	1		mI	
 horopisný	adjective				
 horor	noun	1	276	mI	437
 hororový	adjective		108		346
 horoskop	noun	1	101	mI	55
 horotvorný	adjective				3
-horovanie	noun			s	2
+horovanie	noun	1		s	2
 Horovce	noun			fP	31
 Horovský	adjective				
 Horová	noun	1			7
@@ -24007,7 +24007,7 @@ horšiť	verb		12		3
 hosiäjaký	adjective				
 hospic	noun	1	19	m	63
 hospitalizačný	adjective		1		
-hospitalizovanie	noun		1	s	
+hospitalizovanie	noun	1	1	s	
 hospitalizovaný	adjective		17		199
 hospitalizovať	verb		115		130
 hospitalizácia	noun	1	42	f	150
@@ -24681,7 +24681,7 @@ hrúbkovo	adverb
 hrúbkový	adjective				2
 Hrúnok	noun			mI	2
 hrútiť	verb		1		
-hrúz	noun		1	mI	53
+hrúz	noun	1	1	mI	53
 hrúza	noun		1	f	7
 hrúžiť	verb		1		
 hrýzť	verb	1	547		49
@@ -24923,7 +24923,7 @@ Hurák	name	1
 hurónsky	adjective		7		26
 hus	noun	1	298	f	662
 husacina	noun			f	
-husacinec	noun			mI	
+husacinec	noun	1		mI	
 husacinka	noun			f	
 husací	adjective		39		19
 husiar	noun			mA	5
@@ -24938,7 +24938,7 @@ husitstvo	noun	1		s	52
 Husivarga	name	1			
 husička	noun		8	f	5
 husle	noun	1	378	fP	1493
-husliar	noun			mA	19
+husliar	noun	1		mA	19
 husliarov	adjective		1		
 husliarsky	adjective				2
 huslista	noun	1	86	mA	448
@@ -25032,7 +25032,7 @@ Hviezdoslavov	adjective				1
 hviezdoslavovský	adjective				
 hviezdovito	adverb				2
 hviezdovitý	adjective		1		7
-hviezdovka	noun		3	f	8
+hviezdovka	noun	1	3	f	8
 hviezdový	adjective				7
 hvizd	noun		23	mI	35
 hvizdnúť	verb				
@@ -25190,7 +25190,7 @@ hygienický	adjective		76		303
 hygienik	noun		55	mA	66
 hygienikov	adjective				4
 hygienička	noun		12	f	9
-hygrometer	noun			mI	
+hygrometer	noun	1		mI	
 hygroskop	noun			m	
 hygroskopickosť	noun			f	
 hygroskopicky	adverb				
@@ -25291,7 +25291,7 @@ hypoalergický	adjective		4
 hypobúlia	noun	1			
 hypochlorid	noun		1	mI	
 hypochlórhydria	noun	1			
-hypochonder	noun		18	mA	8
+hypochonder	noun	1	18	mA	8
 hypochonderka	noun			f	
 hypochonderov	adjective				
 hypochondria	noun	1	5	f	8
@@ -25299,7 +25299,7 @@ hypochondricky	adverb		1
 hypochondrický	adjective		4		5
 hypodermický	adjective				
 hypodermálny	adjective	1			
-hypofýza	noun		37	f	185
+hypofýza	noun	1	37	f	185
 hypoglykémia	noun	1	4	f	25
 hypogénny	adjective				
 hypokoristický	adjective				
@@ -25418,7 +25418,7 @@ hálka	noun	1		f	31
 hámor	noun	1		mI	189
 Hámorský	adjective				19
 hánka	noun	1	36	f	4
-háranie	noun			s	8
+háranie	noun	1		s	8
 hárať	verb		6		2
 hárem	noun	1	56	mI	96
 háremový	adjective				
@@ -25544,7 +25544,7 @@ hĺbičov	adjective
 hĺbiť	verb		10		66
 hĺbka	noun		631	f	2730
 hĺbkomer	noun	1	6	mI	6
-hĺbkotlač	noun		1	f	14
+hĺbkotlač	noun	1	1	f	14
 hĺbkotlačový	adjective				10
 hĺbkovo	adverb		2		6
 hĺbkový	adjective		71		214
@@ -25603,7 +25603,7 @@ ichtyol	noun			m
 ichtyologický	adjective				
 ichtyologička	noun	1			
 ichtyolový	adjective				
-ichtyológ	noun			m	17
+ichtyológ	noun	1		m	17
 ichtyológia	noun	1		f	19
 ichtyológov	adjective				
 ichtyosaurus	noun	1		mI	26
@@ -25668,7 +25668,7 @@ ideál	noun		252	mI	781
 ideálne	adverb		25		13
 ideálnosť	noun			f	
 ideálny	adjective		811		1487
-idiocia	noun		2	f	4
+idiocia	noun	1	2	f	4
 idiogram	noun		1	m	
 idiolatria	noun			f	
 idiomatickosť	noun			f	20
@@ -25779,7 +25779,7 @@ ikonizácia	noun			f
 ikonka	noun		8	f	23
 ikonografia	noun		9	f	254
 ikonografický	adjective				49
-ikonoklazmus	noun			m	22
+ikonoklazmus	noun	1		m	22
 ikonový	adjective				
 ikra	noun	1	27	f	107
 ikrový	adjective	1			
@@ -25872,7 +25872,7 @@ imerzia	noun			f
 Imeľ	noun	1		mI	33
 imidž	noun	1	249	mI	191
 imidžový	adjective	1	1		
-imigrant	noun		160	mA	348
+imigrant	noun	1	160	mA	348
 imigrantka	noun		17	f	4
 imigrantov	adjective		4		26
 imigrantský	adjective		13		7
@@ -26280,7 +26280,7 @@ infinitezimálny	adjective		1		75
 infinitizmus	noun			m	
 infinitný	adjective				
 infinitum	noun	1	1		5
-infinitív	noun		3	mI	10
+infinitív	noun	1	3	mI	10
 infinitívny	adjective				4
 infix	noun			mI	2
 inflamatórny	adjective				
@@ -26288,7 +26288,7 @@ inflamácia	noun			f
 inflačne	adverb				3
 inflačný	adjective		3		88
 inflexný	adjective				10
-influenza	noun			f	17
+influenza	noun	1		f	17
 inflácia	noun	1	103	f	844
 infolinka	noun			f	5
 infomácia	noun			f	
@@ -26476,7 +26476,7 @@ inonárodný	adjective				18
 inoperabilný	adjective				
 inorečový	adjective				
 inorodý	adjective		1		
-inosť	noun			f	2
+inosť	noun	1		f	2
 inotaj	noun	1	2	mI	11
 inovatka	noun	1	1	f	2
 inovatívne	adverb		1		4
@@ -27266,7 +27266,7 @@ izomorfia	noun	1		f	6
 izomorfizmus	noun			m	24
 izomorfne	adverb				2
 izomorfný	adjective		1		38
-izomér	noun		1	mI	355
+izomér	noun	1	1	mI	355
 izopropyl	noun	1		mI	9
 izopropylalkohol	noun	1	1	mI	25
 izopropylbenzén	noun	1		mI	2
@@ -27987,7 +27987,7 @@ jednokrídlový	adjective				32
 jednokrídly	adjective		1		
 jednokusový	adjective				
 jednoliato	adverb		1		7
-jednoliatosť	noun			f	6
+jednoliatosť	noun	1		f	6
 jednoliaty	adjective		13		74
 jednolistový	adjective				2
 jednolôžkový	adjective		7		2
@@ -28271,7 +28271,7 @@ jezuitov	adjective		10		15
 jezuitský	adjective		13		901
 jezuliatko	noun		4	s	17
 Jeľcin	noun		5	mA	116
-ješitnosť	noun		7	f	
+ješitnosť	noun	1	7	f	
 jež	noun	1	15	mA	182
 ježa	noun		1	s	8
 ježací	adjective				
@@ -28748,7 +28748,7 @@ kajakárstvo	noun		1	s
 Kajan	name	1	2		4
 kajanie	noun		3	s	
 kajať	verb		114		88
-kajka	noun		6	f	13
+kajka	noun	1	6	f	13
 kajman	noun		36	mA	29
 kajmanský	adjective		51		14
 kajmaní	adjective		4		56
@@ -28770,7 +28770,7 @@ kakací	adjective		6
 kakadí	adjective				
 kakanie	noun	1	16	s	
 kakao	noun	1	201	s	131
-kakaovník	noun		7	mI	35
+kakaovník	noun	1	7	mI	35
 kakaovníkový	adjective				
 kakaovo	adverb				
 kakaovohnedý	adjective				
@@ -28867,7 +28867,7 @@ kaligrafov	adjective				6
 kalika	noun		10	f	2
 kaliko	noun	1	1	s	3
 kalikový	adjective				
-kalina	noun		1	f	241
+kalina	noun	1	1	f	241
 kalinit	noun	1			2
 kalinka	noun		15	f	38
 Kalinkovo	noun	1		s	44
@@ -28935,7 +28935,7 @@ kalus	noun		2	mI	12
 kalusový	adjective				
 kaluž	noun		118	f	17
 kaluža	noun	1	4	f	66
-kalužiak	noun			m	60
+kalužiak	noun	1		m	60
 kalužina	noun			f	
 Kalužný	name	1			13
 Kalužský	adjective				
@@ -29054,7 +29054,7 @@ kamienkový	adjective		2		15
 kamienok	noun		141	mI	229
 Kamil	noun	1	62	m	1061
 Kamila	noun	1	5	f	246
-kamilka	noun		1	f	3
+kamilka	noun	1	1	f	3
 kamilkový	adjective		14		11
 Kamilov	adjective				
 kamizola	noun		1	fmI	
@@ -29120,7 +29120,7 @@ kancelárov	adjective		5		6
 kancelársky	adjective		255		533
 kancelárstvo	noun		4	s	13
 kancerizácia	noun			f	
-kancerogén	noun			m	
+kancerogén	noun	1		m	
 kancerogénny	adjective				
 kancerózny	adjective				
 kanceľ	noun		3	mI	
@@ -29155,7 +29155,7 @@ kandži	noun	1			57
 kanec	noun	1	86	mA	67
 kanelovanie	noun			s	9
 kanelovaný	adjective				62
-kanelácia	noun			f	
+kanelácia	noun	1		f	
 kanibal	noun		121	mA	51
 kanibalizmus	noun	1	45	mI	109
 kanibalov	adjective		20		6
@@ -29251,7 +29251,7 @@ kapce	noun		2	mIP	10
 kapciózny	adjective				
 Kapec	name	1	2		7
 kapec	noun		2	m	7
-kapela	noun		1848	f	10266
+kapela	noun	1	1848	f	10266
 kapelník	noun	1	7	mA	342
 kapelníkov	adjective				6
 kapelový	adjective		4		2
@@ -29469,7 +29469,7 @@ karburátorový	adjective				4
 karbón	noun		12	mI	155
 karbónový	adjective		27		51
 karbónsky	adjective				46
-karcinogenita	noun			f	14
+karcinogenita	noun	1		f	14
 karcinogén	noun	1	10	mI	65
 karcinogénne	adverb		3		3
 karcinogénny	adjective	1	8		97
@@ -29566,7 +29566,7 @@ karloveský	adjective				3
 karlovský	adjective				36
 Karlovy	adjective				302
 karma	noun	1	279	f	219
-Karman	noun			mA	11
+Karman	noun	1		mA	11
 Karmanov	adjective		4		
 karmazín	noun			m	
 karmazínový	adjective				2
@@ -29695,7 +29695,7 @@ kaspický	adjective		12		272
 kasta	noun	1	168	f	157
 kastanety	noun	1	6	fP	17
 kastelán	noun	1	7	mA	143
-kastelánka	noun		20	f	
+kastelánka	noun	1	20	f	
 kastelánov	adjective				10
 kastelánstvo	noun			s	3
 kastigácia	noun			f	
@@ -29772,7 +29772,7 @@ katapultovať	verb		79		166
 katapultový	adjective				
 katar	noun	1	17	mI	519
 katarakt	noun		1	mI	15
-katarakta	noun			f	71
+katarakta	noun	1		f	71
 katarový	adjective				
 katarský	adjective	1	2		141
 katarzia	noun	1	13	f	69
@@ -29826,7 +29826,7 @@ kategorizácia	noun		3	f	1156
 kategoriálny	adjective				26
 kategória	noun	1	381	f	12410
 katetrizovať	verb				
-katetrizácia	noun		2	f	5
+katetrizácia	noun	1	2	f	5
 katexovanie	noun			s	
 Katilína	noun			f	
 Katina	noun		32	mA	29
@@ -29876,7 +29876,7 @@ kaustika	noun			f	10
 kaustobiolit	noun	1		m	3
 kauterizácia	noun		1	f	
 kauza	noun		81	f	980
-kauzalita	noun		12	f	65
+kauzalita	noun	1	12	f	65
 kauzatívum	noun	1			
 kauzálnosť	noun			f	
 kauzálny	adjective		7		109
@@ -29945,7 +29945,7 @@ kazisvet	noun		5	mA
 kazisvetov	adjective				
 kaziteľ	noun			m	
 kazivcový	adjective				
-kazivec	noun			mI	9
+kazivec	noun	1		mI	9
 kaziť	verb		838		79
 kazový	adjective		2		2
 kazualizmus	noun	1			
@@ -30226,8 +30226,8 @@ kilobajtový	adjective		1
 kilogram	noun	1	143	mI	545
 kilogramový	adjective	1	2		50
 kilohertz	noun	1	5	mI	
-kilojoule	noun		1	m	17
-kilokalória	noun			f	
+kilojoule	noun	1	1	m	17
+kilokalória	noun	1		f	
 kilometer	noun	1	1855	mI	4505
 kilometrický	adjective				5
 kilometrovník	noun		11	mI	27
@@ -30386,7 +30386,7 @@ Klapy	noun			mIP	31
 klaret	noun		4	mI	
 klarifikácia	noun			f	2
 klarinet	noun	1	50	mI	430
-klarinetista	noun			mA	58
+klarinetista	noun	1		mA	58
 klarinetistka	noun			f	
 klarinetistov	adjective				2
 klarinetový	adjective		2		20
@@ -30480,7 +30480,7 @@ Klement	noun	1	8	m	653
 Klementov	adjective				3
 klementínka	noun		1	f	7
 Klempár	name	1			2
-klen	noun			mI	90
+klen	noun	1		mI	90
 klenba	noun	1	102	f	2892
 klenbový	adjective		3		115
 klenot	noun	1	287	mI	460
@@ -30522,7 +30522,7 @@ kleptománia	noun	1	4	f	6
 klepávať	verb				
 klepáč	noun		1	mI	62
 klerik	noun		37	mA	236
-klerika	noun		2	f	8
+klerika	noun	1	2	f	8
 klerikalizmus	noun	1		mI	9
 klerikalizovať	verb				
 klerikov	adjective		2		5
@@ -30564,13 +30564,13 @@ klietočka	noun			f
 kliešte	noun		136	fP	112
 klieštenec	noun			mA	
 Klieštiková	noun	1			
-klieštiky	noun		3	mIP	4
+klieštiky	noun	1	3	mIP	4
 klieština	noun			f	14
 klieštiť	verb				
 klieštový	adjective				
 kliešť	noun	1	140	mA	118
 kliešťový	adjective		1		41
-klik	noun		57	m	17
+klik	noun	1	57	m	17
 klika	noun		71	f	145
 klikanie	noun		24	s	9
 klikať	verb		1		
@@ -30675,7 +30675,7 @@ klokočový	adjective				7
 kloktadlo	noun		11	s	9
 kloktanie	noun		7	s	5
 kloktať	verb		7		
-klon	noun		236	mI	225
+klon	noun	1	236	mI	225
 klonazepam	noun		3	mI	6
 klonenie	noun		1	s	
 klonický	adjective				
@@ -30767,7 +30767,7 @@ klérofašista	noun			m
 klérofašistický	adjective				21
 klérofašistov	adjective				
 klérofašizmus	noun	1		mI	4
-klérus	noun		2	mI	277
+klérus	noun	1	2	mI	277
 klík	noun			mI	4
 klíma	noun		219	f	1334
 klíring	noun	1		m	4
@@ -30809,7 +30809,7 @@ Kmeťová	noun	1		f	13
 kmienkový	adjective				
 kmienok	noun			m	2
 kmih	noun		2	mI	
-kmit	noun		3	mI	144
+kmit	noun	1	3	mI	144
 kmitajúci	adjective		2		14
 kmitanie	noun	1	8	s	115
 kmitavosť	noun			f	
@@ -30862,7 +30862,7 @@ knihopis	noun	1		mI	2
 knihovanie	noun			s	
 knihovaný	adjective				
 knihovať	verb				
-knihoveda	noun			f	5
+knihoveda	noun	1		f	5
 knihovnička	noun		3	f	3
 knihovnícky	adjective		1		40
 knihovníctvo	noun	1	4	s	79
@@ -31050,7 +31050,7 @@ kojenec	noun		23	mA	20
 kojenecký	adjective		14		
 kojenie	noun		8	s	10
 kojiť	verb		137		51
-kojot	noun		89	m	26
+kojot	noun	1	89	m	26
 kojotov	adjective		18		8
 Kojšov	noun	1		mI	48
 koka	noun		99	f	157
@@ -31118,12 +31118,12 @@ kolaborant	noun	1	28	mA	162
 kolaborantka	noun		4	f	
 kolaborantov	adjective		4		7
 kolaborantský	adjective		2		34
-kolaborantstvo	noun			s	20
+kolaborantstvo	noun	1		s	20
 kolaboratívny	adjective				29
 kolaborovanie	noun			s	3
 kolaborovať	verb		18		40
 kolaborujúci	adjective				19
-kolaborácia	noun		18	f	133
+kolaborácia	noun	1	18	f	133
 kolabovať	verb		4		15
 kolacionovanie	noun			s	
 kolacionovať	verb				
@@ -31518,7 +31518,7 @@ komitent	noun			mA
 komitentov	adjective				
 komitét	noun			mI	115
 komička	noun	1	17	f	81
-komično	noun			s	9
+komično	noun	1		s	9
 Komiňáková	noun	1			
 Komjatice	noun	1		fP	111
 Komlošová	noun	1			
@@ -31707,7 +31707,7 @@ komunikatívnosť	noun			f	12
 komunikatívny	adjective		22		62
 komunikačne	adverb		1		17
 komunikačný	adjective		462		1447
-komunikovanie	noun		5	s	29
+komunikovanie	noun	1	5	s	29
 komunikovaný	adjective				5
 komunikovateľný	adjective				2
 komunikovať	verb		952		795
@@ -31868,7 +31868,7 @@ kondor	noun	1	47	mA	110
 kondotiér	noun	1	1	m	8
 kondukcia	noun			f	5
 kondukt	noun			mI	
-konduktivita	noun		1	f	9
+konduktivita	noun	1	1	f	9
 konduktomer	noun			m	
 konduktometria	noun	1		f	10
 konduktor	noun		2	m	
@@ -32008,7 +32008,7 @@ Koniarovce	noun	1		fP	15
 koniarovský	adjective				
 koniarsky	adjective				21
 koniec	noun	1	19762	mI	28450
-konifera	noun			f	4
+konifera	noun	1		f	4
 konina	noun		37	f	5
 koniotómia	noun			f	
 konisko	noun			s	
@@ -32077,7 +32077,7 @@ konkávne	adverb		2		1
 konkávnosť	noun			f	4
 konkávny	adjective		4		103
 konofikácia	noun			f	
-konope	noun		40	f	201
+konope	noun	1	40	f	201
 konopnica	noun			f	24
 konopnisko	noun			s	
 konopný	adjective		8		91
@@ -32107,7 +32107,7 @@ konsolidovať	verb		14		115
 konsolidácia	noun		11	f	200
 konsolidátor	noun			m	3
 konsonancia	noun			f	6
-konsonant	noun			mI	9
+konsonant	noun	1		mI	9
 konsonantický	adjective				3
 konsonantný	adjective				9
 konsonančný	adjective				
@@ -32200,7 +32200,7 @@ kontrahovať	verb				19
 kontraindikovaný	adjective				25
 kontraindikácia	noun	1	3	f	32
 kontrakcia	noun		175	f	249
-kontrakt	noun		433	mI	1553
+kontrakt	noun	1	433	mI	1553
 kontraktačne	adverb				
 kontraktačný	adjective				
 kontraktný	adjective		1		3
@@ -32410,7 +32410,7 @@ konzumný	adjective	1	29		92
 konzumovanie	noun	1	4	s	18
 konzumovaný	adjective		1		15
 konzumovať	verb		99		495
-konzumpcia	noun			f	
+konzumpcia	noun	1		f	
 konzumpčný	adjective				
 konzumujúci	adjective		3		4
 konzumácia	noun		62	f	396
@@ -32426,8 +32426,8 @@ koník	noun		188	mA	189
 Koníková	adjective				
 koníča	noun	1		s	
 koníčatko	noun			s	
-koníček	noun		302	mA	163
-konôpka	noun			f	40
+koníček	noun	1	302	mA	163
+konôpka	noun	1		f	40
 konča	preposition				2
 Končal	name	1			3
 končatina	noun	1	325	f	1634
@@ -33223,7 +33223,7 @@ kozmonautka	noun		4	f	73
 kozmonautov	adjective		6		43
 kozmonymum	noun	1		s	
 kozmonómia	noun			f	
-kozmopolita	noun			mA	17
+kozmopolita	noun	1		mA	17
 kozmopolitický	adjective				
 kozmopolitizmus	noun	1		mI	27
 kozmopolitka	noun			f	
@@ -33446,11 +33446,11 @@ krajanský	adjective				148
 krajec	noun		37	mI	23
 krajina	noun	1	10148	f	37564
 krajinka	noun		41	f	150
-krajinkár	noun		1	mA	17
+krajinkár	noun	1	1	mA	17
 krajinkárka	noun			f	
 krajinkárov	adjective				
 krajinkársky	adjective				4
-krajinkárstvo	noun			s	
+krajinkárstvo	noun	1		s	
 krajinne	adverb				3
 krajinnoekologický	adjective				4
 krajinný	adjective		2		2547
@@ -33579,7 +33579,7 @@ kraviarka	noun			f	5
 kraviarov	adjective				
 kraviarsky	adjective				32
 kravina	noun		1070	f	
-kravinec	noun		2	mI	
+kravinec	noun	1	2	mI	
 kravička	noun		27	f	
 kravka	noun		5	f	
 kravský	adjective		140		188
@@ -33616,7 +33616,7 @@ kredenc	noun		71	mI	31
 kredibilita	noun		6	f	12
 kredit	noun		399	mI	212
 kreditný	adjective		479		226
-kreditor	noun			mA	
+kreditor	noun	1		mA	
 kreditorov	adjective				
 kreditovaný	adjective				
 kreditovať	verb				2
@@ -33639,7 +33639,7 @@ kreker	noun	1	15	mI	3
 Kreko	name	1			2
 krematórium	noun	1	53	s	147
 kremačný	adjective		4		2
-kremelina	noun			f	3
+kremelina	noun	1		f	3
 kremencový	adjective				6
 kremenec	noun	1	1	mI	232
 kremenistý	adjective				
@@ -33852,7 +33852,7 @@ Krivoklátsky	adjective				11
 krivolako	adverb				
 krivolaký	adjective		3		31
 krivonohý	adjective		6		
-krivonos	noun		2	mA	32
+krivonos	noun	1	2	mA	32
 krivonosí	adjective				6
 krivooký	adjective				
 krivoprísažne	adverb				
@@ -33898,7 +33898,7 @@ Križalkovičová	noun	1
 Križan	name	1			122
 Križanová	noun	1		f	36
 križiacky	adjective		51		1488
-križiak	noun		53	mA	907
+križiak	noun	1	53	mA	907
 križiakov	adjective		6		10
 Križko	name	1			45
 križovanie	noun		3	s	110
@@ -33918,7 +33918,7 @@ krkolomne	adverb		2
 krkolomnosť	noun			f	
 krkolomný	adjective		7		16
 krkonošský	adjective				72
-krkovica	noun		1	f	2
+krkovica	noun	1	1	f	2
 krkovička	noun	1	13	f	10
 krkvať	verb				
 krm	noun	1	1	mI	
@@ -34079,7 +34079,7 @@ kruhoústy	adjective
 krumhorn	noun	1			
 krumlovský	adjective				5
 krumpeľ	noun	1		m	2
-krumpľa	noun		6	f	6
+krumpľa	noun	1	6	f	6
 krumpľovitý	adjective				
 krumpľový	adjective				
 krunier	noun		9	mI	
@@ -34211,7 +34211,7 @@ kryptomérny	adjective
 kryptonym	noun	1			4
 kryptón	noun	1	13	mI	21
 kryptónový	adjective	1			
-krysa	noun		1012	f	80
+krysa	noun	1	1012	f	80
 krysí	adjective		54		5
 kryt	noun		457	mI	803
 krytie	noun		138	s	142
@@ -34761,7 +34761,7 @@ kupujúci	adjective		118		197
 kupážovanie	noun			s	
 kupírovať	verb				6
 kupón	noun		194	mI	72
-kupónka	noun			f	2
+kupónka	noun	1		f	2
 kupónovo	adverb				
 kupónový	adjective		3		52
 kupčenie	noun		3	s	7
@@ -34769,7 +34769,7 @@ kupčiaci	adjective
 kupčiť	verb	1	11		8
 kura	noun	1	1160	fs	291
 kuracina	noun	1	4	f	4
-kuracinec	noun			m	
+kuracinec	noun	1		m	
 kuracinka	noun		1	f	
 kurací	adjective		595		130
 kurare	noun	1	5		6
@@ -34910,7 +34910,7 @@ kutňa	noun		2	f	2
 Kuvajt	noun	1	7	m	178
 kuvajtský	adjective	1	5		48
 Kuvajťanka	noun	1			
-kuvik	noun		6	mA	62
+kuvik	noun	1	6	mA	62
 kuvikanie	noun		1	s	
 kuvikať	verb	1	1		
 kuvičí	adjective				
@@ -35085,7 +35085,7 @@ kvestúrny	adjective	1
 kvet	noun	1	2742	mI	3077
 kvetastý	adjective				
 kvetavý	adjective				
-kvetena	noun			f	190
+kvetena	noun	1		f	190
 kvetenstvo	noun			s	30
 kvetina	noun	1	680	f	180
 kvetinka	noun		123	f	7
@@ -35148,7 +35148,7 @@ kvičiaci	adjective		2
 Kvocerová	noun	1			
 kvocient	noun	1	5	mI	56
 kvok	noun	1	1	m	2
-kvokanie	noun		1	s	
+kvokanie	noun	1	1	s	
 kvokať	verb		3		
 kvoknúť	verb		1		
 kvotácia	noun	1		f	
@@ -35211,7 +35211,7 @@ kydať	verb		47
 kydnutý	adjective				
 kydnúť	verb				
 kyfoskolióza	noun			f	
-kyj	noun		1	mI	193
+kyj	noun	1	1	mI	193
 kyjak	noun	1	34	mI	59
 Kyjanica	name	1			
 kyjanica	noun			f	
@@ -35493,7 +35493,7 @@ kúpalisko	noun	1	35	s	445
 kúpanie	noun		90	s	248
 kúpavať	verb		8		
 kúpač	noun			mA	5
-kúpačka	noun			f	4
+kúpačka	noun	1		f	4
 kúpačov	adjective				
 kúpať	verb		634		130
 kúpelný	adjective				2
@@ -35666,7 +35666,7 @@ kňazov	adjective		16		27
 kňazovať	verb				
 kňazsky	adverb				2
 kňazský	adjective	1	24		1128
-kňazstvo	noun		20	s	249
+kňazstvo	noun	1	20	s	249
 Kňazík	name	1			
 Kňazíková	noun	1			
 kňažka	noun		49	f	172
@@ -35866,7 +35866,7 @@ lajdáčka	noun		1	f
 lajk	noun	1	3		
 lajka	noun	1	2	f	18
 Lajmon	name	1			
-lajniak	noun			m	9
+lajniak	noun	1		m	9
 lajniakov	adjective				
 lajno	noun	1	120	s	14
 lajster	noun		2	mI	
@@ -35904,7 +35904,7 @@ lakotníkov	adjective
 lakotníčka	noun			f	
 lakotný	adjective		1		
 lakovací	adjective		1		2
-lakovanie	noun		4	s	26
+lakovanie	noun	1	4	s	26
 lakovaný	adjective		2		45
 lakovač	noun			mA	
 lakovačka	noun			f	
@@ -36108,7 +36108,7 @@ lascívny	adjective	1	4
 laser	noun	1	395	mI	460
 laserovo	adverb		1		2
 laserový	adjective		228		491
-lasica	noun		108	f	720
+lasica	noun	1	108	f	720
 lasička	noun		24	f	4
 lasičí	adjective		1		
 laskonka	noun			f	2
@@ -36120,7 +36120,7 @@ lastexový	adjective
 Lastomír	noun	1		mI	25
 Lastovce	noun	1		fP	16
 lastovica	noun	1		f	4
-lastovičiar	noun			mA	38
+lastovičiar	noun	1		mA	38
 lastovička	noun	1	29	f	162
 lastovičník	noun			m	10
 lastovičí	adjective	1	4		70
@@ -36418,7 +36418,7 @@ lekár	noun	1	3406	mA	5847
 lekárenský	adjective		7		24
 lekárenstvo	noun		2	s	10
 lekáreň	noun	1	482	f	403
-lekárka	noun		310	f	423
+lekárka	noun	1	310	f	423
 lekárnicky	adverb		1		
 lekárnický	adjective		1		75
 lekárnictvo	noun	1	2	s	28
@@ -36639,10 +36639,10 @@ letný	adjective	1	918		5851
 leto	noun	1	2643	s	4741
 letohrádok	noun	1	2	mI	127
 letok	noun			m	
-letokruh	noun		19	mI	83
-letopis	noun		11	mI	354
+letokruh	noun	1	19	mI	83
+letopis	noun	1	11	mI	354
 letopiscov	adjective				4
-letopisec	noun			mA	27
+letopisec	noun	1		mA	27
 letopisný	adjective				17
 letopočet	noun	1	30	mI	694
 letora	noun			f	
@@ -36667,7 +36667,7 @@ letúň	noun		3	mI	25
 leu	noun	1	10		46
 leucit	noun			mI	9
 leukemický	adjective		2		6
-leukocyt	noun		8	mI	77
+leukocyt	noun	1	8	mI	77
 leukocytový	adjective				
 leukocytárny	adjective				
 leukoencefalopatia	noun	1	2		5
@@ -36707,7 +36707,7 @@ levíčekov	adjective
 Levčík	name	1			3
 Lewin	noun		2	mA	63
 lewisit	noun	1		mI	3
-lexika	noun			f	73
+lexika	noun	1		f	73
 lexikalizovať	verb				
 lexikograf	noun			mA	70
 lexikografia	noun	1		f	33
@@ -36773,7 +36773,7 @@ ležatý	adjective				52
 ležať	verb	1	3702		17132
 Ležiachov	noun	1		mI	9
 ležiaci	adjective		132		3563
-ležiak	noun		18	mI	73
+ležiak	noun	1	18	mI	73
 ležiareň	noun		1	f	
 ležiavať	verb		2		
 ležiačky	adverb		5		15
@@ -37058,7 +37058,7 @@ lillehammerský	adjective		1
 Lilongwe	name	1			11
 lima	noun	1	172	f	531
 Limanová	adjective				
-limba	noun		15	f	72
+limba	noun	1	15	f	72
 Limbach	noun	1		mI	107
 limbašský	adjective				29
 limbický	adjective		13		9
@@ -37111,7 +37111,7 @@ linearita	noun		1	f	16
 Linec	noun	1		m	29
 linecký	adjective		8		22
 lineálny	adjective				
-lineár	noun			mI	
+lineár	noun	1		mI	
 lineárne	adverb		7		70
 lineárnosť	noun			f	9
 lineárny	adjective		40		1399
@@ -37123,7 +37123,7 @@ lingvistický	adjective		11		256
 lingvistika	noun	1	19	f	266
 lingvistka	noun		1	f	15
 lingvistov	adjective		1		21
-link	noun		152	m	338
+link	noun	1	152	m	338
 linka	noun		2319	f	6756
 linkovanie	noun			s	15
 linkovaný	adjective				4
@@ -37132,7 +37132,7 @@ linkový	adjective		12		138
 linnéovka	noun			f	2
 lino	noun		273	s	1989
 linoleorez	noun	1		mI	2
-linoleoryt	noun			mI	2
+linoleoryt	noun	1		mI	2
 linoleový	adjective		2		
 linoleum	noun	1	24	s	32
 linorez	noun	1		mI	16
@@ -37144,7 +37144,7 @@ linuxový	adjective				18
 Linčan	noun			m	
 Linčanov	adjective				
 lipa	noun	1	45	f	1207
-lipeň	noun			mA	37
+lipeň	noun	1		mA	37
 lipiansky	adjective				40
 lipican	noun	1		m	7
 lipicanský	adjective	1			4
@@ -37382,17 +37382,17 @@ loajálny	adjective		95
 lob	noun		13	mI	27
 lobbing	noun	1	4	mI	3
 lobbista	noun		1	mA	
-lobbizmus	noun			mI	
+lobbizmus	noun	1		mI	
 lobbovať	verb		1		2
 lobelka	noun		1	f	
 lobing	noun	1	4	m	13
 lobista	noun		21	m	5
 lobistický	adjective		7		14
 lobistov	adjective		9		2
-lobizmus	noun		1	m	5
+lobizmus	noun	1	1	m	5
 loboda	noun			f	9
 Lobotka	name	1			27
-lobovanie	noun		5	s	11
+lobovanie	noun	1	5	s	11
 lobovaný	adjective				
 lobovať	verb		37		61
 lobárny	adjective				
@@ -37498,7 +37498,7 @@ lokálny	adjective		269		2410
 lokálový	adjective				
 lokálpatriot	noun			m	
 lokálpatriotický	adjective				
-lokálpatriotizmus	noun			m	3
+lokálpatriotizmus	noun	1		m	3
 lokálpatriotka	noun			f	
 lokálpatriotov	adjective				
 lokátor	noun	1	82	m	19
@@ -37535,7 +37535,7 @@ lomoziaci	adjective
 lomoziť	verb		7		
 lomozný	adjective				
 lomský	adjective				6
-lomítko	noun		11	s	7
+lomítko	noun	1	11	s	7
 London	noun		158	mA	2554
 Londonov	adjective		1		5
 Londýn	noun	1	661	m	2033
@@ -37591,7 +37591,7 @@ loretánsky	adjective				60
 Lorková	noun	1			
 lormetazepam	noun			mI	3
 lorňon	noun			mI	
-los	noun		1581	mA	4163
+los	noun	1	1581	mA	4163
 losangeleský	adjective		2		4
 losica	noun		7	f	
 losos	noun	1	320	mA	171
@@ -37792,7 +37792,7 @@ lupičský	adjective		2		14
 lupičstvo	noun			s	
 lupkať	verb				
 lupnúť	verb		7		
-lupok	noun			mI	2
+lupok	noun	1		mI	2
 Lupoč	noun	1		mI	28
 Lupták	name	1			66
 Luptáková	noun	1			22
@@ -37938,7 +37938,7 @@ lyžica	noun	1	272	f	80
 lyžicovitý	adjective				5
 lyžicový	adjective	1	3		5
 lyžina	noun		8	f	14
-lyžičiarka	noun			f	14
+lyžičiarka	noun	1		f	14
 lyžička	noun		292	f	49
 lyžičkový	adjective				2
 lyžovanie	noun	1	105	s	776
@@ -38013,7 +38013,7 @@ lážo-plážo	adjective	1	2
 léga	noun			f	
 légia	noun	1	279	f	1255
 Lél	noun			mI	10
-lénnik	noun			mA	20
+lénnik	noun	1		mA	20
 lénnikov	adjective				6
 lénny	adjective				42
 léno	noun	1	3	s	343
@@ -38050,7 +38050,7 @@ líra	noun		98	f	95
 lírový	adjective		1		2
 lístie	noun	1	177	s	177
 lístička	noun			f	
-lístkovnica	noun			f	3
+lístkovnica	noun	1		f	3
 lístkový	adjective		18		34
 lístok	noun	1	3581	mI	1359
 lístoček	noun		46	mI	28
@@ -38097,7 +38097,7 @@ lôžkový	adjective	1	13		108
 Lörincová	noun	1			
 lúchať	verb				
 lúdiť	verb		12		13
-lúh	noun		21	mI	25
+lúh	noun	1	21	mI	25
 lúhovanie	noun			s	14
 lúhovať	verb		4		7
 lúhovitosť	noun			f	
@@ -38226,7 +38226,7 @@ machorka	noun			f	4
 machorkový	adjective				
 machovitý	adjective				
 Machovič	name	1			12
-machovka	noun		2	f	47
+machovka	noun	1	2	f	47
 machovo	adverb				14
 machový	adjective	1	2		86
 machrovať	verb		11		
@@ -38697,7 +38697,7 @@ malomyseľný	adjective		2
 maloobchod	noun	1	19	mI	83
 maloobchodne	adverb		2		
 maloobchodnícky	adjective				
-maloobchodník	noun		12	mA	37
+maloobchodník	noun	1	12	mA	37
 maloobchodníkov	adjective		1		10
 maloobchodný	adjective		29		191
 maloobjemový	adjective				4
@@ -38846,7 +38846,7 @@ manažérka	noun		216	f	277
 manažérov	adjective		8		1
 manažérske	adverb		11		3
 manažérsky	adjective		52		321
-manažérstvo	noun		2	s	191
+manažérstvo	noun	1	2	s	191
 manchester	noun	1	136	mI	1817
 manchesterský	adjective		3		6
 Manchsterčan	noun			m	
@@ -38978,11 +38978,11 @@ mankárov	adjective
 manna	noun		643	f	149
 Mannesmann	noun			mA	3
 mannový	adjective		20		49
-manometer	noun		5	mI	7
+manometer	noun	1	5	mI	7
 manometrický	adjective				
 manský	adjective				14
 manstvo	noun			s	4
-mantika	noun			f	2
+mantika	noun	1		f	2
 mantila	noun			f	
 mantinel	noun	1	38	mI	57
 mantinelizmus	noun			m	
@@ -39308,7 +39308,7 @@ maslový	adjective	1	78		56
 masmediálny	adjective		4		117
 masmédium	noun	1	20	s	185
 Masný	name	1	1		85
-masochista	noun		20	m	
+masochista	noun	1	20	m	
 masochisticky	adverb		1		
 masochistický	adjective		9		2
 masochistka	noun		8	f	
@@ -39336,7 +39336,7 @@ mastika	noun			f
 mastikácia	noun			f	
 mastitída	noun		2	f	16
 mastivo	noun			s	23
-mastix	noun			m	7
+mastix	noun	1		m	7
 mastič	noun			m	3
 mastička	noun		33	f	2
 mastičkár	noun		3	mA	11
@@ -39367,7 +39367,7 @@ masér	noun		51	mA	81
 masérka	noun		79	f	9
 masérov	adjective		6		3
 masérsky	adjective		3		13
-masírovanie	noun		12	s	7
+masírovanie	noun	1	12	s	7
 masírovaný	adjective		1		
 masírovať	verb		139		5
 masírujúci	adjective		1		
@@ -39850,7 +39850,7 @@ medicinálny	adjective				29
 medický	adjective		1		
 medicína	noun	1	1109	f	3132
 medicínsky	adjective		324		526
-medik	noun		122	mA	293
+medik	noun	1	122	mA	293
 medikament	noun	1	7	mI	9
 medikamentový	adjective				
 medikamentózny	adjective		1		22
@@ -39870,7 +39870,7 @@ meditatívny	adjective		9		46
 meditačný	adjective		24		78
 mediteránny	adjective				41
 meditlač	noun			f	
-meditovanie	noun		7	s	4
+meditovanie	noun	1	7	s	4
 meditovať	verb		183		20
 meditujúci	adjective		1		7
 meditácia	noun	1	217	f	343
@@ -40032,7 +40032,7 @@ medzistena	noun			f	5
 medzistrop	noun			mI	3
 medzistupeň	noun		4	mI	80
 medzistupňový	adjective				4
-medzistyk	noun			mI	4
+medzistyk	noun	1		mI	4
 medzisúčet	noun		1	mI	2
 medzititulok	noun			mI	6
 medzitriedny	adjective				
@@ -40271,7 +40271,7 @@ menčester	noun		9	mI
 menčestrový	adjective		9		
 menšenec	noun			mI	7
 menševický	adjective				
-menševik	noun			mA	80
+menševik	noun	1		mA	80
 menševikov	adjective				1
 menševizmus	noun	1		m	7
 menšina	noun	1	156	f	1901
@@ -40409,7 +40409,7 @@ metalistov	adjective				1
 metalizačný	adjective				
 metalizovaný	adjective				15
 metalizovať	verb				
-metalizácia	noun			f	
+metalizácia	noun	1		f	
 metalogenéza	noun			f	2
 metalografia	noun	1		f	7
 metaloid	noun			mI	
@@ -40447,7 +40447,7 @@ meteor	noun	1	99	mI	369
 meteor.	acronym	1			
 meteorický	adjective		23		228
 meteorit	noun	1	269	mI	441
-meteorizmus	noun			m	3
+meteorizmus	noun	1		m	3
 meteorologický	adjective	1	61		574
 meteorologička	noun	1	9	f	3
 meteorológ	noun	1	63	mA	127
@@ -40491,7 +40491,7 @@ metodský	adjective				2
 metonymia	noun	1		f	19
 metonymickosť	noun			f	
 metonymický	adjective				2
-metopizmus	noun			m	2
+metopizmus	noun	1		m	2
 metoprolol	noun		3	mI	11
 metr.	acronym	1			
 metricky	adverb		1		5
@@ -40744,7 +40744,7 @@ miešne	adverb		1		1
 miešny	adjective		11		6
 miešok	noun	1	60	mI	73
 Migo	name	1			
-migrant	noun		27	mA	311
+migrant	noun	1	27	mA	311
 migrantka	noun			f	
 migrantov	adjective		2		12
 migračne	adverb				2
@@ -40842,7 +40842,7 @@ Mikronézanka	noun			f
 Mikronézanov	adjective				
 Mikronézia	noun			f	36
 mikronézsky	adjective				
-mikroobvod	noun		3	mI	2
+mikroobvod	noun	1	3	mI	2
 mikroorganizmus	noun	1	31	mI	480
 mikropodnik	noun			mI	
 mikropočítač	noun	1	5	mI	113
@@ -40870,17 +40870,17 @@ mikrotén	noun	1		m
 mikroténový	adjective				
 mikrotóm	noun		1	mI	
 mikrovlna	noun			f	
-mikrovlnka	noun		212	f	11
+mikrovlnka	noun	1	212	f	11
 mikrovlnný	adjective		39		279
 mikrovlnový	adjective		1		19
 mikrovlný	adjective		1		
 mikrovlákno	noun		5	s	8
 mikrovolt	noun	1	1	mI	2
 mikroúroveň	noun			f	4
-mikročip	noun		100	mI	32
+mikročip	noun	1	100	mI	32
 mikroštruktúra	noun			f	15
-mikrób	noun		86	mI	84
-mikrón	noun		9	mI	23
+mikrób	noun	1	86	mI	84
+mikrón	noun	1	9	mI	23
 Mikula	noun	1	2	mA	169
 Mikulec	name	1			34
 mikulka	noun			f	11
@@ -41141,7 +41141,7 @@ minigolfový	adjective		3
 minigraf	noun			mI	3
 miniikona	noun			f	
 miniinterrupcia	noun			f	2
-minikalkulačka	noun			f	
+minikalkulačka	noun	1		f	
 minikoncert	noun			m	
 minikurz	noun			mI	3
 minilexikón	noun			mI	5
@@ -41150,7 +41150,7 @@ minimalisticky	adverb		2
 minimalistický	adjective		10		151
 minimalistov	adjective				2
 minimalizačný	adjective				
-minimalizmus	noun		2	m	41
+minimalizmus	noun	1	2	m	41
 minimalizovanie	noun		8	s	19
 minimalizovaný	adjective		1		5
 minimalizovať	verb		70		290
@@ -41432,7 +41432,7 @@ mliekáreň	noun		27	f	70
 mliekárov	adjective		1		
 mliekársky	adjective				2
 mlieč	noun	1	4	mI	24
-mliečie	noun			s	3
+mliečie	noun	1		s	3
 mliečivec	noun			mI	6
 mliečko	noun		37	s	
 mliečne	adverb		4		2
@@ -41527,7 +41527,7 @@ mnohohlasnosť	noun			f
 mnohohlasný	adjective				
 mnohohlasovosť	noun			f	
 mnohohlavý	adjective				
-mnohojazyčnosť	noun			f	4
+mnohojazyčnosť	noun	1		f	4
 mnohojazyčný	adjective				10
 mnohokanálový	adjective				
 mnohokvetý	adjective				30
@@ -41620,7 +41620,7 @@ mníšik	noun	1
 mníška	noun	1	607	f	258
 mníškin	adjective		1		
 mníšsky	adjective		27		372
-mníšstvo	noun			s	83
+mníšstvo	noun	1		s	83
 mnúci	adjective		1		
 mobil	noun		5304	mI	603
 mobilita	noun		19	f	338
@@ -41646,9 +41646,9 @@ mocichtivý	adjective		1		4
 mocipán	noun		3	mA	6
 mocipánov	adjective		1		
 mocne	adverb		32		20
-mocnenec	noun			mI	
+mocnenec	noun	1		mI	
 mocnieť	verb				
-mocnina	noun		16	f	203
+mocnina	noun	1	16	f	203
 mocninový	adjective				72
 mocniteľ	noun	1		mI	12
 mocniť	verb		6		
@@ -41656,7 +41656,7 @@ mocnosť	noun		93	f	1139
 mocnár	noun		5	mA	6
 mocnárov	adjective		2		
 mocnársky	adjective		1		
-mocnárstvo	noun			s	38
+mocnárstvo	noun	1		s	38
 mocný	adjective		2120		1316
 mocovať	verb				
 mod.	acronym	1			
@@ -41952,7 +41952,7 @@ Monako	noun	1	8	s	182
 monarcha	noun	1	78	mA	224
 monarchia	noun	1	83	f	2381
 monarchický	adjective		1		16
-monarchista	noun		8	mA	60
+monarchista	noun	1	8	mA	60
 monarchistický	adjective		5		78
 monarchistka	noun			f	
 monarchistov	adjective		1		1
@@ -42003,7 +42003,7 @@ monochrómny	adjective				19
 monodráma	noun	1		f	24
 monofil	noun		3	mI	
 monofilový	adjective				
-monoftong	noun			m	2
+monoftong	noun	1		m	2
 monoftongický	adjective				
 monoftongizačný	adjective	1			
 monoftongizácia	noun	1		f	2
@@ -42140,7 +42140,7 @@ mop	noun		155	mI	38
 moped	noun	1	90	mI	65
 mops	noun	1	2		10
 mopseľ	noun			mI	
-mopslík	noun		8	mA	
+mopslík	noun	1	8	mA	
 mor	noun	1	383	mI	194
 mora	noun		1310	f	1159
 moralista	noun		17	mA	35
@@ -42201,7 +42201,7 @@ Morfeus	name	1	16		14
 morfinista	noun		2	mA	
 morfinizmus	noun			m	
 morfiový	adjective				
-morfium	noun		267	s	51
+morfium	noun	1	267	s	51
 morfologicky	adverb		1		130
 morfologický	adjective		1		402
 morfológ	noun			m	10
@@ -42236,7 +42236,7 @@ morsky	adverb		5
 morský	adjective	1	1444		3505
 Morsov	adjective				
 mortadela	noun			f	2
-mortalita	noun		4	f	68
+mortalita	noun	1	4	f	68
 mortifikácia	noun			f	
 mortinatálny	adjective				
 moruša	noun	1	7	f	132
@@ -42412,7 +42412,7 @@ mozoľovatý	adjective
 mozoľovitý	adjective				
 moč	noun	1	482	mI	532
 močarina	noun	1	18	f	41
-močarisko	noun		39	s	95
+močarisko	noun	1	39	s	95
 močaristý	adjective		9		274
 močenie	noun	1	62	s	99
 močiaci	adjective		3		
@@ -42555,7 +42555,7 @@ mrknutie	noun		28	s
 mrknúť	verb		416		
 mrkotajúci	adjective				
 mrkotný	adjective				
-Mrkva	noun		8	mA	9
+Mrkva	noun	1	8	mA	9
 mrkva	noun	1	307	f	93
 mrkvička	noun		24	f	20
 Mrkvov	adjective		1		
@@ -42665,7 +42665,7 @@ mufti	noun	1	2		5
 muka	noun	1	6	f	49
 muknúť	verb		42		6
 muky	noun		177	fP	104
-mukyňa	noun			f	26
+mukyňa	noun	1		f	26
 mukyňový	adjective				
 mul	noun	1	72	m	111
 mula	noun		21	f	9
@@ -42948,7 +42948,7 @@ myokarditída	noun	1	1	f	60
 myokardový	adjective	1			
 myoparalýza	noun			f	
 myopatia	noun		5	f	24
-myopia	noun			f	7
+myopia	noun	1		f	7
 myopický	adjective	1	1		
 myospazmus	noun			m	
 myostimulátor	noun			m	
@@ -43056,7 +43056,7 @@ málo	noun	1	10295	s	14182
 málokde	adverb		1		6
 málokedy	adverb		187		188
 málokrvne	adverb				
-málokrvnosť	noun		3	f	39
+málokrvnosť	noun	1	3	f	39
 málokrvný	adjective				
 málokto	pronoun		87		75
 máloktorý	adjective		5		13
@@ -43152,7 +43152,7 @@ mäkčiaci	adjective
 mäkčidlo	noun			s	
 mäkčiť	verb				
 mäsiar	noun	1	380	mA	212
-mäsiarka	noun		12	f	10
+mäsiarka	noun	1	12	f	10
 mäsiarov	adjective		16		3
 mäsiarsky	adjective		50		98
 mäsiarstvo	noun		78	s	41
@@ -43297,7 +43297,7 @@ mýtina	noun			f
 mýtizovaný	adjective				
 mýtizovať	verb				
 mýtiť	verb				2
-mýtne	noun		6	s	2
+mýtne	noun	1	6	s	2
 mýtnik	noun			m	19
 mýtnikov	adjective				
 mýtny	adjective		25		243
@@ -43510,7 +43510,7 @@ nacionalistov	adjective		6		9
 nacionalizmus	noun	1	14	mI	534
 nacionalizovaný	adjective				
 nacionalizovať	verb				2
-nacionalizácia	noun			f	4
+nacionalizácia	noun	1		f	4
 nacionálie	noun			fP	
 nacionálne	adverb		1		1
 nacionálny	adjective		4		176
@@ -43845,7 +43845,7 @@ nadurený	adjective
 nadutcov	adjective				
 nadutec	noun		5	mA	
 naduto	adverb		2		
-nadutosť	noun		14	f	6
+nadutosť	noun	1	14	f	6
 nadutý	adjective		62		4
 naduť	verb		8		
 nadužiť	verb				
@@ -43896,7 +43896,7 @@ nadísť	verb	1	524		49
 nadívať	verb				
 nadúrovňový	adjective				
 nadúvajúci	adjective		1		
-nadúvanie	noun		12	s	30
+nadúvanie	noun	1	12	s	30
 nadúvať	verb		18		2
 nadýchanie	noun		5	s	2
 nadýchaný	adjective		8		4
@@ -43998,7 +43998,7 @@ nafúkancov	adjective		8
 nafúkane	adverb		18		
 nafúkanec	noun		69	mA	2
 nafúkanie	noun		1	s	
-nafúkanosť	noun		8	f	
+nafúkanosť	noun	1	8	f	
 nafúkaný	adjective		106		6
 nafúkať	verb		104		
 nafúknutie	noun		14	s	24
@@ -44438,7 +44438,7 @@ naliať	verb		877		75
 naliehajúci	adjective		2		4
 naliehanie	noun		24	s	214
 naliehavo	adverb		113		42
-naliehavosť	noun		40	f	46
+naliehavosť	noun	1	40	f	46
 naliehavý	adjective		950		170
 naliehať	verb		327		239
 naliepať	verb		2		
@@ -44599,7 +44599,7 @@ namydliť	verb		31
 namyslencov	adjective		2		
 namyslene	adverb		18		5
 namyslenec	noun		25	mA	
-namyslenosť	noun		19	f	8
+namyslenosť	noun	1	19	f	8
 namyslený	adjective		124		42
 namyslieť	verb		189		
 namáhane	adverb				
@@ -44820,7 +44820,7 @@ napochodovanie	noun		2	s
 napochodovať	verb		158		4
 napochytre	adverb				
 napochytro	adverb		1		
-napodobenie	noun		7	s	25
+napodobenie	noun	1	7	s	25
 napodobenina	noun	1	145	f	126
 napodobený	adjective				3
 napodobiteľ	noun		9	m	
@@ -44841,7 +44841,7 @@ napodobovateľov	adjective				2
 napodobovať	verb		15		25
 napodobujúci	adjective				8
 napodobňovací	adjective		2		
-napodobňovanie	noun		31	s	109
+napodobňovanie	noun	1	31	s	109
 napodobňovaný	adjective				14
 napodobňovateľ	noun		26	mA	18
 napodobňovateľka	noun			f	
@@ -44994,7 +44994,7 @@ napájací	adjective		69		362
 napájadlo	noun		33	s	13
 napájajúci	adjective		3		14
 napájane	adverb		2		
-napájanie	noun		190	s	392
+napájanie	noun	1	190	s	392
 napájaný	adjective		4		44
 napájač	noun		1	mI	12
 napájačka	noun			f	2
@@ -45065,7 +45065,7 @@ narazený	adjective		5		2
 naraziť	verb		4459		1835
 naračný	adjective				
 naraňajkovať	verb	1	103		7
-narcis	noun		44	mI	59
+narcis	noun	1	44	mI	59
 narcisokvetý	adjective				5
 narcisový	adjective		2		32
 narcizmus	noun	1	18	m	17
@@ -45186,7 +45186,7 @@ narážaný	adjective
 narážač	noun		6	mA	2
 narážačka	noun		1	f	2
 narážať	verb		485		267
-narážka	noun		243	f	260
+narážka	noun	1	243	f	260
 narúbať	verb		17		2
 narúčať	verb				
 narúšajúci	adjective				8
@@ -46249,7 +46249,7 @@ nedohoda	noun			f	3
 nedohľadno	noun			s	
 nedojenie	noun			s	
 nedoknuteľný	adjective		5		
-nedokonavosť	noun			f	
+nedokonavosť	noun	1		f	
 nedokončenie	noun		2	s	9
 nedokončenosť	noun			f	2
 nedokrvenosť	noun			f	
@@ -46503,7 +46503,7 @@ nemehlov	adjective		1
 nemenej	adverb		15		1
 nemenenie	noun			s	
 nemenie	noun			s	
-nemenlivosť	noun			f	
+nemenlivosť	noun	1		f	
 nemennosť	noun	1	2	f	26
 nemenovaný	adjective		23		55
 Nemes	name	1	1		47
@@ -46855,7 +46855,7 @@ neprejedenie	noun			s
 neprekonateľnosť	noun		1	f	
 neprekročenie	noun			s	
 nepreložiteľný	adjective				4
-nepremennosť	noun			f	
+nepremennosť	noun	1		f	
 nepremokavosť	noun		1	f	2
 nepremožiteľnosť	noun		1	f	
 nepremyslenosť	noun			f	
@@ -47111,7 +47111,7 @@ nesúcosť	noun			f
 nesúhlas	noun	1	45	mI	194
 nesúlad	noun		25	mI	98
 nesúmernosť	noun		1	f	2
-nesúrodosť	noun		4	f	9
+nesúrodosť	noun	1	4	f	9
 nesústredenie	noun			s	
 nesústredenosť	noun			f	4
 nesúvislosť	noun			f	8
@@ -47256,7 +47256,7 @@ neverník	noun		15	mA	2
 neverníkov	adjective		3		
 nevesta	noun	1	1547	f	654
 nevestin	adjective		39		17
-nevestinec	noun		83	mI	48
+nevestinec	noun	1	83	mI	48
 nevestička	noun		2	f	
 nevhodnosť	noun		1	f	15
 neviazanosť	noun		5	f	14
@@ -47281,7 +47281,7 @@ nevoľnica	noun		1	f
 nevoľnosť	noun	1	177	f	148
 nevoľnícky	adjective		2		19
 nevoľníctvo	noun	1	8	s	142
-nevoľník	noun		14	mA	101
+nevoľník	noun	1	14	mA	101
 nevoľníkov	adjective		6		3
 nevoľníčka	noun		1	f	2
 nevpustenie	noun			s	
@@ -47454,14 +47454,14 @@ nezmieriteľnosť	noun			f	5
 nezmysel	noun	1	2021	mI	76
 nezmyselnosť	noun		5	f	23
 nezmyselný	adjective	1	46		24
-neznaboh	noun		15	mA	
+neznaboh	noun	1	15	mA	
 neznabohov	adjective		2		
 neznabožský	adjective				
-neznabožstvo	noun		1	s	
-neznajboh	noun		1	mA	
+neznabožstvo	noun	1	1	s	
+neznajboh	noun	1	1	mA	
 neznajbohov	adjective				
-neznajbožstvo	noun			s	
-neznalosť	noun		30	f	57
+neznajbožstvo	noun	1		s	
+neznalosť	noun	1	30	f	57
 neznelosť	noun			f	3
 neznesiteľnosť	noun			f	
 nezničiteľnosť	noun		1	f	4
@@ -47545,7 +47545,7 @@ neľubozvuk	noun	1		mI	6
 neľubozvučnosť	noun			f	
 neľudia	noun		11	mAP	
 neľudskosť	noun		6	f	6
-neľúbosť	noun		1	f	4
+neľúbosť	noun	1	1	f	4
 neľútostný	adjective		35		27
 neľútosť	noun			f	
 nešetrnosť	noun			f	
@@ -48032,7 +48032,7 @@ nosáňov	adjective
 nosík	noun		2	mI	
 nota	noun	1	386	f	600
 notačný	adjective				
-notebook	noun		291	mI	289
+notebook	noun	1	291	mI	289
 notes	noun		88	mI	233
 notesík	noun		1	mI	
 noteštek	noun			m	
@@ -48151,7 +48151,7 @@ novopostavený	adjective	1	2		146
 novopozitivista	noun			m	
 novopozitivistický	adjective				
 novopozitivistov	adjective				
-novopozitivizmus	noun			m	11
+novopozitivizmus	noun	1		m	11
 novoprijatý	adjective	1	5		10
 novopripojený	adjective		1		7
 novopriznaný	adjective				2
@@ -48381,7 +48381,7 @@ nymburský	adjective				36
 nymfa	noun		26	f	482
 nymfea	noun	1			3
 nymfický	adjective				
-nymfomanka	noun		18	f	6
+nymfomanka	noun	1	18	f	6
 nymfový	adjective		1		
 nystagmus	noun		5	mI	13
 náb.	acronym	1	2		
@@ -48539,11 +48539,11 @@ nákazlivý	adjective	1	295		96
 nákazovo	adverb				
 nákazový	adjective		2		
 náklad	noun	1	1393	mI	4942
-nákladiak	noun		897	mI	21
+nákladiak	noun	1	897	mI	21
 nákladisko	noun		2	s	26
 nákladište	noun			s	
 nákladne	adverb				27
-nákladniak	noun		6	mI	
+nákladniak	noun	1	6	mI	
 nákladnosť	noun			f	23
 nákladný	adjective		665		2870
 nákladovo	adverb		3		14
@@ -48586,7 +48586,7 @@ nálepkový	adjective				7
 nálet	noun		151	mI	1123
 náletový	adjective				94
 nálev	noun		31	mI	61
-nálevník	noun			mA	34
+nálevník	noun	1		mA	34
 nález	noun	1	292	mI	5388
 nálezca	noun		8	mA	32
 nálezcov	adjective				
@@ -48655,7 +48655,7 @@ námrazový	adjective
 Nána	noun	1	1		19
 nános	noun	1	22	mI	198
 nánosový	adjective				4
-nápad	noun		13713	mI	1148
+nápad	noun	1	13713	mI	1148
 nápadito	adverb		2		8
 nápaditosť	noun		2	f	15
 nápaditý	adjective		44		59
@@ -48669,7 +48669,7 @@ nápadný	adjective	1	200		438
 nápev	noun		2	mI	85
 nápis	noun	1	711	mI	3398
 náplasť	noun		177	f	52
-náplava	noun			fmI	88
+náplava	noun	1		fmI	88
 náplavový	adjective				46
 náplecník	noun	1	2	mI	15
 náplň	noun	1	166	f	885
@@ -49120,7 +49120,7 @@ obchodníčka	noun		63	f	21
 obchodný	adjective	1	2245		8544
 obchodobateľnosť	noun			f	
 obchodovací	adjective		1		2
-obchodovanie	noun		392	s	557
+obchodovanie	noun	1	392	s	557
 obchodovaný	adjective		1		33
 obchodovateľnosť	noun			f	
 obchodovateľný	adjective		8		40
@@ -49354,7 +49354,7 @@ objasnenie	noun	1	14	s	79
 objasnenosť	noun		3	f	
 objasnený	adjective		1		11
 objasniť	verb		670		579
-objasňovanie	noun		1	s	53
+objasňovanie	noun	1	1	s	53
 objasňovaný	adjective				
 objasňovať	verb		45		156
 objasňujúci	adjective		4		17
@@ -49374,7 +49374,7 @@ objavne	adverb				3
 objavnosť	noun			f	
 objavný	adjective		10		39
 objavovane	adverb		1		
-objavovanie	noun		25	s	172
+objavovanie	noun	1	25	s	172
 objavovaný	adjective				3
 objavovať	verb		640		5319
 objavujúci	adjective		8		71
@@ -50009,7 +50009,7 @@ obsažný	adjective		3		18
 obschnúť	verb				
 obschýnať	verb				
 obscénne	adverb		7		9
-obscénnosť	noun		26	f	27
+obscénnosť	noun	1	26	f	27
 obscénny	adjective		81		49
 obsedantne	adverb		3		
 obsedantný	adjective		10		8
@@ -50696,7 +50696,7 @@ odchovávať	verb		1		9
 odchovňa	noun			f	
 odchrchlať	verb				
 odchylne	adverb				9
-odchylnosť	noun			f	3
+odchylnosť	noun	1		f	3
 odchylný	adjective				20
 odchyt	noun		34	mI	40
 odchytanie	noun			s	
@@ -51213,7 +51213,7 @@ odliezť	verb
 odlifrovaný	adjective				
 odlifrovať	verb		3		
 odlistiť	verb		1		
-odliv	noun		81	mI	161
+odliv	noun	1	81	mI	161
 odliznutý	adjective				
 odlišne	adverb		95		146
 odlišnosť	noun		77	f	402
@@ -51447,12 +51447,12 @@ odolávajúci	adjective		2		13
 odolávanie	noun		5	s	5
 odolávať	verb		196		402
 odomknuteľný	adjective				3
-odomknutie	noun		23	s	17
+odomknutie	noun	1	23	s	17
 odomknutý	adjective		3		6
 odomknúť	verb	1	504		69
 odomkýnať	verb				
 odomykací	adjective		3		
-odomykanie	noun		6	s	17
+odomykanie	noun	1	6	s	17
 odomykať	verb		3		4
 odontogénny	adjective				
 odontologička	noun	1			
@@ -52118,7 +52118,7 @@ odsunuto	adverb		1
 odsunutý	adjective		4		39
 odsunúť	verb		166		255
 odsuvka	noun		3	f	
-odsuvník	noun			m	2
+odsuvník	noun	1		m	2
 odsuvný	adjective				3
 odsvätený	adjective				6
 odswapovaný	adjective				1
@@ -52839,7 +52839,7 @@ ohorený	adjective		7		8
 ohorieť	verb		8		
 ohorok	noun	1	52	mI	5
 ohoršovať	verb				
-ohovorenie	noun			s	
+ohovorenie	noun	1		s	
 ohovorený	adjective				
 ohovoriť	verb		5		
 ohovárací	adjective		1		
@@ -52847,7 +52847,7 @@ ohovárajúci	adjective
 ohováranie	noun	1	118	s	125
 ohováraný	adjective		2		
 ohovárač	noun		9	mA	9
-ohováračka	noun		10	f	
+ohováračka	noun	1	10	f	
 ohováračný	adjective		1		
 ohováračský	adjective		5		
 ohovárať	verb	1	235		19
@@ -53325,7 +53325,7 @@ Oldrich	noun	1		m	28
 Oldrichov	adjective				
 oleander	noun		10	mI	16
 oleandrový	adjective				
-olefín	noun			mI	11
+olefín	noun	1		mI	11
 Olefínová	adjective				
 Oleg	noun	1	90	m	341
 Olegov	adjective		1		
@@ -53625,10 +53625,10 @@ onakvejší	adjective		3
 onakvý	adjective				
 onaký	adjective		12		2
 onam	adverb		3		
-onania	noun			f	4
+onania	noun	1		f	4
 onanista	noun		29	mA	
 onanistov	adjective		3		
-onanizmus	noun			m	2
+onanizmus	noun	1		m	2
 onanovací	adjective		5		
 onanovanie	noun		12	s	3
 onanovať	verb		45		
@@ -54118,7 +54118,7 @@ opozdene	adverb		1
 opozdenie	noun		2	s	
 opozdený	adjective				
 opozdiť	verb		14		
-opozitum	noun		3	s	15
+opozitum	noun	1	3	s	15
 opozične	adverb				6
 opozičnosť	noun			f	
 opozičník	noun		1	mA	5
@@ -54131,14 +54131,14 @@ opočlovek	noun			mA	28
 opočlovekov	adjective				
 opoľudia	noun			mAP	
 opracovane	adverb		1		
-opracovanie	noun		4	s	79
+opracovanie	noun	1	4	s	79
 opracovaný	adjective		1		158
 opracovateľnosť	noun			f	6
 opracovateľný	adjective		1		8
 opracovať	verb		13		33
-opracovávanie	noun			s	11
+opracovávanie	noun	1		s	11
 opracovávať	verb		2		19
-opracúvanie	noun		1	s	6
+opracúvanie	noun	1	1	s	6
 opracúvať	verb		1		3
 opradený	adjective		4		51
 opranie	noun		1	s	
@@ -54400,7 +54400,7 @@ orchidea	noun	1	161	f	119
 orchideovo	adverb				
 orchideový	adjective		3		15
 ordinariát	noun			mI	98
-ordinačka	noun		1	f	
+ordinačka	noun	1	1	f	
 ordinačný	adjective		4		
 ordinovanie	noun		1	s	
 ordinovaný	adjective		1		26
@@ -54533,7 +54533,7 @@ oriešik	noun			m
 orieškovo	adverb		1		5
 orieškovohnedý	adjective				
 orieškový	adjective		49		10
-oriešok	noun		527	mI	191
+oriešok	noun	1	527	mI	191
 orieštek	noun			m	
 originalita	noun		39	f	151
 originál	noun		555	mI	1282
@@ -55024,7 +55024,7 @@ osemtriedny	adjective
 osemtýždňový	adjective				5
 osemuholník	noun	1	2	mI	55
 osemvalcový	adjective		1		59
-osemvalec	noun		4	mI	48
+osemvalec	noun	1	4	mI	48
 osemventilový	adjective				2
 osemveslica	noun			f	2
 osemčlenný	adjective				59
@@ -55396,7 +55396,7 @@ ostrovanie	noun			s
 ostrovanka	noun		1	f	
 ostrovanov	adjective		1		2
 Ostrovany	noun	1		mIP	22
-ostrovid	noun			mA	101
+ostrovid	noun	1		mA	101
 ostrovidný	adjective				
 ostrovný	adjective	1	50		578
 Ostrovský	adjective				19
@@ -55876,7 +55876,7 @@ ovládaný	adjective		43		465
 ovládateľne	adverb		3		3
 ovládateľnosť	noun		1	f	108
 ovládateľný	adjective		25		137
-ovládač	noun		473	mI	563
+ovládač	noun	1	473	mI	563
 ovládať	verb		3577		3065
 ovládnuteľný	adjective		2		
 ovládnutie	noun		71	s	326
@@ -56230,7 +56230,7 @@ ošetrovateľský	adjective		21		97
 ošetrovateľstvo	noun		10	s	77
 ošetrovať	verb		163		114
 ošetrovné	noun			s	4
-ošetrovňa	noun		580	f	44
+ošetrovňa	noun	1	580	f	44
 ošetrujúci	adjective		40		37
 ošialenie	noun		1	s	
 ošialený	adjective				
@@ -56474,7 +56474,7 @@ padáčik	noun			m	3
 Padáň	noun	1		mI	8
 padúch	noun			mA	4
 padúcnica	noun	1	2	f	
-paganizmus	noun		1	m	2
+paganizmus	noun	1	1	m	2
 pagaštan	noun	1	2	mI	48
 pagina	noun			f	2
 paging	noun		1	mI	13
@@ -56614,14 +56614,14 @@ paletovo	adverb
 paletový	adjective		1		2
 Paleš	name	1			
 Paliar	name	1			
-paliareň	noun		4	f	
+paliareň	noun	1	4	f	
 paliatívny	adjective	1			3
 palica	noun	1	1102	f	505
 palicovať	verb				2
 palicovitý	adjective				2
 palicový	adjective				3
 palier	noun			mA	7
-palilógia	noun			f	
+palilógia	noun	1		f	
 palina	noun	1	24	f	125
 palindrom	noun		2	mI	
 palinolistý	adjective				5
@@ -56669,7 +56669,7 @@ palpačne	adverb		4
 palpačný	adjective		1		
 palpitácia	noun			f	
 palpovať	verb				
-palpácia	noun		1	f	7
+palpácia	noun	1	1	f	7
 paluba	noun	1	3270	f	2575
 palubný	adjective		177		1339
 palubný lístok	noun	1			
@@ -56689,7 +56689,7 @@ Palúš	name	1			4
 palček	noun		18	mI	6
 palčiak	noun		10	mI	
 Palčová	noun	1			
-pamajorán	noun			m	14
+pamajorán	noun	1		m	14
 pamflet	noun	1	17	mI	134
 pamfletický	adjective				2
 pamfletista	noun			mA	2
@@ -56898,7 +56898,7 @@ pančucháče	noun		23	mIP	5
 pančuška	noun		24	f	8
 pančuškový	adjective				
 panštieť	verb				
-panština	noun			f	
+panština	noun	1		f	
 Pap	name	1	7		36
 papa	noun		524	f	164
 papacha	noun			f	
@@ -56983,7 +56983,7 @@ papuľový	adjective
 papyrový	adjective				4
 papyrus	noun		10	mI	377
 papyrusový	adjective				69
-papája	noun		24	f	32
+papája	noun	1	24	f	32
 papáč	noun			mA	2
 papáčov	adjective				
 Papín	noun	1		mI	59
@@ -57107,7 +57107,7 @@ parazitologička	noun			f
 parazitológ	noun	1		mA	36
 parazitológia	noun	1		f	29
 parazitov	adjective		1		2
-parazitovanie	noun		4	s	9
+parazitovanie	noun	1	4	s	9
 parazitovať	verb		7		97
 parazitujúci	adjective		5		31
 parazitárne	adverb				6
@@ -57151,7 +57151,7 @@ parentéza	noun			f	7
 parený	adjective		1		2
 parergický	adjective				
 parestézia	noun		1	f	8
-parfum	noun		471	mI	190
+parfum	noun	1	471	mI	190
 parfumovane	adverb		1		
 parfumovaný	adjective		1		6
 parfumovať	verb				3
@@ -57388,7 +57388,7 @@ pastelka	noun		69	f	26
 pastelovo	adverb				2
 pastelový	adjective		15		33
 pasterizačný	adjective				
-pasterizovanie	noun			s	
+pasterizovanie	noun	1		s	
 pasterizovaný	adjective		1		12
 pasterizovať	verb		5		12
 pasterizácia	noun	1	1	f	29
@@ -57870,7 +57870,7 @@ peletón	noun		1	mI
 pelešenie	noun		1	s	
 pelešiť	verb		19		
 peleštek	noun			mI	
-pelikán	noun		116	mA	259
+pelikán	noun	1	116	mA	259
 pelikání	adjective				
 Pellegrini	noun		1	m	298
 pelofilný	adjective				
@@ -58058,7 +58058,7 @@ perifokálny	adjective
 perifrastický	adjective				
 perifrastika	noun			f	
 perifráza	noun	1		f	4
-periféria	noun		55	f	255
+periféria	noun	1	55	f	255
 periférne	adverb		5		9
 periférnosť	noun			f	
 periférny	adjective		44		420
@@ -58116,7 +58116,7 @@ perlitový	adjective				2
 perlivo	adverb				
 perlivosť	noun			f	
 perlivý	adjective		25		21
-perlička	noun		26	f	75
+perlička	noun	1	26	f	75
 perličkový	adjective		6		8
 perliť	verb		1		
 perlokučný	adjective				2
@@ -58232,7 +58232,7 @@ peruť	noun		11	f	461
 perverzia	noun	1	9	f	5
 perverzita	noun		9	f	3
 perverzne	adverb		6		
-perverznosť	noun		18	f	3
+perverznosť	noun	1	18	f	3
 perverzný	adjective		188		11
 perzeidy	noun	1		f	13
 perzekuovaný	adjective				6
@@ -58269,7 +58269,7 @@ pesimistický	adjective		38		56
 pesimistka	noun		9	f	
 pesimistov	adjective				
 pesimizmus	noun	1	21	mI	75
-pesnička	noun		1790	f	1162
+pesnička	noun	1	1790	f	1162
 pesničkový	adjective		1		73
 pesničkár	noun	1	4	mA	315
 pesničkárka	noun	1	1	f	66
@@ -58734,7 +58734,7 @@ piplať	verb		8
 Pipová	noun		3	f	
 pipradrol	noun			mI	2
 pipík	noun	1	15		4
-pipíška	noun		3	f	17
+pipíška	noun	1	3	f	17
 Pira	name	1			23
 piraňa	noun	1	20	f	4
 piritramid	noun			mI	3
@@ -58746,8 +58746,8 @@ pirátka	noun		13	f	5
 pirátov	adjective		5		4
 pirátsky	adjective	1	228		190
 pirátstvo	noun		43	s	80
-pirôžok	noun		15	mI	8
-pirôžtek	noun			m	
+pirôžok	noun	1	15	mI	8
+pirôžtek	noun	1		m	
 Pisaná	noun			f	84
 pisateľ	noun		32	mA	58
 pisateľka	noun		3	f	
@@ -58757,7 +58757,7 @@ pisk	noun		2	mI
 pisknutie	noun			s	
 pisknúť	verb				
 Pisko	name	1			
-piskor	noun		12	m	71
+piskor	noun	1	12	m	71
 Piskorovce	noun	1		fP	7
 Piskorová	adjective				3
 piskot	noun		26	mI	19
@@ -58970,7 +58970,7 @@ planografický	adjective
 planografka	noun			f	
 planografov	adjective				
 planta	noun		1	f	45
-plantajn	noun			mI	2
+plantajn	noun	1		mI	2
 plantavý	adjective				
 plantať	verb				
 plantárny	adjective		1		7
@@ -59063,7 +59063,7 @@ plavebne	adverb
 plavebný	adjective		17		276
 plavec	noun	1	143	mA	363
 plavecký	adjective		109		1455
-plavectvo	noun			s	
+plavectvo	noun	1		s	
 plavenie	noun		6	s	19
 plavený	adjective				5
 Plaveč	noun			mI	142
@@ -59091,7 +59091,7 @@ plavákový	adjective				59
 plavárenský	adjective				
 plaváreň	noun	1	66	f	155
 plaváčik	noun		2	mI	
-plavúň	noun			mI	47
+plavúň	noun	1		mI	47
 plavý	adjective		22		126
 plavčícky	adjective		2		
 plavčík	noun		83	mA	83
@@ -59151,7 +59151,7 @@ plechavieť	verb
 plechavý	adjective		2		
 Plecho	name	1			6
 Plechotice	noun	1		fP	13
-plechovica	noun		29	f	7
+plechovica	noun	1	29	f	7
 plechovka	noun	1	644	f	106
 plechovkový	adjective		11		
 plechovo	adverb				
@@ -59404,7 +59404,7 @@ plodivý	adjective				7
 plodiť	verb		100		74
 plodne	adverb		6		2
 plodnica	noun	1		f	150
-plodnička	noun			f	
+plodnička	noun	1		f	
 plodnosť	noun	1	143	f	399
 plodný	adjective	1	152		471
 plodolist	noun	1		mI	56
@@ -59767,7 +59767,7 @@ pobranie	noun			s
 pobrať	verb		203		46
 pobrežie	noun	1	1596	s	6095
 Pobrežie Slonoviny	noun	1			
-pobrežník	noun		7	mA	53
+pobrežník	noun	1	7	mA	53
 pobrežný	adjective		324		1513
 pobrušnica	noun	1	10	f	85
 pobrušnicový	adjective				4
@@ -60012,7 +60012,7 @@ podceňovanie	noun		11	s	23
 podceňovaný	adjective		5		3
 podceňovať	verb		575		85
 podceňujúci	adjective		1		2
-podchladenie	noun		54	s	57
+podchladenie	noun	1	54	s	57
 podchladený	adjective		14		26
 podchladiť	verb		17		
 podchladzovať	verb				
@@ -60086,8 +60086,8 @@ podgurážiť	verb
 podhadzovanie	noun			s	
 podhadzovaný	adjective				
 podhadzovať	verb		6		
-podhlavnica	noun			f	
-podhlavník	noun			mI	2
+podhlavnica	noun	1		f	
+podhlavník	noun	1		mI	2
 podhmat	noun			mI	
 podhniť	verb				
 podhnívať	verb		1		
@@ -60210,7 +60210,7 @@ podkovkový	adjective				2
 podkovovito	adverb				5
 podkovovitý	adjective				60
 podkovový	adjective				2
-podkožie	noun			s	44
+podkožie	noun	1		s	44
 podkožne	adverb		2		10
 podkožný	adjective	1	48		101
 podkresliť	verb				
@@ -60436,7 +60436,7 @@ podnikane	adverb
 podnikanie	noun	1	600	s	1054
 podnikaný	adjective				
 podnikateľ	noun	1	353	mA	2797
-podnikateľka	noun		42	f	207
+podnikateľka	noun	1	42	f	207
 podnikateľov	adjective		1		3
 podnikateľsky	adverb		2		6
 podnikateľský	adjective	1	75		634
@@ -60456,7 +60456,7 @@ podnos	noun		250	mI	18
 podnož	noun			f	79
 podnožie	noun			s	6
 podnožka	noun		4	f	8
-podnožník	noun			mI	4
+podnožník	noun	1		mI	4
 podnožný	adjective				
 podnožový	adjective				4
 podnájom	noun		119	mI	38
@@ -61184,7 +61184,7 @@ pohnutie	noun		25	s	12
 pohnutlivý	adjective				
 pohnuto	adverb		1		
 pohnutý	adjective		5		45
-pohnútka	noun		86	f	130
+pohnútka	noun	1	86	f	130
 pohnúť	verb		8224		326
 pohoda	noun		16651	f	310
 pohodene	adverb		1		
@@ -61266,7 +61266,7 @@ pohrdlivý	adjective
 pohrdnutie	noun			s	
 pohrdnúť	verb		33		38
 pohreb	noun	1	2292	mI	1292
-pohrebisko	noun		74	s	933
+pohrebisko	noun	1	74	s	933
 pohrebište	noun		7	s	14
 pohrebne	adverb		1		
 pohrebníctvo	noun		52	s	8
@@ -61278,7 +61278,7 @@ pohrešujúci	adjective		1
 pohrkať	verb		1		
 pohrnúť	verb		7		
 pohrobok	noun	1	1	mA	122
-pohroma	noun		408	f	286
+pohroma	noun	1	408	f	286
 pohromade	adverb		350		109
 Pohronie	noun	1		s	154
 pohronskoruskovský	adjective				
@@ -61600,7 +61600,7 @@ pokrivkávať	verb		5
 pokrivovať	verb				
 pokrižovať	verb				
 pokrkvať	verb				
-pokrm	noun		97	mI	334
+pokrm	noun	1	97	mI	334
 pokrmový	adjective	1	1		
 pokrok	noun	1	1180	mI	1092
 pokrokovo	adverb		4		10
@@ -61625,9 +61625,9 @@ pokrutina	noun			f
 pokrutinový	adjective				
 pokrutiny	noun			fP	
 pokrvenský	adjective				
-pokrvenstvo	noun			s	
+pokrvenstvo	noun	1		s	
 pokrvne	adverb		16		25
-pokrvnosť	noun		2	f	4
+pokrvnosť	noun	1	2	f	4
 pokrvný	adjective		247		152
 pokrytcov	adjective		20		2
 pokrytec	noun	1	264	mA	18
@@ -62094,7 +62094,7 @@ polosvet	noun		3	mI
 polosvit	noun			mI	
 polosúkromný	adjective				
 polotekutý	adjective				8
-polotieň	noun		1	mI	42
+polotieň	noun	1	1	mI	42
 polotma	noun			f	
 polotmavý	adjective				4
 polotovar	noun	1	28	mI	168
@@ -62257,7 +62257,7 @@ polygénny	adjective
 polygón	noun	1	11	mI	130
 polygónový	adjective				8
 polyhalogenid	noun	1		mI	8
-polyhistor	noun		2	mA	219
+polyhistor	noun	1	2	mA	219
 polyhistorov	adjective				3
 polykane	adverb				
 polykarbonát	noun	1		mI	23
@@ -62286,7 +62286,7 @@ Polynézanka	noun		1	f
 Polynézanov	adjective		2		11
 Polynézia	noun	1	4	f	50
 polynézsky	adjective		12		129
-polynóm	noun		2	mI	207
+polynóm	noun	1	2	mI	207
 polynómny	adjective				
 polyolefín	noun			mI	5
 polyp	noun		20	mI	100
@@ -62408,7 +62408,7 @@ pomenovávací	adjective		1
 pomenovávanie	noun		3	s	24
 pomenovávať	verb		14		47
 pomenúvajúci	adjective		3		13
-pomenúvanie	noun		1	s	15
+pomenúvanie	noun	1	1	s	15
 pomenúvaný	adjective				33
 pomenúvať	verb		13		149
 pomenší	adjective				4
@@ -62429,7 +62429,7 @@ pomeškať	verb
 pomeštiť	verb				
 pomfrit	noun			m	3
 pomfritka	noun			f	2
-pomfritky	noun			fP	2
+pomfritky	noun	1		fP	2
 pomiagať	verb				
 pomiasť	verb		161		27
 pomiatnuť	verb		69		
@@ -62846,7 +62846,7 @@ pooškrabovať	verb
 pooškuľovať	verb				
 poošuchovať	verb				
 pop	noun	1	369	mA	1740
-pop-art	noun			m	2
+pop-art	noun	1		m	2
 popadaný	adjective		1		7
 popadať	verb		45		4
 Popadič	name	1			2
@@ -63339,7 +63339,7 @@ poriedko	adverb
 poriečie	noun			s	21
 poriečny	adjective				27
 porisko	noun		7	s	27
-porno	noun		864	s	32
+porno	noun	1	864	s	32
 pornofilm	noun	1	8	m	
 pornografia	noun	1	156	f	167
 pornograficky	adverb				
@@ -64131,7 +64131,7 @@ posádzaný	adjective		4		1
 posádzať	verb				1
 posánkovať	verb				
 posáľať	verb				
-posúch	noun		2	m	2
+posúch	noun	1	2	m	2
 posúdenie	noun	1	9	s	118
 posúdený	adjective		5		5
 posúditeľný	adjective		1		
@@ -64301,7 +64301,7 @@ potrasenie	noun		8	s	2
 potrat	noun	1	427	mI	419
 potratený	adjective		4		2
 potratiť	verb		192		44
-potrava	noun		765	f	2266
+potrava	noun	1	765	f	2266
 potravina	noun	1	943	f	2409
 potravinovo	adverb				3
 potravinový	adjective		218		418
@@ -64697,7 +64697,7 @@ povonku	adverb		6
 povoz	noun		28	mI	102
 povoziť	verb		153		4
 povoznícky	adjective				10
-povozníctvo	noun			s	61
+povozníctvo	noun	1		s	61
 povozník	noun	1	5	mA	111
 povozníkov	adjective		1		9
 povoľkať	verb				
@@ -64920,7 +64920,7 @@ povýšenecky	adverb		32		12
 povýšenecký	adjective		52		10
 povýšenectvo	noun		5	s	6
 povýšenie	noun		191	s	391
-povýšenosť	noun		13	f	9
+povýšenosť	noun	1	13	f	9
 povýšený	adjective		18		238
 povýšiť	verb		919		1943
 povďak	noun			mI	
@@ -65106,7 +65106,7 @@ pozhášať	verb
 pozhľadávať	verb				
 pozhľadúvať	verb				
 pozhŕňať	verb				
-pozinkovanie	noun			s	7
+pozinkovanie	noun	1		s	7
 pozinkovaný	adjective				21
 pozinkovať	verb				
 pozinkovávanie	noun			s	
@@ -65566,10 +65566,10 @@ poštárka	noun		11	f	17
 poštárov	adjective		3		7
 poštársky	adjective		3		4
 poštátnene	adverb				2
-poštátnenie	noun			s	17
+poštátnenie	noun	1		s	17
 poštátnený	adjective				28
 poštátniť	verb				
-poštátňovanie	noun			s	3
+poštátňovanie	noun	1		s	3
 poštátňovať	verb				
 poštípanie	noun		3	s	2
 poštípaný	adjective		1		
@@ -65648,7 +65648,7 @@ požiarisko	noun			s
 požiarne	adverb		2		35
 požiarnicky	adverb		9		
 požiarnický	adjective		21		50
-požiarnictvo	noun			s	
+požiarnictvo	noun	1		s	
 požiarnik	noun	1	271	mA	46
 požiarnikov	adjective		3		1
 požiarnička	noun		15	f	
@@ -65721,7 +65721,7 @@ prachovec	noun	1		mI	44
 prachovitý	adjective				
 prachovka	noun		20	f	2
 prachový	adjective		20		427
-prachy	noun		743	mIP	1
+prachy	noun	1	743	mIP	1
 prachár	noun			mI	8
 pracháreň	noun			f	17
 prachársky	adjective				2
@@ -65805,7 +65805,7 @@ praindoeurópčina	noun	1			9
 prajazyk	noun	1		mI	33
 prajazykový	adjective	1			
 prajne	adverb				
-prajnosť	noun		1	f	2
+prajnosť	noun	1	1	f	2
 prajný	adjective				
 prajúci	adjective				
 prak	noun	1	69	mI	68
@@ -65926,13 +65926,13 @@ praslovančina	noun	1		f	47
 prasne	adverb		1		
 prasnica	noun	1	15	f	7
 prasnička	noun	1		f	
-prasnosť	noun			f	2
+prasnosť	noun	1		f	2
 prasný	adjective				
 prastaro	adverb		1		
 prastarý	adjective		223		275
 prastrýc	noun			mA	3
 prastrýko	noun		18	mA	43
-prasynovec	noun		4	mA	51
+prasynovec	noun	1	4	mA	51
 pratanie	noun		2	s	
 pratať	verb		341		43
 prateta	noun		39	f	22
@@ -66711,14 +66711,14 @@ predpisovať	verb		104		128
 predpisový	adjective		5		
 predpisujúci	adjective				4
 predplatene	adverb		1		
-predplatenie	noun			s	2
+predplatenie	noun	1		s	2
 predplatený	adjective		101		28
-predplatiteľ	noun		17	mA	169
+predplatiteľ	noun	1	17	mA	169
 predplatiteľka	noun			f	
 predplatiteľov	adjective		7		27
 predplatiteľský	adjective				5
 predplatiť	verb		54		26
-predplatné	noun		40	s	34
+predplatné	noun	1	40	s	34
 predplatný	adjective		28		135
 predplodina	noun			f	
 predplácanie	noun			s	
@@ -66938,7 +66938,7 @@ predulovať	verb
 predumať	verb				
 preduniverzitný	adjective				2
 predurčene	adverb				
-predurčenie	noun		23	s	18
+predurčenie	noun	1	23	s	18
 predurčenosť	noun		1	f	7
 predurčený	adjective		240		44
 predurčiť	verb		193		254
@@ -67115,7 +67115,7 @@ prefiltrovávať	verb		1
 prefinancovanie	noun		2	s	
 prefinancovaný	adjective		1		
 prefinancovať	verb		11		
-prefix	noun			mI	160
+prefix	noun	1		mI	160
 prefixový	adjective				
 prefixácia	noun			f	
 prefixálny	adjective				2
@@ -67430,8 +67430,8 @@ prekladajúci	adjective		1		3
 prekladane	adverb		1		2
 prekladanie	noun		17	s	123
 prekladaný	adjective		1		90
-prekladateľ	noun		89	mA	2244
-prekladateľka	noun		13	f	594
+prekladateľ	noun	1	89	mA	2244
+prekladateľka	noun	1	13	f	594
 prekladateľov	adjective		5		98
 prekladateľský	adjective		7		172
 prekladateľstvo	noun		1	s	50
@@ -67794,7 +67794,7 @@ preložiteľnosť	noun	1		f
 preložiteľný	adjective				16
 preložiť	verb		4500		2635
 preložka	noun			f	123
-prelud	noun		160	mI	127
+prelud	noun	1	160	mI	127
 preludný	adjective		3		
 prelumpovať	verb				
 prelustrovať	verb		11		
@@ -67879,7 +67879,7 @@ premiestnený	adjective		3		58
 premiestniteľný	adjective		1		2
 premiestniť	verb		762		1191
 premiestňovací	adjective		2		
-premiestňovanie	noun		16	s	76
+premiestňovanie	noun	1	16	s	76
 premiestňovaný	adjective				4
 premiestňovať	verb		155		136
 premiestňujúci	adjective		1		
@@ -68360,7 +68360,7 @@ prepotený	adjective		27		1
 prepotiť	verb		24		1
 prepotrebnosť	noun			f	
 prepotrebný	adjective		3		6
-prepozícia	noun			f	2
+prepozícia	noun	1		f	2
 prepočet	noun		32	mI	249
 prepočetný	adjective				
 prepočtový	adjective				3
@@ -70071,7 +70071,7 @@ prielivový	adjective				8
 prieloh	noun			mI	56
 prielom	noun	1	136	mI	518
 prielomový	adjective		3		31
-prieložník	noun			m	11
+prieložník	noun	1		m	11
 Prieložný	adjective				10
 prieluba	noun			f	
 prieluka	noun		2	f	7
@@ -71075,7 +71075,7 @@ prisľúbenie	noun		2	s	2
 prisľúbený	adjective		8		25
 prisľúbiť	verb		148		509
 prisťahovalcov	adjective		4		41
-prisťahovalec	noun		137	mA	787
+prisťahovalec	noun	1	137	mA	787
 prisťahovalecký	adjective		20		70
 prisťahovalectvo	noun	1	17	s	148
 prisťahovalkyňa	noun		1	f	2
@@ -71968,7 +71968,7 @@ protikapitalistický	adjective		1
 protikartelový	adjective		1		
 protiklad	noun	1	182	mI	821
 protikladne	adverb				6
-protikladnosť	noun			f	15
+protikladnosť	noun	1		f	15
 protikladný	adjective		22		126
 protikoaličný	adjective				
 protikomunisticky	adverb				8
@@ -72324,7 +72324,7 @@ prvosienkový	adjective				9
 prvostupňovo	adverb				
 prvostupňový	adjective		6		57
 prvotina	noun		15	f	195
-prvotlač	noun			f	27
+prvotlač	noun	1		f	27
 prvotne	adverb		7		64
 prvotnopospolný	adjective				5
 prvotnosť	noun			f	3
@@ -72453,10 +72453,10 @@ prémiový	adjective		22		117
 préria	noun	1	74	f	141
 prériový	adjective		13		17
 préteritum	noun			s	8
-prétorián	noun			mA	39
+prétorián	noun	1		mA	39
 prétoriánov	adjective				1
 prétoriánsky	adjective				25
-prézent	noun			mI	9
+prézent	noun	1		mI	9
 prézentný	adjective				2
 príbalový	adjective		1		14
 príbeh	noun	1	12650	mI	7787
@@ -72572,7 +72572,7 @@ príma	noun		166	f	52
 prímas	noun		1	mA	235
 prímasov	adjective				3
 prímeno	noun	1		s	51
-prímer	noun			mI	2
+prímer	noun	1		mI	2
 prímerie	noun	1	397	s	829
 prímes	noun	1	19	f	473
 prímesok	noun			mI	
@@ -72635,7 +72635,7 @@ prírodopiskyňa	noun			f
 prírodopisný	adjective		9		52
 prírodoveda	noun	1	9	f	87
 prírodovedcov	adjective		2		59
-prírodovedec	noun		20	mA	817
+prírodovedec	noun	1	20	mA	817
 prírodovedecky	adverb				20
 prírodovedecký	adjective		11		905
 prírodovedkyňa	noun		1	f	15
@@ -73195,7 +73195,7 @@ pustnutie	noun			s	2
 pustnúť	verb		5		60
 pusto	adverb		16		
 pustota	noun		5	f	
-pustovka	noun		5	f	45
+pustovka	noun	1	5	f	45
 pustovnícky	adjective		1		12
 pustovník	noun	1	80	mA	334
 pustovníkov	adjective		4		5
@@ -73230,7 +73230,7 @@ puzdro	noun	1	260	s	731
 puzdrový	adjective	1			2
 puzolán	noun			m	4
 puzolánový	adjective				2
-puč	noun		91	mI	282
+puč	noun	1	91	mI	282
 pučanie	noun			s	67
 pučať	verb		21		10
 Puček	name	1			
@@ -73244,7 +73244,7 @@ pučiť	verb
 puška	noun	1	1102	f	1173
 Puškinov	adjective		10		128
 puškový	adjective		1		43
-puškvorec	noun		5	mI	21
+puškvorec	noun	1	5	mI	21
 puškár	noun		20	mA	80
 puškárka	noun		1	f	
 puškárov	adjective		6		6
@@ -73322,7 +73322,7 @@ pyšne	adverb		24		11
 pyšniť	verb		1		
 pyšnosť	noun			f	
 pyšný	adjective		1438		240
-pyštek	noun		1	mI	16
+pyštek	noun	1	1	mI	16
 pyžamka	noun		1	f	
 pyžamko	noun		4	s	
 pyžamo	noun	1	435	fs	26
@@ -73507,7 +73507,7 @@ pästiar	noun	1	4	mA	6
 pästiarka	noun			f	
 pästiarov	adjective				
 pästiarsky	adjective				
-pästiarstvo	noun			s	2
+pästiarstvo	noun	1		s	2
 pästička	noun		4	f	
 pästný	adjective		34		111
 päsť	noun	1	999	f	280
@@ -74036,7 +74036,7 @@ pôvodkyňa	noun		2	f
 pôvodne	adverb		531		15328
 pôvodnosť	noun			f	23
 pôvodný	adjective	1	1553		19047
-pôľka	noun			f	10
+pôľka	noun	1		f	10
 pôžitkový	adjective		1		
 pôžitkár	noun		10	mA	9
 pôžitkárov	adjective		2		
@@ -74310,7 +74310,7 @@ radikalisticky	adverb
 radikalistický	adjective				
 radikalistov	adjective				
 radikalizmus	noun	1	7	mI	57
-radikalizovanie	noun			s	
+radikalizovanie	noun	1		s	
 radikalizovať	verb		11		40
 radikalizácia	noun	1	8	f	63
 radikál	noun		64	m	569
@@ -74453,7 +74453,7 @@ rajónne	adverb
 rajónny	adjective		2		2
 rajónový	adjective		1		9
 Rajčany	noun	1		mIP	13
-rajčiak	noun		3	mI	53
+rajčiak	noun	1	3	mI	53
 rajčiakovo	adverb				
 rajčiakový	adjective	1	1		3
 rajčina	noun	1	147	f	19
@@ -74752,8 +74752,8 @@ Ražňová	noun			f	3
 rcsl.	acronym	1			
 readmisný	adjective				
 reagencia	noun	1		f	9
-reagens	noun			mI	2
-reagent	noun		3	m	19
+reagens	noun	1		mI	2
+reagent	noun	1	3	m	19
 reagenčný	adjective				
 reagovanie	noun		7	s	18
 reagovaný	adjective				
@@ -74844,10 +74844,10 @@ rebrovka	noun		1	f	28
 rebrový	adjective	1	6		222
 rebrík	noun	1	615	mI	226
 rebríkový	adjective		6		4
-rebríček	noun		182	mI	7477
+rebríček	noun	1	182	mI	7477
 rebríčkovo	adverb				5
 rebríčkový	adjective		1		47
-rebélia	noun		110	f	136
+rebélia	noun	1	110	f	136
 receiver	noun		7	mI	16
 recentný	adjective				428
 recenzent	noun		5	mA	189
@@ -75177,9 +75177,9 @@ rehotajúci	adjective		1
 rehotať	verb		72		
 rehoľa	noun		8	f	798
 rehoľnícky	adjective				3
-rehoľník	noun		10	mA	338
+rehoľník	noun	1	10	mA	338
 rehoľníkov	adjective		1		7
-rehoľníčka	noun		3	f	174
+rehoľníčka	noun	1	3	f	174
 rehoľný	adjective		23		877
 rehtorstvo	noun			s	
 rehydratácia	noun			f	9
@@ -75858,7 +75858,7 @@ rezeda	noun			f	2
 rezedový	adjective				11
 rezerva	noun		313	f	675
 rezervačný	adjective		9		36
-rezervista	noun		1	mA	17
+rezervista	noun	1	1	mA	17
 rezervistov	adjective				2
 rezervný	adjective		92		506
 rezervovací	adjective		1		
@@ -76143,7 +76143,7 @@ riekanka	noun		41	f	43
 rieknuť	verb				
 rieslový	adjective				
 Riečan	name	1			30
-riečica	noun			f	8
+riečica	noun	1		f	8
 riečisko	noun		19	s	91
 riečište	noun		11	s	32
 riečka	noun		20	f	1226
@@ -76326,7 +76326,7 @@ rockerov	adjective		8		1
 rockovo	adverb		3		24
 rockový	adjective		453		4447
 rod	noun	1	933	mI	25811
-rodanid	noun			mI	5
+rodanid	noun	1		mI	5
 rodene	adverb				
 rodenie	noun		20	s	9
 rodenticíd	noun	1		mI	51
@@ -76390,7 +76390,7 @@ Rohaľová	noun	1			5
 rohovatenie	noun			s	
 rohovatieť	verb				
 rohovec	noun			mI	108
-rohovina	noun		5	f	38
+rohovina	noun	1	5	f	38
 rohovinový	adjective				50
 rohovitý	adjective				22
 rohovka	noun	1	55	f	103
@@ -76405,13 +76405,13 @@ rohožka	noun	1	95	f	6
 Rohožnícky	adjective				6
 Rohožník	noun			mI	123
 rohožový	adjective				
-roháč	noun		19	mA	521
+roháč	noun	1	19	mA	521
 roháčik	noun			m	32
 Roháčsky	adjective				120
 rohý	adjective				
 roj	noun	1	145	mI	406
 rojaci	adjective		1		
-rojalista	noun			mA	187
+rojalista	noun	1		mA	187
 rojalistický	adjective				44
 rojalistka	noun			f	2
 rojalistov	adjective				8
@@ -76446,7 +76446,7 @@ rokokový	adjective		1		340
 rokovací	adjective		16		146
 rokovanie	noun	1	391	s	2653
 rokovaný	adjective				
-rokovateľ	noun			m	
+rokovateľ	noun	1		m	
 rokovať	verb		212		891
 rokový	adjective		1		
 Rokoš	noun			mI	96
@@ -76474,7 +76474,7 @@ rolovanie	noun		14	s	33
 rolovaný	adjective				
 rolovať	verb		28		11
 roláda	noun		29	f	6
-rolák	noun		37	mI	2
+rolák	noun	1	37	mI	2
 Rolín	name	1			2
 romadúr	noun			m	
 romadúrov	adjective				
@@ -76524,7 +76524,7 @@ ropa	noun	1	601	f	1478
 ropný	adjective		322		768
 ropovod	noun	1	33	mI	109
 ropový	adjective		1		
-ropucha	noun		98	f	171
+ropucha	noun	1	98	f	171
 ropustný	adjective				
 ropuší	adjective		3		
 roquefort	noun		6	m	25
@@ -76625,7 +76625,7 @@ rovnoprávnosť	noun		34	f	210
 rovnoprávny	adjective		16		93
 rovnoramenný	adjective		8		97
 rovnorodo	adverb				
-rovnorodosť	noun			f	6
+rovnorodosť	noun	1		f	6
 rovnorodý	adjective		3		44
 rovnosmerný	adjective				
 rovnostranný	adjective		9		64
@@ -78964,7 +78964,7 @@ rukavičkársky	adjective
 rukavičkárstvo	noun			s	
 rukojemník	noun	1	1306	mA	404
 rukojemníkov	adjective		57		25
-rukojemníčka	noun		29	f	3
+rukojemníčka	noun	1	29	f	3
 rukola	noun	1	3		2
 rukolapne	adverb		1		
 rukolapnosť	noun			f	
@@ -79159,7 +79159,7 @@ Ružbarská	noun	1
 Ružbašanová	noun	1			
 Ružena	noun	1	1	f	61
 ružencový	adjective		2		182
-ruženec	noun		75	mI	272
+ruženec	noun	1	75	mI	272
 Ruženka	noun		44	f	42
 ruženín	noun	1		mI	10
 ružiak	noun			m	10
@@ -79230,7 +79230,7 @@ Rybák	name	1			9
 Rybánsky	adjective				8
 rybár	noun	1	286	mA	615
 rybáreň	noun	1		f	5
-rybárik	noun		5	mA	159
+rybárik	noun	1	5	mA	159
 rybáriť	verb		25		
 rybárka	noun		7	f	22
 rybárov	adjective		9		9
@@ -79277,9 +79277,9 @@ rysovňa	noun		2	f	2
 rysujúci	adjective		2		2
 rysí	adjective	1	1		9
 rytcov	adjective				7
-rytec	noun		4	mA	180
+rytec	noun	1	4	mA	180
 rytecký	adjective		1		12
-rytectvo	noun		1	s	9
+rytectvo	noun	1	1	s	9
 rytie	noun		2	s	40
 rytier	noun	1	1262	mA	2460
 rytierka	noun		4	f	7
@@ -79342,7 +79342,7 @@ rádiobiológ	noun			m
 rádiobiológia	noun			f	3
 rádiochémia	noun	1		f	12
 rádiodiagnostický	adjective				4
-rádiodiagnostika	noun			f	2
+rádiodiagnostika	noun	1		f	2
 rádioekológia	noun	1		f	5
 rádioelektrický	adjective				
 rádioelektronický	adjective				45
@@ -79558,7 +79558,7 @@ rôznofarebný	adjective		8		64
 rôznojazyčný	adjective				
 rôznolistý	adjective				25
 rôznorodo	adverb		1		11
-rôznorodosť	noun		48	f	256
+rôznorodosť	noun	1	48	f	256
 rôznorodý	adjective		69		769
 rôznosmerne	adverb				
 rôznosmernosť	noun			f	
@@ -79706,7 +79706,7 @@ Sabol	name	1			60
 Sabolová	noun	1			37
 Sabolíková	noun	1			
 sabotovací	adjective		1		
-sabotovanie	noun		7	s	8
+sabotovanie	noun	1	7	s	8
 sabotovaný	adjective		9		
 sabotovateľný	adjective		1		
 sabotovať	verb		315		39
@@ -79718,7 +79718,7 @@ sabotážnictvo	noun			s
 sabotážnik	noun		2	mA	
 sabotážnikov	adjective				
 sabotážny	adjective		2		40
-sabotér	noun		40	mA	28
+sabotér	noun	1	40	mA	28
 sabotérka	noun		3	f	
 sabotérov	adjective		7		7
 sabotérsky	adjective		3		
@@ -79924,7 +79924,7 @@ samochodný	adjective				4
 samochvála	noun		7	f	
 samoderžavie	noun	1		s	12
 samoderžavný	adjective				
-samodruhosť	noun			f	
+samodruhosť	noun	1		f	
 samodruhý	adjective	1			
 samodŕžavný	adjective				
 samofinancovanie	noun			s	5
@@ -80100,7 +80100,7 @@ samočinný	adjective		2		61
 samočistenie	noun		2	s	14
 samočistiaci	adjective		11		10
 samoľúbo	adverb		8		3
-samoľúbosť	noun		44	f	22
+samoľúbosť	noun	1	44	f	22
 samoľúby	adjective		105		5
 samoštúdium	noun		6	s	40
 Samsonová	adjective				10
@@ -80167,7 +80167,7 @@ sanovať	verb				12
 sansalvadorský	adjective				2
 sanskrit	noun	1	17	mI	197
 sanskritský	adjective		1		159
-sanskrt	noun		8	mI	42
+sanskrt	noun	1	8	mI	42
 sanskrtský	adjective		1		7
 santal	noun	1	4	mI	6
 santalový	adjective				
@@ -80320,7 +80320,7 @@ Saša	name	1	84		66
 sať	verb	1	589		363
 sbulimácia	noun			f	
 scaner	noun		8	mI	
-scanner	noun		16	mI	20
+scanner	noun	1	16	mI	20
 scediť	verb				2
 scelenie	noun		1	s	4
 scelený	adjective				4
@@ -80504,7 +80504,7 @@ schňapnúť	verb
 sciedzací	adjective				4
 sciedzanie	noun			s	2
 sciedzať	verb				
-science-fiction	noun		6	m	36
+science-fiction	noun	1	6	m	36
 scientizmus	noun	1		m	13
 scientologický	adjective		1		
 scientologička	noun	1	3	f	
@@ -80584,7 +80584,7 @@ sebaironicky	adverb
 sebaironický	adjective				2
 sebairónia	noun			f	16
 sebaisto	adverb		59		14
-sebaistota	noun		66	f	22
+sebaistota	noun	1	66	f	22
 sebaistý	adjective		148		27
 sebaklam	noun	1	44	mI	10
 sebakontrola	noun		89	f	21
@@ -80652,7 +80652,7 @@ sebauvedomujúci	adjective				2
 sebavedome	adverb		26		15
 sebavedomie	noun		295	s	190
 sebavedomo	adverb		10		12
-sebavedomosť	noun		1	f	2
+sebavedomosť	noun	1	1	f	2
 sebavedomý	adjective		171		101
 sebavyjadrenie	noun		11	s	31
 sebavzdelanie	noun			s	
@@ -80677,7 +80677,7 @@ Sebechleby	noun	1		mIP	51
 sebeckosť	noun		29	f	16
 sebecky	adverb	1	78		4
 sebecký	adjective	1	1039		76
-sebectvo	noun		49	s	24
+sebectvo	noun	1	49	s	24
 Sebedražie	noun	1		s	40
 seberovný	adjective		75		26
 sebestačne	adverb		1		2
@@ -81141,7 +81141,7 @@ sekrečný	adjective				63
 sekrécia	noun		1	f	195
 sekrét	noun		23	mI	100
 sekrétový	adjective				
-sekt	noun		33	mI	79
+sekt	noun	1	33	mI	79
 sekta	noun	1	175	f	287
 sektor	noun		756	mI	1817
 sektorovo	adverb				5
@@ -81414,7 +81414,7 @@ septet	noun		1	mI	4
 septicky	adverb				
 septický	adjective	1	24		59
 septik	noun		8	mI	4
-septikémia	noun		1	f	42
+septikémia	noun	1	1	f	42
 septima	noun			f	58
 septimový	adjective				
 septimán	noun			mA	5
@@ -81439,7 +81439,7 @@ seriózny	adjective		461		195
 serpentín	noun	1		mI	1
 serpentína	noun	1	8	f	66
 serpentínový	adjective		1		13
-serv	noun		10	mI	19
+serv	noun	1	10	mI	19
 server	noun	1	529	mI	2229
 serverovo	adverb				4
 serverový	adjective		27		121
@@ -81551,7 +81551,7 @@ Sevillčanov	adjective
 sex	noun	1	9682	mI	1207
 sexappeal	noun	1	7	mI	9
 sexbomba	noun		14	f	6
-sexepíl	noun		5	m	6
+sexepíl	noun	1	5	m	6
 sexi	adjective		1668		27
 sexizmus	noun	1	12	m	19
 sexovanie	noun		10	s	
@@ -82064,7 +82064,7 @@ skalkový	adjective				2
 skalnatý	adjective		46		1268
 skalnica	noun			f	6
 skalnička	noun			f	8
-Skalník	noun			mI	82
+Skalník	noun	1		mI	82
 skalný	adjective	1	135		2770
 skalolezcov	adjective				2
 skalolezec	noun		2	mA	
@@ -82080,14 +82080,14 @@ skalpovací	adjective		1
 skalpovanie	noun		4	s	
 skalpovať	verb		13		
 Skalský	adjective	1			7
-skalár	noun		1	mI	73
+skalár	noun	1	1	mI	73
 skalárne	adverb				2
 skalárny	adjective				214
 skamarátiť	verb		95		32
-skamenelina	noun		32	f	320
+skamenelina	noun	1	32	f	320
 skamenelý	adjective		13		31
 skamenenie	noun		2	s	5
-skamenenina	noun			f	3
+skamenenina	noun	1		f	3
 skamenený	adjective		9		52
 skamenievanie	noun			s	
 skamenieť	verb		52		58
@@ -82355,7 +82355,7 @@ sklátiť	verb		10
 skláňajúci	adjective		1		10
 skláňanie	noun		1	s	
 skláňať	verb		73		37
-skléra	noun		1	f	4
+skléra	noun	1	1	f	4
 sklíčko	noun		27	s	43
 skmásať	verb				
 skoba	noun		30	f	14
@@ -82766,7 +82766,7 @@ skultúrňovanie	noun			s
 skultúrňovaný	adjective				
 skultúrňovať	verb				
 skundoliť	verb				
-skunk	noun		93	mA	36
+skunk	noun	1	93	mA	36
 skupaňa	noun			f	
 skupenský	adjective				
 skupenstvo	noun	1	13	s	345
@@ -83123,7 +83123,7 @@ slavianofil	noun			mA	10
 slavianofilov	adjective				4
 slavianofilský	adjective				
 slavianofilstvo	noun	1		s	5
-slavista	noun			mA	167
+slavista	noun	1		mA	167
 slavisticky	adverb				
 slavistický	adjective				80
 slavistika	noun	1		f	151
@@ -83228,7 +83228,7 @@ slimáčikov	adjective		1
 slina	noun	1	244	f	129
 slinavý	adjective				
 slinenie	noun		3	s	10
-slinivka	noun		12	f	14
+slinivka	noun	1	12	f	14
 sliniť	verb		1		
 slinka	noun		2	f	
 slinkový	adjective				
@@ -83275,7 +83275,7 @@ Sliško	name	1
 Sližov	noun			mI	3
 slnce	noun	1	13	s	22
 slncový	adjective	1	1		9
-slnenie	noun			s	9
+slnenie	noun	1		s	9
 slnečne	adverb		2		2
 slnečnica	noun		57	f	176
 slnečnicovo	adverb				
@@ -83345,7 +83345,7 @@ Slotov	adjective		1		52
 slovacikum	noun	1		s	9
 slovacikálne	adverb				2
 slovacikálny	adjective				7
-slovakista	noun			mA	42
+slovakista	noun	1		mA	42
 slovakistický	adjective				13
 slovakistika	noun	1		f	53
 slovakistka	noun	1		f	10
@@ -83567,7 +83567,7 @@ slýchane	adverb		4		3
 slýchať	verb		102		28
 Smaho	name	1			
 smalt	noun		1	mI	83
-smaltovanie	noun			s	13
+smaltovanie	noun	1		s	13
 smaltovaný	adjective		1		42
 smaltovať	verb				
 smaltovo	adverb				
@@ -83623,7 +83623,7 @@ smerovosť	noun			f	19
 smerový	adjective	1	48		306
 smerujúci	adjective		176		1270
 Smetanová	noun	1			10
-smetiak	noun		33	m	3
+smetiak	noun	1	33	m	3
 smetiar	noun	1	108	mA	15
 smetiarka	noun		7	f	
 smetiarov	adjective		9		
@@ -83709,7 +83709,7 @@ Smoterová	noun	1
 smotánka	noun		99	f	42
 smotánkový	adjective				
 Smoľak	name	1			
-smrad	noun		745	mI	5
+smrad	noun	1	745	mI	5
 smradenie	noun		1	s	
 smradievať	verb				
 smradiť	verb				
@@ -83790,7 +83790,7 @@ snajper	noun	1	69	mA	5
 snajperov	adjective		2		
 Snak	name	1			3
 Snakov	noun	1		mI	24
-snaženie	noun		72	s	134
+snaženie	noun	1	72	s	134
 snažiaci	adjective		117		97
 snaživcov	adjective		2		
 snaživec	noun		9	mA	
@@ -83950,7 +83950,7 @@ sochársky	adjective		14		953
 sochárstvo	noun	1	19	s	535
 Socháň	name	1			29
 sociabilita	noun		1	f	31
-socialista	noun		86	mA	477
+socialista	noun	1	86	mA	477
 socialisticky	adverb		1		11
 socialistický	adjective	1	113		3103
 socialistka	noun		8	f	11
@@ -84012,7 +84012,7 @@ sofistikovaný	adjective		189		215
 sofistikovať	verb		4		
 sofistikácia	noun		2	f	
 sofistov	adjective				1
-sofizma	noun			f	6
+sofizma	noun	1		f	6
 sofizmus	noun	1		mI	15
 Sofoniáš	noun	1		m	20
 softbal	noun	1	26	m	96
@@ -84251,7 +84251,7 @@ sortovanie	noun			s
 sortovať	verb				
 sortový	adjective				
 sortírovať	verb				
-sosna	noun		1	f	42
+sosna	noun	1	1	f	42
 Sosnina	noun			f	5
 sosnový	adjective		2		43
 sosák	noun		1	mI	
@@ -85113,14 +85113,14 @@ spontánne	adverb		12		31
 spontánnosť	noun	1	50	f	58
 spontánny	adjective		274		579
 sponzor	noun	1	449	mA	578
-sponzoring	noun		6	mI	20
+sponzoring	noun	1	6	mI	20
 sponzorov	adjective		5		3
 sponzorovanie	noun		7	s	9
 sponzorovaný	adjective		12		56
 sponzorovať	verb		207		231
 sponzorsky	adverb				4
 sponzorský	adjective		21		158
-sponzorstvo	noun		12	s	51
+sponzorstvo	noun	1	12	s	51
 sponzorujúci	adjective		1		2
 spool	noun			mI	4
 spoplatnenie	noun			s	27
@@ -85592,7 +85592,7 @@ spuchnúť	verb		4
 spuchrený	adjective				
 spucovať	verb		5		
 spupne	adverb				
-spupnosť	noun			f	7
+spupnosť	noun	1		f	7
 spupný	adjective		22		18
 spurne	adverb		1		
 spurno	adverb				
@@ -85825,7 +85825,7 @@ srdcovka	noun		24	f	15
 srdcovkový	adjective				2
 srdcovnica	noun	1		f	12
 srdcovnicový	adjective				
-srdcovník	noun			mI	7
+srdcovník	noun	1		mI	7
 srdcovo	adverb		1		
 srdcovocievny	adjective		3		60
 srdcový	adjective		579		1243
@@ -85876,7 +85876,7 @@ srňacina	noun			f
 srňací	adjective				
 sršanie	noun			s	
 sršať	verb		66		7
-sršeň	noun		41	mA	73
+sršeň	noun	1	41	mA	73
 sršeňov	adjective				
 sršiaci	adjective		2		
 sršní	adjective		5		
@@ -86133,7 +86133,7 @@ starček	noun		116	mA	96
 starčekov	adjective		3		2
 staršina	noun		24	mA	23
 staršinov	adjective		3		3
-staršovstvo	noun			s	2
+staršovstvo	noun	1		s	2
 statarický	adjective				
 statickosť	noun			f	4
 staticky	adverb		3		55
@@ -86638,7 +86638,7 @@ stonásobne	adverb		9		4
 stonásobný	adjective				3
 stonásobok	noun		1	mI	7
 stonávať	verb				
-stonôžka	noun			f	5
+stonôžka	noun	1		f	5
 stoosem	number				2
 stoosemdesiat	number		4		3
 stoosemdesiatdeväť	number				
@@ -86889,7 +86889,7 @@ strakavý	adjective
 strakonický	adjective				14
 strakovo	adverb				2
 strakový	adjective				38
-strakoš	noun		1	mA	138
+strakoš	noun	1	1	mA	138
 strakuľa	noun			f	
 strakáč	noun		5	mA	7
 strana	noun	1	16100	f	50708
@@ -87320,7 +87320,7 @@ strnule	adverb		1
 strnulo	adverb		4		11
 strnulosť	noun		23	f	36
 strnulý	adjective		41		49
-strnádka	noun		2	f	113
+strnádka	noun	1	2	f	113
 strnúť	verb		7		
 strobilácia	noun	1		f	4
 stroboskop	noun		6	mI	
@@ -87992,7 +87992,7 @@ Sucháň	noun	1		mI	46
 Sucháňová	adjective				
 suchý	adjective	1	866		3883
 sud	noun	1	624	mI	576
-sudba	noun			f	4
+sudba	noun	1		f	4
 sudca	noun	1	2963	mA	2341
 sudcov	adjective		30		13
 sudcovať	verb				
@@ -88008,7 +88008,7 @@ Sudince	noun	1		fP	10
 sudisko	noun			s	
 sudička	noun		26	fmA	37
 sudkynin	adjective				
-sudkyňa	noun		217	f	240
+sudkyňa	noun	1	217	f	240
 sudlica	noun	1	1	f	
 Sudoměřický	adjective				2
 sudovina	noun			f	
@@ -88023,7 +88023,7 @@ suezský	adjective		13		203
 sufentanil	noun			mI	3
 suficientnosť	noun			f	
 sufita	noun			f	
-sufix	noun			mI	33
+sufix	noun	1		mI	33
 sufixový	adjective				6
 sufixálny	adjective				2
 sufizancia	noun			f	
@@ -88041,7 +88041,7 @@ sugestivita	noun			f
 sugestívne	adverb		1		2
 sugestívnosť	noun			f	8
 sugestívny	adjective	1	21		81
-suicídium	noun			s	2
+suicídium	noun	1		s	2
 suita	noun		40	f	446
 suitový	adjective				10
 sujet	noun	1		mI	32
@@ -88106,7 +88106,7 @@ sumbisívny	adjective
 sumec	noun	1	89	mA	49
 sumička	noun		17	f	
 sumka	noun		2	f	
-summit	noun		126	mI	260
+summit	noun	1	126	mI	260
 sumovateľný	adjective				2
 sumovať	verb				4
 sumptuózny	adjective				
@@ -88275,7 +88275,7 @@ suspenzor	noun		46	mI	7
 suspenzácia	noun		9	f	
 suspenzívny	adjective				5
 sustentovať	verb				
-sutana	noun		15	f	11
+sutana	noun	1	15	f	11
 suterén	noun	1	773	mI	246
 suterénny	adjective		6		17
 suterénový	adjective				
@@ -88663,7 +88663,7 @@ svrbľavý	adjective
 svrkať	verb				
 svrkot	noun			m	
 svrček	noun	1	32	mA	72
-svrčina	noun		7	f	15
+svrčina	noun	1	7	f	15
 svrčinka	noun			f	
 Svrčinovec	noun	1	1	mI	124
 svrčinový	adjective				
@@ -88961,7 +88961,7 @@ syrársky	adjective				3
 syrárstvo	noun			s	
 syrček	noun		5	mI	6
 Sysel	name	1	6		11
-syseľ	noun		16	mA	88
+syseľ	noun	1	16	mA	88
 syslí	adjective				2
 systaltický	adjective				
 systematickosť	noun			f	15
@@ -89150,7 +89150,7 @@ súcitenie	noun		2	s
 súcitiaci	adjective		1		
 súcitiť	verb		202		10
 súcitne	adverb		2		4
-súcitnosť	noun		1	f	4
+súcitnosť	noun	1	1	f	4
 súcitný	adjective		161		26
 súcno	noun	1	1	s	248
 súcnosť	noun			f	11
@@ -89188,7 +89188,7 @@ súdružstvo	noun			s
 súdržne	adverb				
 súdržnosť	noun		68	f	179
 súdržný	adjective		21		34
-súfizmus	noun		1	m	11
+súfizmus	noun	1	1	m	11
 súhlas	noun		435	mI	1134
 súhlasiaci	adjective		1		2
 súhlasiť	verb		9914		3795
@@ -89296,7 +89296,7 @@ súrodencov	adjective		12		84
 súrodenec	noun	1	392	mA	1220
 súrodenecký	adjective		44		44
 súrodo	adverb				2
-súrodosť	noun		1	f	
+súrodosť	noun	1	1	f	
 súrodý	adjective		2		4
 súručenstvo	noun			s	5
 súsek	noun	1		m	
@@ -89379,10 +89379,10 @@ súčasný	adjective	1	1165		12668
 súčastne	adverb		20		
 súčastnosť	noun		86	f	4
 súčasť	noun	1	4701	f	26342
-súčet	noun		81	mI	1111
+súčet	noun	1	81	mI	1111
 súčiastka	noun	1	321	f	877
 súčiastkový	adjective				4
-súčin	noun		1	mI	428
+súčin	noun	1	1	mI	428
 súčiniteľ	noun		4	mI	180
 súčinne	adverb				
 súčinnosť	noun		7	f	213
@@ -89988,7 +89988,7 @@ taxovať	verb		3
 taxový	adjective				
 taxácia	noun			f	3
 taxátor	noun			mA	6
-taxík	noun		1915	mI	133
+taxík	noun	1	1915	mI	133
 taxón	noun	1		mI	4446
 Taylorová	noun		134	f	123
 taľafatka	noun		13	f	3
@@ -90123,7 +90123,7 @@ tekvička	noun		58	f	5
 telavivský	adjective				2
 Telavivčan	noun			m	
 Telavivčanov	adjective				
-telefax	noun		3	mI	7
+telefax	noun	1	3	mI	7
 telefaxový	adjective				
 telefikácia	noun			f	
 telefonicky	adverb		58		100
@@ -90226,7 +90226,7 @@ telolecitálny	adjective	1
 teloveda	noun	1			3
 telovedný	adjective	1			
 telový	adjective		103		191
-telovýchova	noun			f	63
+telovýchova	noun	1		f	63
 telovýchovný	adjective				361
 telquel	noun			mI	
 telurický	adjective		2		
@@ -90474,7 +90474,7 @@ terasovať	verb
 terasovito	adverb				14
 terasovitý	adjective		6		80
 terasový	adjective		8		49
-teratogenita	noun			f	6
+teratogenita	noun	1		f	6
 teratogénny	adjective				13
 teraz	adverb	1	123820		4271
 terazzový	adjective				
@@ -90633,7 +90633,7 @@ tesnostný	adjective				2
 tesnosť	noun		2	f	40
 tesný	adjective		771		1162
 test	noun		6422	mI	3339
-testament	noun		132	mI	375
+testament	noun	1	132	mI	375
 testamentový	adjective				
 testamentárne	adverb				7
 testamentárny	adjective				
@@ -90715,7 +90715,7 @@ Texaco	noun	1	6	s	14
 Texas	name	1	403		1248
 texaskovina	noun			f	
 texaskový	adjective				
-texasky	noun		4	fP	11
+texasky	noun	1	4	fP	11
 texaský	adjective		147		277
 text	noun	1	917	mI	13587
 textika	noun			f	
@@ -90739,7 +90739,7 @@ textový	adjective		58		897
 texturovaný	adjective				2
 textácia	noun			f	2
 textár	noun	1	29	mA	1246
-textárka	noun		7	f	173
+textárka	noun	1	7	f	173
 textárov	adjective		5		43
 textársky	adjective				36
 textília	noun		8	f	196
@@ -90767,7 +90767,7 @@ teľacina	noun	1	31	f	4
 teľacinka	noun		1	f	
 teľací	adjective		109		44
 teľatník	noun			mI	2
-teľnosť	noun			f	7
+teľnosť	noun	1		f	7
 teľný	adjective		1		2
 tešedíkovský	adjective				2
 tešenie	noun		1	s	
@@ -90920,7 +90920,7 @@ Tinka	noun		1	f	11
 tinkcia	noun			f	
 tinktúra	noun		20	f	43
 tiodiglykol	noun			mI	3
-tiokyanát	noun			mI	10
+tiokyanát	noun	1		mI	10
 tiomočovina	noun			f	8
 tionylchlorid	noun			mI	6
 tioéter	noun			mI	4
@@ -91477,7 +91477,7 @@ totalitarizmus	noun	1	1	mI	39
 totalitne	adverb				
 totalitnosť	noun			f	
 totalitný	adjective		15		366
-totalizmus	noun		1	mI	2
+totalizmus	noun	1	1	mI	2
 totalizujúci	adjective				2
 totalizátor	noun			mI	
 totem	noun	1	80	mI	62
@@ -91789,9 +91789,9 @@ transportér	noun		189	mI	317
 transportérový	adjective				
 transpozičný	adjective				27
 transpozícia	noun		3	f	122
-transsexualita	noun			f	3
+transsexualita	noun	1		f	3
 transsexualizmus	noun	1		m	6
-transsexuál	noun		16	m	8
+transsexuál	noun	1	16	m	8
 transsexuálov	adjective		2		5
 transsibírsky	adjective		19		77
 transsonický	adjective				
@@ -91800,8 +91800,8 @@ transudácia	noun			f
 transuránový	adjective				2
 transverzála	noun			f	11
 transverzálny	adjective		1		17
-transvestita	noun		39	m	6
-transvestitizmus	noun			m	
+transvestita	noun	1	39	m	6
+transvestitizmus	noun	1		m	
 transvestitka	noun			f	
 transvestitov	adjective		9		5
 transvestizmus	noun	1		m	24
@@ -91881,7 +91881,7 @@ traumatogénny	adjective
 traumatologický	adjective		5		12
 traumatologička	noun			f	
 traumatológ	noun		5	m	5
-traumatológia	noun		2	f	4
+traumatológia	noun	1	2	f	4
 traumatológov	adjective				
 Travela	noun		43	f	193
 travertín	noun	1	2	mI	200
@@ -92220,7 +92220,7 @@ trifurkácia	noun			f
 triga	noun		2	f	3
 trigeminus	noun	1			5
 trigeminálny	adjective	1			
-triglycerid	noun		8	mI	22
+triglycerid	noun	1	8	mI	22
 trigonometria	noun	1	31	f	56
 trigonometricky	adverb				2
 trigonometrický	adjective	1	1		56
@@ -92245,7 +92245,7 @@ trilión	noun		62	mI	28
 trilióntina	noun		2	f	
 trilkovanie	noun		3	s	
 trilkovať	verb		3		
-trilobit	noun		2	mA	147
+trilobit	noun	1	2	mA	147
 trilogický	adjective				
 trilok	noun		3	mI	43
 trilógia	noun	1	25	f	834
@@ -92547,7 +92547,7 @@ Trnavá	noun			f	155
 Trnavčan	noun	1		mA	23
 Trnavčanka	noun			f	
 Trnavčanov	adjective				2
-trnka	noun		1	f	264
+trnka	noun	1	1	f	264
 Trnkov	noun	1		mI	13
 trnkový	adjective		6		75
 Trnovec	noun			mI	200
@@ -92793,7 +92793,7 @@ tropizmus	noun			m	3
 troposféra	noun	1	9	f	64
 troska	noun		1237	f	686
 troskový	adjective				470
-trova	noun		15	f	42
+trova	noun	1	15	f	42
 troviť	verb				
 trovný	adjective				
 troyský	adjective				11
@@ -92916,7 +92916,7 @@ Trumpov	adjective		1		8
 Trunko	name	1			
 trup	noun	1	388	mI	2128
 trupový	adjective				7
-trus	noun		108	mI	156
+trus	noun	1	108	mI	156
 trusirérka	noun			f	
 Truska	noun		1	f	9
 truskavý	adjective				
@@ -93177,7 +93177,7 @@ tunelárka	noun			f
 tunelárov	adjective				2
 tunelársky	adjective		1		2
 tuner	noun	1	8	mI	24
-tungsten	noun		1	mI	10
+tungsten	noun	1	1	mI	10
 tunguzský	adjective				2
 tuniak	noun	1	239	mA	63
 tuniačí	adjective				
@@ -93333,7 +93333,7 @@ Tučková	noun	1
 tučnastý	adjective				
 tučne	adverb		20		83
 tučniak	noun	1	646	mA	229
-tučnica	noun			f	31
+tučnica	noun	1		f	31
 tučnieť	verb		16		
 tučnosť	noun			f	4
 tučnota	noun	1	29	f	18
@@ -93395,7 +93395,7 @@ tvarôžok	noun			m
 tvarý	adjective				
 tviliský	adjective				
 tvoj	pronoun	1	36419		149
-tvor	noun		751	m	367
+tvor	noun	1	751	m	367
 tvorba	noun	1	381	f	12704
 tvorca	noun	1	277	mA	2425
 tvorcov	adjective		3		13
@@ -93694,7 +93694,7 @@ týkanie	noun			s	21
 týkať	verb		3919		2791
 týkať sa	verb	1			
 tým	conjunction		73707		16913
-týmus	noun		3	mI	49
+týmus	noun	1	3	mI	49
 týmusový	adjective				
 týnsky	adjective				17
 týrací	adjective		2		
@@ -93728,7 +93728,7 @@ tŕnie	noun	1	28	s	154
 tŕnik	noun			m	
 tŕnistý	adjective		18		36
 tŕnitý	adjective		8		40
-tŕnovník	noun			mI	2
+tŕnovník	noun	1		mI	2
 tŕpka	noun			f	
 tŕpkový	adjective				
 tŕpnutie	noun		5	s	2
@@ -93843,7 +93843,7 @@ uchmatnúť	verb		178		7
 uchnúť	verb				
 ucho	noun	1	3388	s	1383
 uchodiť	verb		4		
-ucholak	noun		2	mA	37
+ucholak	noun	1	2	mA	37
 uchopenie	noun		44	s	114
 uchopiteľnosť	noun	1		f	3
 uchopiteľný	adjective				14
@@ -94133,11 +94133,11 @@ uhoľne	adverb
 uhoľný	adjective		92		454
 uhrabať	verb				
 uhrabávať	verb				
-uhradenie	noun		1	s	15
+uhradenie	noun	1	1	s	15
 uhradený	adjective		2		2
 uhradiť	verb		82		142
 uhradzovací	adjective				
-uhradzovanie	noun			s	
+uhradzovanie	noun	1		s	
 uhradzovaný	adjective				
 uhradzovať	verb				
 uhranie	noun			s	
@@ -94158,7 +94158,7 @@ Uhrovský	adjective				44
 uhryznutie	noun		215	s	90
 uhryznutý	adjective		1		5
 uhryznúť	verb		530		59
-uhrádzanie	noun			s	
+uhrádzanie	noun	1		s	
 uhrádzaný	adjective				2
 uhrádzať	verb		8		25
 uhrýzať	verb				
@@ -94187,7 +94187,7 @@ uhľobarónov	adjective
 uhľohydrát	noun	1	27	mI	9
 uhľokresba	noun			f	
 uhľovo	adverb		1		
-uhľovodan	noun		1	mI	
+uhľovodan	noun	1	1	mI	
 uhľovodík	noun	1	18	mI	532
 uhľovodíkový	adjective		6		105
 uhľový	adjective	1	5		20
@@ -94704,7 +94704,7 @@ unavovať	verb		395		14
 unavujúci	adjective		35		2
 unavujúco	adverb		1		
 unca	noun	1	100	f	53
-uncia	noun			f	17
+uncia	noun	1		f	17
 unciový	adjective				
 uncitral	noun			mI	2
 uncový	adjective	1	1		
@@ -95097,7 +95097,7 @@ urazenosť	noun		2	f
 urazený	adjective		11		8
 uraziť	verb		1385		208
 Urban	noun	1	27	m	999
-urbanista	noun			mA	170
+urbanista	noun	1		mA	170
 urbanisticky	adverb				20
 urbanistický	adjective		7		456
 urbanistika	noun	1		f	18
@@ -95145,7 +95145,7 @@ uriekavý	adjective
 urieknutie	noun	1	8	s	
 urieknutý	adjective		2		2
 urieknuť	verb		27		
-urinácia	noun			f	
+urinácia	noun	1		f	
 urna	noun		168	f	148
 urnový	adjective		2		41
 urobene	adverb		6		
@@ -95974,7 +95974,7 @@ uzemnený	adjective		2		7
 uzemniť	verb		127		47
 uzemňovací	adjective		10		11
 uzemňovanie	noun			s	
-uzemňovač	noun		2	mI	2
+uzemňovač	noun	1	2	mI	2
 uzemňovať	verb		3		
 uzemňujúci	adjective		1		
 uzhodnúť	verb				
@@ -96344,7 +96344,7 @@ vak	noun		458	mI	323
 vakancia	noun			f	2
 vakantný	adjective	1			14
 vakcinačný	adjective		1		9
-vakcinovanie	noun			s	
+vakcinovanie	noun	1		s	
 vakcinovaný	adjective				3
 vakcinovať	verb		1		3
 vakcinácia	noun	1	4	f	88
@@ -96471,7 +96471,7 @@ valvulárny	adjective	1
 valér	noun			mI	182
 Valéria	noun	1	17	f	67
 valónsky	adjective				403
-valún	noun			mI	4
+valún	noun	1		mI	4
 valček	noun		37	mI	89
 valčekovitý	adjective				
 valčekový	adjective				23
@@ -96487,7 +96487,7 @@ vandalizmus	noun	1	79	mI	61
 vandalov	adjective		11		4
 vandalsky	adverb				
 vandalský	adjective		6		33
-vandalstvo	noun		1	s	2
+vandalstvo	noun	1	1	s	2
 vander	noun		2	m	28
 vandeľ	noun			m	
 Vandlík	name	1			10
@@ -96559,7 +96559,7 @@ variabilne	adverb				12
 variabilnosť	noun			f	8
 variabilný	adjective		9		385
 variaci	adjective		9		6
-variancia	noun			f	6
+variancia	noun	1		f	6
 variant	noun		94	fmI	4657
 variantne	adverb				
 variantnosť	noun			f	69
@@ -96867,7 +96867,7 @@ velikánsky	adjective		26		6
 velikáš	noun		1	mA	
 velikášov	adjective				
 velikášsky	adjective		2		4
-velikášstvo	noun		5	s	4
+velikášstvo	noun	1	5	s	4
 veliký	adjective		32		94
 veliteľ	noun	1	4598	mA	10600
 veliteľka	noun		279	f	67
@@ -97173,7 +97173,7 @@ vetristý	adjective
 vetriť	verb		10		6
 vetrolam	noun		2	mI	25
 vetrolamový	adjective				
-vetromer	noun		2	mI	2
+vetromer	noun	1	2	mI	2
 vetromilný	adjective				
 vetroplach	noun	1	7	mA	14
 vetroplachov	adjective				
@@ -97200,7 +97200,7 @@ vetviť	verb		12		216
 vetvovitý	adjective				2
 vetvový	adjective		1		3
 veverica	noun	1	54	f	147
-veverička	noun		469	f	63
+veverička	noun	1	469	f	63
 veveričí	adjective		18		
 Veverka	name	1	4		31
 Veverková	noun	1			
@@ -97524,7 +97524,7 @@ viachodnotový	adjective				9
 viacizbový	adjective				
 viacjadrový	adjective		1		6
 viacjazyčne	adverb				
-viacjazyčnosť	noun			f	6
+viacjazyčnosť	noun	1		f	6
 viacjazyčný	adjective		2		67
 viackanálový	adjective				29
 viackolesový	adjective				2
@@ -97587,11 +97587,11 @@ viacvretenový	adjective				3
 viacvrstvovo	adverb				
 viacvrstvovosť	noun			f	2
 viacvrstvový	adjective		4		90
-viacvýznamovosť	noun		1	f	4
+viacvýznamovosť	noun	1	1	f	4
 viacvýznamový	adjective		3		3
 viaczdrojový	adjective				5
 viaczložkový	adjective				20
-viacznačnosť	noun		1	f	6
+viacznačnosť	noun	1	1	f	6
 viacznačný	adjective				23
 viaczväzkový	adjective				22
 viacúrovňový	adjective				39
@@ -97695,7 +97695,7 @@ videoprehrávač	noun	1	5	mI	4
 videopremietačka	noun	1		f	2
 videoprogram	noun			mI	10
 videoprojekcia	noun		1	f	6
-videoprojektor	noun			mI	10
+videoprojektor	noun	1		mI	10
 videopáska	noun		67	f	5
 videorekordér	noun	1	22	mI	39
 videosekvencia	noun		2	f	17
@@ -97713,12 +97713,12 @@ videoštúdium	noun			s	3
 vidiaci	adjective		29		5
 vidiecky	adjective	1	215		2778
 vidiek	noun	1	485	mI	1039
-vidiečan	noun		48	mA	70
+vidiečan	noun	1	48	mA	70
 vidiečanka	noun		10	f	10
 vidiečanov	adjective		7		10
 vidieť	verb	1	134567		8863
 vidimácia	noun			f	3
-vidina	noun		267	f	124
+vidina	noun	1	267	f	124
 Vidiná	noun	1		f	30
 viditeľne	adverb		66		124
 viditeľnosť	noun		98	f	324
@@ -97762,10 +97762,10 @@ vierohodne	adverb		29		24
 vierohodnosť	noun	1	43	f	61
 vierohodný	adjective		121		94
 vierolomne	adverb				
-vierolomnosť	noun		1	f	6
+vierolomnosť	noun	1	1	f	6
 vierolomný	adjective		1		5
 Vieroslava	noun	1		f	6
-vierouka	noun			f	100
+vierouka	noun	1		f	100
 vieroučne	adverb				2
 vieroučný	adjective				87
 vierovyznanie	noun		38	s	522
@@ -97883,7 +97883,7 @@ Vinodol	noun	1		mI	14
 vinohrad	noun	1	55	mI	619
 vinohradnícky	adjective				563
 vinohradníctvo	noun	1		s	214
-vinohradník	noun			mA	73
+vinohradník	noun	1		mA	73
 vinohradníkov	adjective				3
 vinohradníčka	noun			f	
 vinohradný	adjective		1		
@@ -97953,7 +97953,7 @@ virtualizačný	adjective				2
 virtualizovaný	adjective				10
 virtualizovať	verb		1		
 virtualizácia	noun	1		f	34
-virtuozita	noun		2	f	59
+virtuozita	noun	1	2	f	59
 virtuálizácia	noun			f	
 virtuálne	adverb		2		4
 virtuálnosť	noun			f	
@@ -98303,7 +98303,7 @@ vlnovkový	adjective				2
 vlnovo	adverb		1		
 vlnovod	noun			mI	20
 vlnový	adjective		93		922
-vlnočet	noun			mI	4
+vlnočet	noun	1		mI	4
 vlnár	noun			mA	
 vlnárka	noun			f	
 vlnárov	adjective				
@@ -98546,7 +98546,7 @@ vodiť	verb	1	393		121
 vodka	noun	1	826	f	115
 vodkový	adjective				
 vodkyňa	noun		68	f	53
-vodnateľnosť	noun		1	f	4
+vodnateľnosť	noun	1	1	f	4
 vodnateľný	adjective				
 vodnatieľka	noun	1		f	13
 vodnato	adverb		1		
@@ -98556,7 +98556,7 @@ vodniak	noun			mA	20
 vodnopólový	adjective		1		970
 vodnosť	noun			f	14
 vodná pištoľ	noun	1			
-vodnár	noun		23	m	252
+vodnár	noun	1	23	m	252
 vodnárov	adjective		1		
 vodné	noun		9	s	63
 vodnícky	adjective				5
@@ -98874,7 +98874,7 @@ vozebné	noun			s	4
 vozenie	noun		6	s	3
 vozeň	noun	1	192	mI	2485
 voziaci	adjective		4		
-voziar	noun			mA	2
+voziar	noun	1		mA	2
 vozidielko	noun			s	3
 vozidlo	noun	1	1588	s	9245
 vozidlový	adjective		4		99
@@ -98999,7 +98999,7 @@ vplíženie	noun		1	s
 vplížiť	verb		88		
 vplúžiť	verb				
 vplývajúci	adjective				15
-vplývanie	noun			s	
+vplývanie	noun	1		s	
 vplývať	verb		141		355
 vpochodovanie	noun		1	s	
 vpochodovať	verb		42		35
@@ -99619,9 +99619,9 @@ vulgárny	adjective	1	200		145
 Vulgáta	noun	1		f	19
 vulkanicky	adverb				24
 vulkanický	adjective	1	37		1661
-vulkanit	noun			m	2
+vulkanit	noun	1		m	2
 vulkanizačný	adjective				3
-vulkanizmus	noun			m	121
+vulkanizmus	noun	1		m	121
 vulkanizovanie	noun			s	
 vulkanizovaný	adjective		4		2
 vulkanizovať	verb				
@@ -100529,7 +100529,7 @@ vyjednávajúci	adjective		1
 vyjednávanie	noun	1	405	s	325
 vyjednávateľ	noun		1	mA	
 vyjednávateľný	adjective		1		
-vyjednávač	noun		185	mA	93
+vyjednávač	noun	1	185	mA	93
 vyjednávačka	noun		4	f	5
 vyjednávačov	adjective		12		1
 vyjednávať	verb		769		301
@@ -101765,7 +101765,7 @@ vypínanie	noun		19	s	32
 vypínaný	adjective				3
 vypínateľný	adjective				13
 vypínavo	adverb				
-vypínavosť	noun			f	
+vypínavosť	noun	1		f	
 vypínavý	adjective				
 vypínač	noun		343	mI	55
 vypínať	verb	1	359		316
@@ -102253,11 +102253,11 @@ vysrať	verb		844	N	2
 vystarený	adjective				
 vystatovanie	noun		8	s	
 vystatovačne	adjective				
-vystatovačnosť	noun		1	f	
+vystatovačnosť	noun	1	1	f	
 vystatovačný	adjective		1		4
 vystatovať	verb		16		7
 vystavane	adverb		1		
-vystavanie	noun		2	s	11
+vystavanie	noun	1	2	s	11
 vystavaný	adjective		1		107
 vystavať	verb	1	42		752
 vystavene	adverb		5		
@@ -102496,7 +102496,7 @@ vysýpať	verb		6
 vysŕknuť	verb				
 vysťahovací	adjective		1		
 vysťahovalcov	adjective		1		5
-vysťahovalec	noun		4	mA	98
+vysťahovalec	noun	1	4	mA	98
 vysťahovalecký	adjective		1		34
 vysťahovalectvo	noun	1	3	s	131
 vysťahovanie	noun		75	s	130
@@ -102821,7 +102821,7 @@ vyvlastnenie	noun	1	10	s	51
 vyvlastnený	adjective		1		5
 vyvlastniť	verb		13		60
 vyvlastňovací	adjective				
-vyvlastňovanie	noun		5	s	17
+vyvlastňovanie	noun	1	5	s	17
 vyvlastňovaný	adjective				
 vyvlastňovať	verb				9
 vyvliecť	verb		184		17
@@ -103493,7 +103493,7 @@ vzbudzovanie	noun		1	s	6
 vzbudzovaný	adjective				
 vzbudzovať	verb		191		298
 vzbudzujúci	adjective		16		19
-vzbura	noun		577	f	1426
+vzbura	noun	1	577	f	1426
 vzbúdzať	verb		1		
 vzbúrencov	adjective		1		11
 vzbúrenec	noun		79	mA	370
@@ -103560,7 +103560,7 @@ vzduchotesnosť	noun		1	f	6
 vzduchotesný	adjective		47		15
 vzduchotlakový	adjective				6
 vzduchovať	verb				
-vzduchovka	noun		25	f	19
+vzduchovka	noun	1	25	f	19
 vzduchovkový	adjective				
 vzduchovo	adverb				
 vzduchovod	noun			mI	4
@@ -103594,7 +103594,7 @@ vzhliadať	verb		149		18
 vzhliadnutie	noun		6	s	3
 vzhliadnutý	adjective				
 vzhliadnuť	verb		62		17
-vzhľad	noun		3048	mI	7286
+vzhľad	noun	1	3048	mI	7286
 vzhľadne	adverb				
 vzhľadný	adjective				6
 vzhľadovo	adverb		1		64
@@ -103872,7 +103872,7 @@ vákuum	noun	1	117	s	436
 Válková	noun	1			6
 válov	noun	1	14	mI	4
 válovček	noun			m	
-válí	noun			m	4
+válí	noun	1		m	4
 válíov	adjective				
 vám	pronoun		85676		699
 vánok	noun	1	250	mI	63
@@ -103966,7 +103966,7 @@ väzeňov	adjective
 väzieť	verb		26		13
 väzivo	noun	1	13	s	185
 väzivový	adjective	1	2		125
-väzkosť	noun			f	
+väzkosť	noun	1		f	
 väzký	adjective				2
 väzne	adverb				
 väznenie	noun		18	s	184
@@ -104313,7 +104313,7 @@ výlučný	adjective		14		162
 výlučok	noun		23	mI	59
 výmaz	noun		7	mI	19
 výmena	noun	1	1612	f	3235
-výmenník	noun		8	mI	93
+výmenník	noun	1	8	mI	93
 výmenníkový	adjective		3		4
 výmenný	adjective		154		464
 výmenok	noun			mI	
@@ -104363,7 +104363,7 @@ výparný	adjective				10
 výpek	noun		19	mI	
 výpestok	noun			mI	
 výpis	noun		319	mI	183
-výpisok	noun			mI	29
+výpisok	noun	1		mI	29
 výpisový	adjective				
 výplach	noun		82	mI	27
 výplachový	adjective				
@@ -104409,7 +104409,7 @@ výpražok	noun			mI
 výpredaj	noun		295	mI	18
 výpredajový	adjective		9		
 výpust	noun		6	mI	44
-výpustka	noun			f	11
+výpustka	noun	1		f	11
 výpustný	adjective		1		31
 výpustok	noun	1		m	15
 výpusť	noun		2	f	4
@@ -104486,7 +104486,7 @@ výskum	noun	1	2289	mI	9477
 výskumne	adverb				19
 výskumnícky	adjective		1		2
 výskumníctvo	noun			s	
-výskumník	noun		149	mA	647
+výskumník	noun	1	149	mA	647
 výskumníkov	adjective		1		3
 výskumníčka	noun		30	f	40
 výskumný	adjective		475		2464
@@ -104500,7 +104500,7 @@ výslednica	noun			f	59
 výslednicový	adjective				
 výsledný	adjective		50		1213
 výsledok	noun	1	4272	mI	13776
-výsledovka	noun			f	3
+výsledovka	noun	1		f	3
 výslnie	noun		69	s	89
 výslnný	adjective				36
 výslovne	adverb		102		431
@@ -104744,7 +104744,7 @@ včelička	noun		56	f	3
 včelnica	noun		1	f	
 včelník	noun			mI	8
 včelstvo	noun			s	61
-včelár	noun		14	mA	177
+včelár	noun	1	14	mA	177
 Včeláre	noun		2	mIP	72
 včelárenie	noun			s	8
 včelárik	noun			mA	34
@@ -104952,7 +104952,7 @@ walkman	noun		43	mI	23
 Walter	noun		3910	mA	1840
 Walterov	adjective		84		10
 waltrovka	noun	1		f	2
-waltz	noun		24	mI	93
+waltz	noun	1	24	mI	93
 warfarín	noun		12	mI	39
 Warhol	noun		33	mA	207
 Warholov	adjective		3		22
@@ -106619,7 +106619,7 @@ zamilovávanie	noun		3	s
 zamilovávať	verb		38		
 zamixovať	verb				
 Zamiška	name	1			5
-zamknutie	noun		16	s	6
+zamknutie	noun	1	16	s	6
 zamknutý	adjective	1	179		19
 zamknúť	verb	1	3049		88
 zamkýnať	verb		17		
@@ -106702,7 +106702,7 @@ zamurovať	verb		52		120
 Zamutov	noun			mI	5
 Zamutovský	adjective				2
 zamykací	adjective		2		
-zamykanie	noun		22	s	42
+zamykanie	noun	1	22	s	42
 zamykať	verb		266		14
 zamyslene	adverb		8		3
 zamyslenie	noun		20	s	53
@@ -107183,7 +107183,7 @@ zaprášenie	noun			s	4
 zaprášený	adjective		87		18
 zaprášiť	verb		44		8
 zaprážať	verb				
-zapríčinenie	noun		2	s	2
+zapríčinenie	noun	1	2	s	2
 zapríčinený	adjective	1	7		113
 zapríčiniť	verb		413		886
 zapríčiňovanie	noun	1		s	5
@@ -108873,7 +108873,7 @@ zbohom	interjection	1	4215		138
 zboj	noun	1	1	mI	145
 Zbojné	noun	1		s	60
 zbojnícky	adjective				469
-zbojníctvo	noun			s	11
+zbojníctvo	noun	1		s	11
 zbojník	noun	1	58	mA	349
 zbojníkov	adjective		1		4
 zbojníček	noun			m	
@@ -108988,7 +108988,7 @@ zbásnený	adjective
 zbíjací	adjective				
 zbíjanie	noun		2	s	3
 zbíjaný	adjective				
-zbíjačka	noun		32	f	6
+zbíjačka	noun	1	32	f	6
 zbíjať	verb	1	7		16
 Zbín	name	1			
 Zbínová	noun	1			
@@ -109148,7 +109148,7 @@ zdokonaliť	verb		141		345
 zdokonalovanie	noun		3	s	3
 zdokonalovaný	adjective				
 zdokonaľovací	adjective				12
-zdokonaľovanie	noun		15	s	157
+zdokonaľovanie	noun	1	15	s	157
 zdokonaľovaný	adjective		1		3
 zdokonaľovať	verb		76		277
 zdokonaľujúci	adjective		1		4
@@ -109333,7 +109333,7 @@ zdvihový	adjective				304
 zdvihák	noun	1	71	mI	47
 zdvižný	adjective		3		2
 zdvojene	adverb				2
-zdvojenie	noun		1	s	58
+zdvojenie	noun	1	1	s	58
 zdvojenosť	noun		1	f	
 zdvojený	adjective		8		234
 zdvojiť	verb		56		10
@@ -109488,13 +109488,13 @@ zemanov	adjective				36
 Zemanovič	name	1			
 zemanský	adjective				18
 Zemančík	name	1			
-zemediel	noun			mI	
+zemediel	noun	1		mI	
 zemeguľa	noun	1	92	f	113
 zememerač	noun		3	mA	60
 zememeračka	noun			f	
 zememeračov	adjective				3
 zememeračský	adjective		1		48
-zememeračstvo	noun			s	14
+zememeračstvo	noun	1		s	14
 zemepis	noun	1	47	mI	248
 zemepiscov	adjective				
 zemepisec	noun	1	1	mA	25
@@ -109532,7 +109532,7 @@ Zemko	name	1			27
 Zemková	noun	1			13
 zemne	adverb				
 zemniaci	adjective		3		8
-zemnič	noun			mI	2
+zemnič	noun	1		mI	2
 zemniť	verb		6		
 zemník	noun			mI	2
 zemný	adjective		43		930
@@ -109940,7 +109940,7 @@ zimúvať	verb
 Zina	noun	1	7	f	19
 zinakade	adverb				
 zindustrializovať	verb				
-zinjantrop	noun			m	2
+zinjantrop	noun	1		m	2
 zinjantropov	adjective				
 zinkasovanie	noun			s	
 zinkasovaný	adjective				
@@ -110000,7 +110000,7 @@ zistiteľný	adjective		8		43
 zistiť	verb		23724		6456
 zisťovací	adjective		3		14
 zisťovane	adverb				
-zisťovanie	noun		47	s	271
+zisťovanie	noun	1	47	s	271
 zisťovaný	adjective				4
 zisťovať	verb		556		640
 zisťujúci	adjective				5
@@ -110158,7 +110158,7 @@ zlatníčka	noun			f
 zlatnúť	verb				26
 zlato	noun	1	12716	s	3054
 zlatobažný	adjective				
-zlatobyľ	noun			f	40
+zlatobyľ	noun	1		f	40
 zlatofialový	adjective				
 zlatohlavý	adjective		1		90
 zlatohlávka	noun			f	
@@ -110191,7 +110191,7 @@ zlatovský	adjective				9
 zlatozelený	adjective				
 zlatoústy	adjective		1		139
 zlatočervený	adjective				
-zlatoň	noun			m	10
+zlatoň	noun	1		m	10
 zlatoňov	adjective				3
 zlatožltý	adjective		1		96
 zlatulinký	adjective				
@@ -111267,7 +111267,7 @@ znárodnený	adjective		2		74
 znárodnieť	verb				
 znárodniť	verb		14		231
 znárodňovací	adjective				8
-znárodňovanie	noun		4	s	38
+znárodňovanie	noun	1	4	s	38
 znárodňovaný	adjective				
 znárodňovať	verb		2		4
 znáročnenie	noun			s	
@@ -111494,7 +111494,7 @@ zoogénny	adjective
 zoologicky	adverb				12
 zoologický	adjective		44		593
 zoologička	noun		5	f	15
-zoológ	noun		7	mA	479
+zoológ	noun	1	7	mA	479
 zoológia	noun	1	11	f	559
 zoom	noun	1	117		129
 zoonymum	noun	1			
@@ -112156,7 +112156,7 @@ zrelosť	noun	1	19	f	193
 zrelý	adjective	1	290		338
 zrenica	noun	1	47	f	78
 zrenie	noun		3	s	63
-zrenička	noun		143	f	45
+zrenička	noun	1	143	f	45
 zrenovovanie	noun		1	s	
 zrenovovaný	adjective		3		34
 zrenovovať	verb		48		81
@@ -112636,7 +112636,7 @@ zverinec	noun		20	mI	40
 zverinový	adjective		1		
 zveriť	verb		1008		1095
 zvernica	noun	1		f	70
-zverník	noun			mI	14
+zverník	noun	1		mI	14
 zverokruh	noun	1	30	mI	82
 zverolekár	noun	1	15	mA	26
 zverolekárka	noun		4	f	
@@ -113274,7 +113274,7 @@ zádruha	noun			f	6
 zádrž	noun		1	f	29
 zádržný	adjective		2		
 zádubnie	noun	1		s	19
-záduch	noun			mI	6
+záduch	noun	1		mI	6
 záduchový	adjective				
 zádumčivo	adverb		2		
 zádumčivosť	noun			f	4
@@ -113423,7 +113423,7 @@ zákrok	noun		389	mI	1168
 zákrokový	adjective				2
 zákrov	noun			mI	149
 zákrpkový	adjective				
-zákrpok	noun		4	mI	
+zákrpok	noun	1	4	mI	
 zákruta	noun	1	255	f	702
 zákryt	noun	1	17	mI	145
 zákrytový	adjective				
@@ -113521,7 +113521,7 @@ zámček	noun			mI	2
 zánik	noun	1	193	mI	2252
 zánikový	adjective				
 zánovný	adjective		2		2
-zápach	noun		580	mI	328
+zápach	noun	1	580	mI	328
 západ	noun	1	1933	mI	9529
 západka	noun		62	f	35
 západne	adverb		141		4102
@@ -113590,7 +113590,7 @@ zápecníctvo	noun			s
 zápecník	noun			mA	
 zápecníkov	adjective				
 zápecok	noun		1	mI	
-zápeka	noun			f	
+zápeka	noun	1		f	
 zápinka	noun			f	
 zápis	noun		274	mI	2200
 zápiskový	adjective				
@@ -113726,7 +113726,7 @@ zástavník	noun			mA	14
 zástavníkov	adjective				
 zástavníčka	noun			f	
 zástavový	adjective				
-zástena	noun		13	f	22
+zástena	noun	1	13	f	22
 zástera	noun	1	158	f	66
 zásterka	noun		142	f	21
 zásterový	adjective		1		
@@ -113836,7 +113836,7 @@ závistník	noun		1	mA
 závistný	adjective		1		
 závisť	noun	1	220	f	112
 závit	noun	1	50	mI	256
-závitnica	noun		7	f	10
+závitnica	noun	1	7	f	10
 závitnicový	adjective				
 závitník	noun	1	1	mI	22
 závitok	noun		11	mI	12
@@ -114481,7 +114481,7 @@ zžívať	verb
 úplet	noun		2	mI	2
 úpletový	adjective				
 úplne	adverb		21064		7747
-úplnok	noun		10	mI	5
+úplnok	noun	1	10	mI	5
 úplnosť	noun		24	f	143
 úplný	adjective		3415		3819
 ÚPN	acronym	1			
@@ -114542,7 +114542,7 @@ zžívať	verb
 úrodný	adjective		85		572
 úrok	noun	1	407	mI	382
 úrokovací	adjective				2
-úrokovanie	noun		1	s	18
+úrokovanie	noun	1	1	s	18
 úrokovaný	adjective				1
 úrokovať	verb				1
 úrokovo	adverb				2
@@ -114550,7 +114550,7 @@ zžívať	verb
 úroveň	noun	1	2735	f	9200
 úrovňovo	adverb		1		2
 úrovňový	adjective		4		70
-úročenie	noun			s	24
+úročenie	noun	1		s	24
 úročený	adjective				5
 úročiť	verb				6
 úročný	adjective				
@@ -114626,7 +114626,7 @@ zžívať	verb
 ústrety	adverb		139		118
 ústrižok	noun		32	mI	7
 ústrk	noun	1		mI	6
-ústroj	noun		3	mI	55
+ústroj	noun	1	3	mI	55
 ústrojenstvo	noun		16	s	224
 ústrojne	adverb				
 ústrojnosť	noun			f	
@@ -114682,7 +114682,7 @@ zžívať	verb
 útočníčka	noun		6	f	53
 útočný	adjective		394		1253
 útrapa	noun		78	f	142
-útrata	noun		18	f	12
+útrata	noun	1	18	f	12
 útroba	noun	1			
 útrobný	adjective				
 útrobový	adjective				
@@ -114756,9 +114756,9 @@ zžívať	verb
 úzky	adjective	1	526		7606
 úzus	noun			mI	73
 úča	noun		11	f	43
-účastina	noun			f	13
+účastina	noun	1		f	13
 účastinný	adjective				73
-účastinár	noun			mA	7
+účastinár	noun	1		mA	7
 účastinárka	noun			f	
 účastinárov	adjective				
 účastinársky	adjective				17
@@ -114996,13 +114996,13 @@ zžívať	verb
 Čarnogurský	name	1			200
 čarný	adjective				100
 čaro	noun	1	272	s	107
-čarodej	noun		179	mA	38
+čarodej	noun	1	179	mA	38
 čarodejka	noun		70	f	3
 čarodejkin	adjective		2		
 čarodejnica	noun		906	f	184
 čarodejnícky	adjective		159		193
 čarodejníctvo	noun	1	155	s	187
-čarodejník	noun		829	mA	401
+čarodejník	noun	1	829	mA	401
 čarodejníkov	adjective		10		2
 čarodejníčka	noun		7	f	3
 čarodejný	adjective		53		36
@@ -115077,7 +115077,7 @@ zžívať	verb
 čaučau	noun	1			
 Čavoj	noun	1		mI	43
 Čavojský	adjective				14
-čača	noun		4	f	9
+čača	noun	1	4	f	9
 Čačanová	noun	1			
 Čačaná	noun	1			
 čačaný	adjective	1			2
@@ -115349,7 +115349,7 @@ zžívať	verb
 červiačik	noun			m	
 červiačikov	adjective				
 červiačí	adjective				
-červienka	noun		20	f	104
+červienka	noun	1	20	f	104
 červienkový	adjective		1		4
 červivieť	verb				
 červivosť	noun			f	
@@ -115414,7 +115414,7 @@ zžívať	verb
 čečenský	adjective	1	24		233
 čečenčina	noun	1			4
 čečetavý	adjective				4
-čečetka	noun			f	31
+čečetka	noun	1		f	31
 čečina	noun	1		f	
 čečinový	adjective				
 Čečotka	name	1			
@@ -115737,7 +115737,7 @@ zžívať	verb
 čmelí	adjective	1			
 čmelík	noun			mA	36
 čmeľ	noun	1		m	18
-čmud	noun		1	mI	
+čmud	noun	1	1	mI	
 čmudiaci	adjective		2		
 čmudiť	verb		5		
 čmára	noun		1	f	
@@ -115750,7 +115750,7 @@ zžívať	verb
 čnieť	verb		4		41
 čnostne	adverb				
 čnostný	adjective				
-čnosť	noun		2	f	2
+čnosť	noun	1	2	f	2
 čo	particle	1	628354		57749
 čo sa stalo, už sa neodstane	phrase	1			
 čo ti jebe	phrase	1		N	
@@ -115951,7 +115951,7 @@ zžívať	verb
 číhanie	noun		7	s	2
 číhavý	adjective				
 číhať	verb		194		48
-čík	noun		4	m	36
+čík	noun	1	4	m	36
 číkoľvek	adverb		1		
 čílsky	adjective		15		34
 čím	conjunction		10256		12641
@@ -116091,7 +116091,7 @@ zžívať	verb
 ďugať	verb				
 ďugnutie	noun			s	
 ďugnúť	verb				
-Ďumbier	noun		2	m	238
+Ďumbier	noun	1	2	m	238
 ďumbier	noun	1	2	m	238
 ďumbiernik	noun			m	
 ďumbiernikov	adjective				
@@ -116307,7 +116307,7 @@ zžívať	verb
 Ľudo	name	1	1		94
 ľudojed	noun		1	mA	2
 ľudojedov	adjective				
-ľudojedstvo	noun			s	
+ľudojedstvo	noun	1		s	
 ľudomil	noun	1	26	mA	26
 ľudomilka	noun			f	
 ľudomilne	adverb				
@@ -116429,7 +116429,7 @@ zžívať	verb
 šabľový	adjective		3		5
 šach	noun	1	599	m	843
 šach-mat	interjection	1	51		2
-šachista	noun		24	mA	342
+šachista	noun	1	24	mA	342
 šachistka	noun			f	32
 šachistov	adjective		3		1
 šachor	noun	1		mI	11
@@ -116540,7 +116540,7 @@ zžívať	verb
 šampiňón	noun	1	18	mI	23
 šampiňónik	noun			m	
 šampiňónový	adjective		4		
-šampus	noun		75	mI	2
+šampus	noun	1	75	mI	2
 šampusový	adjective				
 šampón	noun		213	mI	34
 šampónovanie	noun			s	
@@ -116709,7 +116709,7 @@ zžívať	verb
 šedivka	noun		1	f	2
 šedivkastý	adjective				
 šedivkavý	adjective				
-šedivník	noun			m	
+šedivník	noun	1		m	
 šedivníkový	adjective				
 šedivo	adverb				2
 šedivohlavý	adjective				
@@ -117145,7 +117145,7 @@ zžívať	verb
 šesťuholník	noun	1	9	mI	86
 šesťuholníkový	adjective		2		57
 šesťvalcový	adjective				91
-šesťvalec	noun		9	mI	116
+šesťvalec	noun	1	9	mI	116
 šesťčlenný	adjective		2		141
 šesťčíslie	noun			s	
 šetrenie	noun		26	s	59
@@ -117253,7 +117253,7 @@ zžívať	verb
 šikanovaný	adjective		3		4
 šikanovať	verb		297		84
 šikanujúci	adjective		9		2
-šikanácia	noun			f	
+šikanácia	noun	1		f	
 šikmastý	adjective				
 šikmina	noun			f	
 šikmo	adverb		25		175
@@ -117693,7 +117693,7 @@ zžívať	verb
 škutka	noun			f	6
 škuľavec	noun		5	mA	
 škuľavo	adverb				
-škuľavosť	noun		1	f	10
+škuľavosť	noun	1	1	f	10
 škuľavý	adjective		19		7
 škuľaňa	noun			f	
 škvara	noun		10	f	14
@@ -117873,7 +117873,7 @@ zžívať	verb
 šnapsový	adjective				
 šnek	noun	1		mI	5
 šnekový	adjective	1			3
-šnicľa	noun			f	
+šnicľa	noun	1		f	
 šnupací	adjective		8		4
 šnupanie	noun		6	s	2
 šnupavý	adjective		5		6
@@ -118131,7 +118131,7 @@ zžívať	verb
 špionáž	noun	1	205	f	287
 špionážne	adverb		3		2
 špionážny	adjective		155		316
-špiritista	noun		6	mA	6
+špiritista	noun	1	6	mA	6
 špiritisticky	adverb				
 špiritistický	adjective		40		11
 špiritistka	noun		7	f	
@@ -119224,7 +119224,7 @@ zžívať	verb
 štát	noun	1	4998	mI	40121
 štátik	noun		1	mI	27
 štátne	adverb		4		55
-štátnica	noun		13	f	13
+štátnica	noun	1	13	f	13
 štátnickosť	noun			f	
 štátnicky	adverb				
 štátnický	adjective		7		50
@@ -119647,7 +119647,7 @@ zžívať	verb
 šírkový	adjective				31
 šírovať	verb				
 šírošíry	adjective		1		
-šírvánšáh	noun			m	
+šírvánšáh	noun	1		m	
 šírvánšáhov	adjective				
 šíry	adjective	1	199		191
 šógun	noun	1	12		116
@@ -119859,7 +119859,7 @@ zžívať	verb
 ťažiskovo	adverb				2
 ťažiskový	adjective				94
 ťažiteľný	adjective				2
-ťaživec	noun			mI	3
+ťaživec	noun	1		mI	3
 ťaživo	noun		2	s	3
 ťaživosť	noun			f	
 ťaživý	adjective		9		52
@@ -120503,7 +120503,7 @@ zžívať	verb
 žlto-čierny	adjective				6
 žltobiely	adjective				18
 žltobledý	adjective				
-žltochvost	noun		1	mA	63
+žltochvost	noun	1	1	mA	63
 žltohlav	noun			mI	39
 žltohlavý	adjective	1			21
 žltohnedo	adverb				4
@@ -120608,7 +120608,7 @@ zžívať	verb
 žonglérka	noun		2	f	
 žonglérov	adjective		4		7
 žonglérsky	adjective				3
-žonglérstvo	noun		1	s	2
+žonglérstvo	noun	1	1	s	2
 žoržet	noun	1		mI	2
 žoržetový	adjective				
 žoviálne	adverb		1		2
@@ -120751,7 +120751,7 @@ zžívať	verb
 žúžoľ	noun	1		mI	
 žúžoľový	adjective	1			
 žďársky	adjective				34
-žĺtko	noun		5	s	
+žĺtko	noun	1	5	s	
 žĺtkový	adjective	1	3		43
 žĺtok	noun	1	41	mI	118
 žľab	noun		63	mI	486

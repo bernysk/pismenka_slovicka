@@ -195,14 +195,20 @@ def tidy(s):
     s = re.sub(r"\(\s*\)", "", s)
     return re.sub(r"\s+", " ", s).replace(" ,", ",").strip()
 
+# „Pes“ a „Mačka“ sú rozlišovacie stránky – článok je „Pes domáci“, „Mačka domáca“
+WIKI_SUFFIX = ["", " domáci", " domáca", " domáce", " obyčajný", " obyčajná", " obyčajné",
+               " (zviera)", " (rastlina)", " (predmet)"]
+
 def wiki_for(w):
-    for title in (w[:1].upper() + w[1:], w):
-        for _ in range(2):
+    cap = w[:1].upper() + w[1:]
+    for title in [cap + s for s in WIKI_SUFFIX] + [w]:
+        for _ in range(3):
             if title in wiki_vety:
                 return title, tidy(wiki_vety[title])
             if title not in wiki_redir:
                 break
             title = wiki_redir[title]
+            title = title[:1].upper() + title[1:]  # auto → „automobil“ → Automobil
     return None, None
 
 for e in entries:
