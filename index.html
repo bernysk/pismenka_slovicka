@@ -31,11 +31,17 @@
           <input id="pattern" placeholder="napr. ?a??a">
         </label>
         <div class="len">
-          <span>Dĺžka slova</span>
+          <span>Dĺžka slova <small>(písmená)</small></span>
           <div class="row">
-            <input id="len-min" type="number" min="1" placeholder="od">
+            <input id="len-min" type="number" min="1" placeholder="od" aria-label="Dĺžka od">
             <span>–</span>
-            <input id="len-max" type="number" min="1" placeholder="do">
+            <input id="len-max" type="number" min="1" placeholder="do" aria-label="Dĺžka do">
+          </div>
+          <span class="syl-label">Počet slabík</span>
+          <div class="row">
+            <input id="syl-min" type="number" min="1" placeholder="od" aria-label="Slabiky od">
+            <span>–</span>
+            <input id="syl-max" type="number" min="1" placeholder="do" aria-label="Slabiky do">
           </div>
         </div>
         <div class="checks">

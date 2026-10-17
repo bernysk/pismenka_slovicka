@@ -13,7 +13,7 @@ Slovenského národného korpusu (SNK) a s frekvenciou zo SNK.
   - **počet:** aspoň / presne / najviac N-krát
 - **písmená, ktoré slovo nesmie obsahovať**
 - **vzor** – napr. `m??ka` (`?` = jedno ľubovoľné písmeno, `*` = čokoľvek)
-- **dĺžka slova** od–do
+- **dĺžka slova** od–do (v písmenách) a **počet slabík** od–do (ma-čka = 2, roz-práv-ka = 3, krk = 1)
 - **slovný druh** – podstatné mená, prídavné mená, slovesá, príslovky, zámená, číslovky, predložky, spojky, častice, citoslovcia
 - **ako bežné slovo** – všetky / aj zriedkavé (10+) / bežné (1 000+, predvolené) / veľmi bežné (10 000+)
   výskytov v Slovenskom národnom korpuse; zmiznú napr. „fiťfiriť“ či „kresťanskosť“
@@ -23,7 +23,7 @@ Slovenského národného korpusu (SNK) a s frekvenciou zo SNK.
 - **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách
 - **vhodné pre deti** – skryje vulgarizmy a nadávky (značky z Wiktionary + zoznam `skripty/nevhodne.txt`)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
-- po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, frekvencia a výklad (Wikislovník, anglický Wiktionary
+- po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, počet slabík, frekvencia a výklad (Wikislovník, anglický Wiktionary
   a prvá veta článku slovenskej Wikipédie s odkazom na celý článok) a **významové vzťahy** – synonymá, antonymá,
   nadradené a podradené pojmy (strom → drevina; lipa, dub…), na ktoré sa dá kliknúť
 
@@ -44,12 +44,14 @@ a otvor http://localhost:8765.
 | Súbor | Obsah |
 |---|---|
 | `index.html`, `style.css`, `app.js` | aplikácia |
-| `data/slova.tsv` | slová pre aplikáciu: slovo, slovný druh, príznak výkladu, frekvencia, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné) |
-| `data/vyklady.json` | výklady, načítajú sa až pri prvom otvorení detailu |
+| `data/slova.tsv` | slová pre aplikáciu (formát 2, popis v hlavičke `app.js` a `skripty/build_web.py`): slovo, kód slovného druhu, príznak výkladu, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné), frekvencie (SNK, knihy, hovorená reč, Wikipédia), počet slabík |
+| `data/vyklady/<písmeno>.json`, `data/synonyma/<písmeno>.json` | výklady a významové vzťahy rozdelené podľa prvého písmena – detail slova načíta len jeden malý súbor |
 | `slova.json`, `slova_s_vykladom.json`, `slova.txt` | úplný zoznam slov s vlastnosťami na ďalšie použitie |
-| `synonyma.json` | synonymá, antonymá, nadradené a podradené pojmy ~45 000 slov so zdrojom každej položky (aj slová mimo aplikácie); `data/synonyma.json` je verzia pre aplikáciu |
+| `synonyma.json` | synonymá, antonymá, nadradené a podradené pojmy ~45 000 slov so zdrojom každej položky (aj slová mimo aplikácie) |
 | `morfflex/morfflex-sk.tsv.xz` | **všetky tvary** overených slov z MorfFlex SK s gramatickými značkami (zbalené, pozri nižšie) |
-| `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`) |
+| `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`); všetko naraz: `skripty/zostav.py` |
+| `docs/plan-tvary.md` | plán ďalšieho rozvoja: tabuľka tvarov, hľadanie v tvaroch, anglické ekvivalenty z WordNetu |
+| `LICENSE` | licencie: kód MIT, dáta CC BY-NC-SA 4.0 |
 
 ### Tvary slov (MorfFlex SK)
 
@@ -65,11 +67,14 @@ Značky sú v schéme [UniMorph](https://unimorph.github.io/schema/), napr. `N;G
 
 ### Obnovenie dát
 
+Jeden príkaz stiahne chýbajúce zdroje do `zdroje/` (~2,5 GB, necommituje sa) a zostaví všetky dáta:
+
 ```bash
-python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt --freq-wiki zdroje/sk_wiki_freq.txt --wiki-vety zdroje/sk_wiki_vety.json --snk zdroje/snk --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
+python -I skripty/zostav.py
 ```
 
-Postup a odkazy na zdrojové súbory sú v `skripty/README.md`.
+Ďalšie možnosti: `--bez-stahovania`, `--od web` (začať od kroku), `--len synonyma` (len jeden krok).
+Jednotlivé kroky a zdroje sú popísané v `skripty/README.md`.
 Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy, `!` = výnimka).
 
 ## Zdroje a licencie
@@ -91,3 +96,4 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
   Frekvencia slova je súčet výskytov všetkých jeho tvarov; jazyk titulkov je hovorový.
 
 Keďže dáta obsahujú MorfFlex SK, celok je určený **iba na nekomerčné použitie** (CC BY-NC-SA 4.0).
+Kód aplikácie a skriptov je pod licenciou MIT. Podrobnosti sú v súbore [`LICENSE`](LICENSE).

@@ -8,7 +8,8 @@
 # Výstupy:
 #   synonyma.json        – úplné dáta so zdrojmi: {slovo: {"synonyma": [{"slova": [...], "zdroj": "..."}],
 #                                                   "antonyma": [{"slovo": "...", "zdroj": "..."}]}}
-#   data/synonyma.json   – pre aplikáciu, len slová z data/slova.tsv: {slovo: {"s": [[…], […]], "a": [...]}}
+#   data/synonyma/<x>.json – pre aplikáciu, len slová z data/slova.tsv, rozdelené podľa prvého písmena:
+#                          {slovo: {"s": [[…], […]], "a": [...], "h": nadradené, "d": podradené}}
 #
 # python -I skripty/synonyma.py --thesaurus zdroje/th_sk_SK_v2.dat --wikt zdroje/skwiktionary-latest-pages-articles.xml
 #        --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --slova data/slova.tsv --out .
@@ -25,8 +26,10 @@ a = ap.parse_args()
 
 words = {}
 for line in open(a.slova, encoding="utf-8"):
+    if line.startswith("#"):
+        continue  # hlavička „#format=2“
     p = line.rstrip("\n").split("\t")
-    words[p[0]] = p[1]
+    words[p[0]] = p[1] if len(p) > 1 else ""  # kód slovného druhu: n, a, v, d…
 lower_to_word = {}
 for w in words:
     lower_to_word.setdefault(w.lower(), w)
@@ -155,7 +158,8 @@ for w, lst in list(ant.items()):
 # --- záporné dvojice ne-: pekný ↔ nepekný (len prídavné mená, príslovky a podstatné mená v zozname)
 ne_pairs = 0
 for w, pos in words.items():
-    if pos in ("adjective", "adverb", "noun") and w.startswith("ne") and w[2:] in words and words[w[2:]] == pos:
+    # prídavné mená (a), príslovky (d), podstatné mená (n)
+    if pos in ("a", "d", "n") and w.startswith("ne") and w[2:] in words and words[w[2:]] == pos:
         add_ant(w, w[2:], "zápor ne-")
         add_ant(w[2:], w, "zápor ne-")
         ne_pairs += 1
@@ -182,8 +186,13 @@ for w, d in full.items():
     if "nadradene" in d: e["h"] = d["nadradene"]
     if "podradene" in d: e["d"] = d["podradene"][:15]
     web[w] = e
-with open(os.path.join(a.out, "data", "synonyma.json"), "w", encoding="utf-8") as f:
-    json.dump(web, f, ensure_ascii=False, separators=(",", ":"))
+import importlib.util  # spoločné funkcie (python -I → načítanie podľa cesty)
+_spec = importlib.util.spec_from_file_location("spolocne", os.path.join(os.path.dirname(os.path.abspath(__file__)), "spolocne.py"))
+spolocne = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(spolocne)
+spolocne.zapis_shardy(web, os.path.join(a.out, "data", "synonyma"))  # data/synonyma/<písmeno>.json
+if os.path.exists(os.path.join(a.out, "data", "synonyma.json")):
+    os.remove(os.path.join(a.out, "data", "synonyma.json"))
 
 src_count = collections.Counter(g["zdroj"] for d in full.values() for g in d.get("synonyma", []))
 ant_count = collections.Counter(x["zdroj"] for d in full.values() for x in d.get("antonyma", []))

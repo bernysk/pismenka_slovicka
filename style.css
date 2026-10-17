@@ -65,6 +65,7 @@ button.ghost { background: transparent; color: var(--accent); border-color: var(
 button.ghost:hover { background: var(--accent-soft); }
 
 .row { display: flex; gap: 8px; align-items: center; }
+.len .syl-label { margin-top: 12px; }
 .checks { display: flex; flex-direction: column; gap: 6px; justify-content: center; }
 .check { display: flex; gap: 8px; align-items: center; font-size: .95rem; }
 .check input { width: 18px; height: 18px; accent-color: var(--accent); }

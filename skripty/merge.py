@@ -1,3 +1,9 @@
+# Krok 2: k zoznamu slov z convert.py doplní výklady
+#   vyklad_sk – zo slovenského Wikislovníka (sekcia „Význam“ pod „Slovenčina“, bez gramatických tvarov typu „datív…“)
+#   vyklad_en – z anglického Wiktionary cez kaikki.org (bez odkazov na tvary form_of/alt_of)
+# a pridá slová z Wiktionary, ktoré v Hunspelli chýbajú. Prepíše <outdir>/slova.json.
+#
+# python -I skripty/merge.py zdroje/skwiktionary-latest-pages-articles.xml zdroje/kaikki.org-dictionary-Slovak.jsonl zdroje/slova.json zdroje
 import re, sys, html, json, collections
 skxml, kaikki, base, outdir = sys.argv[1:5]
 

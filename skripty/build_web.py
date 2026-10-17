@@ -2,12 +2,13 @@
 # a doplní výklady, frekvencie a príznak nevhodnosti.
 #
 # Výstupy:
-#   data/slova.tsv    – slovo <TAB> slovný druh <TAB> 1 ak má výklad <TAB> frekvencia (titulky) <TAB> príznaky
-#                       <TAB> frekvencia (Wikipédia) <TAB> frekvencia (Slovenský národný korpus)
-#                       <TAB> frekvencia (hovorená reč, SNK s-hovor) <TAB> frekvencia (slovenská beletria, SNK img-sk)
-#                       príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
-#                                 P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
-#   data/vyklady.json – {slovo: {"sk": [...], "en": [...]}}
+#   data/slova.tsv       – formát 2 (prvý riadok „#format=2“), stĺpce oddelené tabulátorom:
+#                          slovo, kód slovného druhu (n a v d p c e o t j x m f – pozri spolocne.POS_KOD),
+#                          1 ak má výklad, príznaky, frekvencia SNK (celý korpus), v knihách (img-sk),
+#                          v hovorenej reči (s-hovor), vo Wikipédii, počet slabík
+#                          príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
+#                                    P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
+#   data/vyklady/<x>.json – {slovo: {"sk": [...], "en": [...], "wiki": [veta, článok]}}, x = prvé písmeno bez diakritiky
 #   slova.json, slova_s_vykladom.json, slova.txt – úplný export
 #
 # python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt
@@ -104,6 +105,8 @@ if a.snk:
                 if len(p) < 3 or not p[2] or p[2][0] not in SNK_POS:
                     continue
                 lemma, form, tag = p[0], p[1], p[2]
+                if lemma.startswith("*"):
+                    continue  # SNK hviezdičkou označuje nespisovné slová (*absík, *absolútka)
                 d = snk_morph.get(lemma)
                 if d is None:
                     d = snk_morph[lemma] = [collections.Counter(), set(), set(), False, False]
@@ -323,11 +326,27 @@ for e in entries:
 entries.sort(key=lambda e: (e["slovo"].lower(), e["slovo"]))
 
 # --- zápis
+import importlib.util
+def _nacitaj(meno):  # skripty bežia s python -I, susedné moduly sa načítajú podľa cesty
+    spec = importlib.util.spec_from_file_location(meno, os.path.join(os.path.dirname(os.path.abspath(__file__)), meno + ".py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+spolocne = _nacitaj("spolocne")
+pocet_slabik = _nacitaj("slabiky").pocet_slabik
+
+for e in entries:
+    e["slabiky"] = pocet_slabik(e["slovo"])
+
 os.makedirs(os.path.join(a.out, "data"), exist_ok=True)
 FLAG_ZIV = {"životné": "A", "neživotné": "I"}
 FLAG_VID = {"dokonavé": "D", "nedokonavé": "E"}
 web_defs = {}
+# data/slova.tsv (formát 2) – jeden riadok na slovo, prázdne hodnoty sa nevypisujú:
+#   slovo, kód slovného druhu (spolocne.POS_KOD), 1 = má výklad, príznaky (m/f/s A/I P N),
+#   frekvencia SNK, knihy, hovorená reč, Wikipédia, počet slabík
 with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newline="\n") as f:
+    f.write("#format=2\n")
     for e in entries:
         w = e["slovo"]
         if "\t" in w or "\n" in w or not any(ch.isalpha() for ch in w):
@@ -337,12 +356,16 @@ with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newli
         d = dict(defs.get(w, {}))
         if "vyklad_wiki" in e:
             d["wiki"] = [e["vyklad_wiki"], e["wiki_clanok"]]
-        has_def = bool(d)
-        if has_def: web_defs[w] = d
-        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\t{e.get('frekvencia_snk', '')}"
-                f"\t{e.get('frekvencia_hovorena', '')}\t{e.get('frekvencia_knihy', '')}\n")
-with open(os.path.join(a.out, "data", "vyklady.json"), "w", encoding="utf-8") as f:
-    json.dump(web_defs, f, ensure_ascii=False, separators=(",", ":"))
+        if d: web_defs[w] = d
+        row = [w, spolocne.POS_KOD.get(e["slovny_druh"], e["slovny_druh"]), "1" if d else "", flags,
+               e.get("frekvencia_snk", ""), e.get("frekvencia_knihy", ""), e.get("frekvencia_hovorena", ""),
+               e.get("frekvencia_wiki", ""), e["slabiky"]]
+        f.write("\t".join(map(str, row)).rstrip("\t") + "\n")
+# výklady po súboroch podľa prvého písmena – detail slova načíta len data/vyklady/<písmeno>.json
+spolocne.zapis_shardy(web_defs, os.path.join(a.out, "data", "vyklady"))
+old = os.path.join(a.out, "data", "vyklady.json")
+if os.path.exists(old):
+    os.remove(old)
 with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:
     json.dump(entries, f, ensure_ascii=False, indent=1)
 with open(os.path.join(a.out, "slova_s_vykladom.json"), "w", encoding="utf-8") as f:

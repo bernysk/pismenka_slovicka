@@ -1,5 +1,10 @@
 # Skripty na zostavenie slovníka
 
+**Všetko naraz:** `python -I skripty/zostav.py` – stiahne chýbajúce zdroje (nižšie) a spustí kroky 1–6 v poradí
+(`--bez-stahovania`, `--od <krok>`, `--len <krok>`; kroky: hunspell, vyklady, wiki, web, synonyma, morfflex).
+Pomocné moduly: `spolocne.py` (kódy slovných druhov, rozdelenie dát podľa písmen), `slabiky.py` (počet slabík,
+`python -I skripty/slabiky.py` spustí testy).
+
 Zdroje (stiahnuť do priečinka `zdroje/`, ktorý sa necommituje):
 
 - **MorfFlex SK** cez UniMorph (CC BY-NC-SA 4.0): https://raw.githubusercontent.com/unimorph/slk/main/slk.xz (79 MB, rozbaliť `xz -d` → `slk`, 1,5 GB)

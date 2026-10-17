@@ -1,3 +1,8 @@
+# Krok 1: zoznam slov zo slovníka Hunspell sk_SK.dic → <out>/slova.json a <out>/slova.txt
+# Riadok .dic: „slovo/PRÍZNAKY po:noun is:masculine“ – berie sa slovo, slovný druh (po:) a rod (is:).
+# Výsledok je vstupom pre merge.py (výklady) a slúži na overovanie slov v build_web.py.
+#
+# python -I skripty/convert.py zdroje/sk_SK.dic zdroje
 import json, sys, collections
 src, out = sys.argv[1], sys.argv[2]
 words = {}
