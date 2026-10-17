@@ -22,5 +22,8 @@ python -I skripty/merge.py zdroje/skwiktionary-latest-pages-articles.xml zdroje/
 3. `build_web.py` z `slova.json` vytvorí dáta pre webovú aplikáciu: `data/slova.tsv` a `data/vyklady.json`.
 
 ```bash
-python -I skripty/build_web.py slova.json data
+python -I skripty/build_web.py slova.json data zdroje/sk_full.txt
 ```
+
+Frekvencie (voliteľný tretí argument `build_web.py`):
+https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/sk/sk_full.txt

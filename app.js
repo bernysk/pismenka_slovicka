@@ -21,9 +21,9 @@ const strip = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
-    const [w, pos, def] = line.split("\t");
+    const [w, pos, def, freq] = line.split("\t");
     const lower = w.toLowerCase();
-    return { w, pos, def: def === "1", lower, plain: strip(lower) };
+    return { w, pos, def: def === "1", freq: +freq || 0, lower, plain: strip(lower) };
   });
   addRule();
   run();
@@ -122,7 +122,8 @@ function run() {
   });
 
   const sort = $("sort").value;
-  if (sort === "len") results.sort((a, b) => a.w.length - b.w.length || a.lower.localeCompare(b.lower, "sk"));
+  if (sort === "freq") results.sort((a, b) => b.freq - a.freq || a.lower.localeCompare(b.lower, "sk"));
+  else if (sort === "len") results.sort((a, b) => a.w.length - b.w.length || a.lower.localeCompare(b.lower, "sk"));
   else if (sort === "len-desc") results.sort((a, b) => b.w.length - a.w.length || a.lower.localeCompare(b.lower, "sk"));
   else results.sort((a, b) => a.lower.localeCompare(b.lower, "sk"));
 
@@ -154,7 +155,8 @@ function renderMore() {
 // ---------- detail ----------
 async function openDetail(e) {
   $("detail-word").textContent = e.w;
-  $("detail-pos").textContent = POS_SK[e.pos] || e.pos || "";
+  const freqText = e.freq ? `${e.freq.toLocaleString("sk")}× v korpuse titulkov` : "v korpuse titulkov sa nevyskytuje";
+  $("detail-pos").textContent = [POS_SK[e.pos] || e.pos, freqText].filter(Boolean).join(" · ");
   const body = $("detail-body");
   body.replaceChildren();
   $("detail").showModal();
