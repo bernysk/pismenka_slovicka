@@ -196,7 +196,8 @@ async function openDetail(e) {
   $("detail-pos").textContent = [...gram, freqText].filter(Boolean).join(" · ");
   const body = $("detail-body");
   body.replaceChildren();
-  $("detail").showModal();
+  if (!$("detail").open) $("detail").showModal();  // pri preklikaní na synonymum je okno už otvorené
+  $("detail").scrollTop = 0;
   if (e.def) {
     if (!defs) {
       body.textContent = "Načítavam výklad…";
@@ -232,6 +233,7 @@ async function openDetail(e) {
     p.textContent = "K tomuto slovu zatiaľ nemáme výklad.";
     body.appendChild(p);
   }
+  await renderRelations(e, body);
   const p = document.createElement("p");
   const a = document.createElement("a");
   a.href = "https://slovnik.juls.savba.sk/?w=" + encodeURIComponent(e.w);
@@ -240,6 +242,52 @@ async function openDetail(e) {
   a.textContent = "Hľadať v slovníkoch JÚĽŠ SAV ↗";
   p.appendChild(a);
   body.appendChild(p);
+}
+
+// ---------- významové vzťahy (synonymá, antonymá) ----------
+let relations = null;  // data/synonyma.json, načítané pri prvom otvorení detailu
+let byWord = null;
+
+async function renderRelations(e, body) {
+  if (!relations) {
+    try { relations = await (await fetch("data/synonyma.json")).json(); } catch { relations = {}; }
+    byWord = new Map(words.map((x) => [x.w, x]));
+  }
+  const r = relations[e.w];
+  if (!r) return;
+  const kids = $("kids").checked;
+  const ok = (s) => !(kids && (s.includes("vulgarizmus") || byWord.get(s)?.bad));
+  const chipFor = (s) => {
+    const target = byWord.get(s.replace(/\s*\(.*\)$/, ""));
+    if (!target) { const span = document.createElement("span"); span.className = "rel-word"; span.textContent = s; return span; }
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "rel-word link";
+    b.textContent = s;
+    b.addEventListener("click", () => openDetail(target));
+    return b;
+  };
+  const groups = (r.s || []).map((g) => g.filter(ok)).filter((g) => g.length);
+  const ants = (r.a || []).filter(ok);
+  if (!groups.length && !ants.length) return;
+  const h = document.createElement("h4");
+  h.textContent = "Významové vzťahy";
+  body.appendChild(h);
+  const dl = document.createElement("dl");
+  dl.className = "relations";
+  const row = (label, lines) => {
+    const dt = document.createElement("dt");
+    dt.textContent = label;
+    dl.appendChild(dt);
+    for (const line of lines) {
+      const dd = document.createElement("dd");
+      line.forEach((s, i) => { if (i) dd.append(", "); dd.appendChild(chipFor(s)); });
+      dl.appendChild(dd);
+    }
+  };
+  if (groups.length) row("Synonymá", groups);
+  if (ants.length) row("Antonymá", [ants]);
+  body.appendChild(dl);
 }
 
 // ---------- udalosti ----------

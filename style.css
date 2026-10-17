@@ -123,6 +123,14 @@ dialog::backdrop { background: rgb(0 0 0 / .4); }
 dialog h3 { margin: 0; font-size: 1.5rem; }
 dialog h4 { margin: 16px 0 4px; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 dialog ol { margin: 0; padding-left: 22px; }
+.relations { margin: 0; }
+.relations dt { font-weight: 600; font-size: .9rem; margin-top: 8px; }
+.relations dd { margin: 2px 0 0 0; padding-left: 12px; border-left: 2px solid var(--line); }
+.rel-word.link {
+  border: none; background: none; padding: 0; color: var(--accent); cursor: pointer; font: inherit;
+  text-decoration: underline; text-decoration-color: var(--accent-soft); text-underline-offset: 2px;
+}
+.rel-word.link:hover { text-decoration-color: var(--accent); }
 .close { float: right; border: none; background: transparent; font-size: 1.4rem; line-height: 1; padding: 0 4px; }
 
 footer { color: var(--muted); font-size: .85rem; padding-top: 24px; padding-bottom: 32px; }

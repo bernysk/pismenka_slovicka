@@ -22,7 +22,8 @@ Obsahuje ~90 000 slov v **základnom tvare** s gramatickými vlastnosťami z mor
 - **vhodné pre deti** – skryje vulgarizmy a nadávky (značky z Wiktionary + zoznam `skripty/nevhodne.txt`)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
 - po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, frekvencia a výklad (Wikislovník, anglický Wiktionary
-  a prvá veta článku slovenskej Wikipédie s odkazom na celý článok)
+  a prvá veta článku slovenskej Wikipédie s odkazom na celý článok) a **významové vzťahy** – synonymá a antonymá,
+  na ktoré sa dá kliknúť
 
 ## Spustenie
 
@@ -44,6 +45,7 @@ a otvor http://localhost:8765.
 | `data/slova.tsv` | slová pre aplikáciu: slovo, slovný druh, príznak výkladu, frekvencia, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné) |
 | `data/vyklady.json` | výklady, načítajú sa až pri prvom otvorení detailu |
 | `slova.json`, `slova_s_vykladom.json`, `slova.txt` | úplný zoznam slov s vlastnosťami na ďalšie použitie |
+| `synonyma.json` | synonymá a antonymá ~15 000 slov so zdrojom každej položky (aj slová mimo aplikácie); `data/synonyma.json` je verzia pre aplikáciu |
 | `morfflex/morfflex-sk.tsv.xz` | **všetky tvary** overených slov z MorfFlex SK s gramatickými značkami (zbalené, pozri nižšie) |
 | `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`) |
 
@@ -75,6 +77,8 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
 - Zámená, spojky, predložky, častice, číslovky a overenie slov: [hunspell-sk](https://github.com/sk-spell/hunspell-sk) – MPL 2.0 (`LICENSE-hunspell-sk.txt`)
 - Slovenské výklady: [Wikislovník](https://sk.wiktionary.org) – CC BY-SA 4.0
 - Anglické výklady: [Wiktionary](https://en.wiktionary.org) cez [kaikki.org](https://kaikki.org/dictionary/Slovak/) – CC BY-SA 4.0
+- Synonymá: [OpenThesaurus-SK](https://github.com/LibreOffice/dictionaries/tree/master/sk_SK) (Tibor Bako, Zdenko Podobný) – voľná licencia typu MIT;
+  synonymá a antonymá aj z Wikislovníka a Wiktionary (CC BY-SA); antonymá so záporom ne- (pekný ↔ nepekný) sú odvodené automaticky
 - Frekvencia a výklady zo [slovenskej Wikipédie](https://sk.wikipedia.org) (dump článkov, `skripty/wiki_freq.py`) – CC BY-SA 4.0
 - Frekvencia hovorovej reči: [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.
   Frekvencia slova je súčet výskytov všetkých jeho tvarov; jazyk titulkov je hovorový.
