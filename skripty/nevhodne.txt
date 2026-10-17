@@ -1,0 +1,35 @@
+# Regulárne výrazy (Python, celé slovo malými písmenami) pre slová nevhodné pre deti.
+# Riadok začínajúci "!" je výnimka – zhodné slovo sa NEoznačí.
+(^|.*)jeb.*
+^pič[aeiouyí].*|^pičov.*
+^pizd.*
+^kokot(?!ic).*
+^(s|vy|za|po|roz|u|z)?kurv(?!atúr).*
+^chuj.*
+^(vy|po|na|o|za|ob|roz|u|pre|pri|z)?sra[čťlnľ].*|^(vy|po|na|o|za|roz|u|z)?serie.*
+^hovn.*|^hovien.*
+^zmrd.*
+^šuk[aá].*
+^(vy|po|na|o|za)?šťa[ťl]$|^(vy|po|na|o|za)?šťal[aioy]?$|^šťanie$
+^čurák.*
+^kund[aiyuo].*|^kundov.*
+^buzer(ant|ácia).*|^buzn.*
+^neger.*|^negri?$|^negrov.*
+^prdel.*|^prdieľ.*
+^riť(ol|ou|ami|ách|ám|i)?$|^riťolez.*
+^hajz[eľl].*
+^ksicht.*
+^debil.*
+^kretén.*
+^idiot.*
+^skurven.*
+^ojeb.*
+!^serie[sm].*
+!^serial.*
+!^seriál.*
+!^sraz.*
+!^hovnivál.*
+!^idiotikon.*
+!^kundalin.*
+!^srand.*
+!^moriak.*

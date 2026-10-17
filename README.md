@@ -14,6 +14,8 @@ Malá webová aplikácia na hľadanie slovenských slov podľa písmen. Beží c
 - **dĺžka slova** od–do
 - **zoradenie podľa častosti používania** (predvolené), abecedne alebo podľa dĺžky
 - **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách („c“ ani „h“ sa s ním nezhodujú)
+- **vhodné pre deti** – skryje vulgarizmy a nadávky (značky z Wiktionary + zoznam `skripty/nevhodne.txt`)
+- **iba základné tvary** – skryje vyskloňované a vyčasované tvary (približné, pozri nižšie)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
 - po kliknutí na slovo sa zobrazí výklad (slovensky a/alebo anglicky), ak existuje
 
@@ -42,10 +44,15 @@ a otvor http://localhost:8765.
 Dáta pre aplikáciu sa obnovia príkazom:
 
 ```bash
-python -I skripty/build_web.py slova.json data zdroje/sk_full.txt
+python -I skripty/build_web.py slova.json data --freq zdroje/sk_full.txt   --dic zdroje/sk_SK.dic --aff zdroje/sk_SK.aff   --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt
 ```
 
-(`sk_full.txt` je frekvenčný zoznam z FrequencyWords, pozri nižšie.)
+Odkazy na zdrojové súbory sú v `skripty/README.md`.
+
+**Ako sa rozpozná základný tvar:** slovo je tvar, ak ho Hunspell označí ako tvar iného slova (`st:byť`, pád, čas),
+ak vznikne z pravidiel skloňovania (`.aff`), ak je medzi tvarmi vo Wiktionary, alebo ak je to kmeň známeho slova
++ bežná koncovka. Je to heuristika – občas skryje neohybné slovo (napr. „dokonca“) alebo prepustí tvar (napr. „ľudia“).
+Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy, `!` = výnimka).
 
 ## Zdroje a licencie
 

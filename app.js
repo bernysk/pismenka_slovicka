@@ -26,10 +26,10 @@ const enc = (s) => s.replace(/ch/g, CH);
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
-    const [w, pos, def, freq] = line.split("\t");
+    const [w, pos, def, freq, flags = ""] = line.split("\t");
     const lower = w.toLowerCase();
     const t = enc(lower);
-    return { w, pos, def: def === "1", freq: +freq || 0, lower, t, tp: enc(strip(lower)), len: [...t].length };
+    return { w, pos, def: def === "1", freq: +freq || 0, form: flags.includes("T"), bad: flags.includes("N"), lower, t, tp: enc(strip(lower)), len: [...t].length };
   });
   addRule();
   run();
@@ -112,11 +112,15 @@ function run() {
   const onlyLower = $("only-lower").checked;
   const onlyDefs = $("only-defs").checked;
   const noSpaces = $("no-spaces").checked;
+  const kids = $("kids").checked;
+  const onlyBase = $("only-base").checked;
 
   results = words.filter((e) => {
     if (onlyLower && (e.w !== e.lower || e.pos === "acronym" || e.pos === "name" || e.w.includes("."))) return false;
     if (noSpaces && /[\s-]/.test(e.w)) return false;
     if (onlyDefs && !e.def) return false;
+    if (kids && e.bad) return false;
+    if (onlyBase && e.form) return false;
     const word = ignore ? e.tp : e.t;
     if (min && e.len < min) return false;
     if (max && e.len > max) return false;

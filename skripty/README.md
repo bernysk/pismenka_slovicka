@@ -2,7 +2,7 @@
 
 Zdroje (stiahnuť do samostatného priečinka, napr. `zdroje/`):
 
-- Hunspell sk_SK (MPL 2.0): https://raw.githubusercontent.com/sk-spell/hunspell-sk/master/sk_SK.dic
+- Hunspell sk_SK (MPL 2.0): https://raw.githubusercontent.com/sk-spell/hunspell-sk/master/sk_SK.dic a `sk_SK.aff`
 - sk.wiktionary dump (CC BY-SA): https://dumps.wikimedia.org/skwiktionary/latest/skwiktionary-latest-pages-articles.xml.bz2 (rozbaliť `bunzip2`)
 - kaikki.org – slovenčina z en.wiktionary (CC BY-SA): https://kaikki.org/dictionary/Slovak/kaikki.org-dictionary-Slovak.jsonl
 
@@ -22,7 +22,7 @@ python -I skripty/merge.py zdroje/skwiktionary-latest-pages-articles.xml zdroje/
 3. `build_web.py` z `slova.json` vytvorí dáta pre webovú aplikáciu: `data/slova.tsv` a `data/vyklady.json`.
 
 ```bash
-python -I skripty/build_web.py slova.json data zdroje/sk_full.txt
+python -I skripty/build_web.py slova.json data --freq zdroje/sk_full.txt   --dic zdroje/sk_SK.dic --aff zdroje/sk_SK.aff   --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt
 ```
 
 Frekvencie (voliteľný tretí argument `build_web.py`):
