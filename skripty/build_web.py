@@ -20,6 +20,7 @@ ap.add_argument("--freq", help="frekvenčný zoznam tvarov 'slovo počet' (Frequ
 ap.add_argument("--freq-wiki", help="frekvenčný zoznam tvarov zo slovenskej Wikipédie (wiki_freq.py)")
 ap.add_argument("--kaikki", help="kaikki.org JSONL – značky vulgar/offensive")
 ap.add_argument("--blocklist", help="skripty/nevhodne.txt")
+ap.add_argument("--wiki-vety", help="prvé vety článkov Wikipédie (wiki_freq.py, tretí argument)")
 ap.add_argument("--out", default=".")
 a = ap.parse_args()
 
@@ -181,8 +182,36 @@ for w, (pos, rod) in hun_pos.items():
     entries.append(e)
     have.add(w)
 
+# --- prvá veta článku Wikipédie s rovnakým názvom (Voda, Strom, Bratislava), aj cez presmerovanie
+wiki_vety, wiki_redir = {}, {}
+if a.wiki_vety:
+    wd = json.load(open(a.wiki_vety, encoding="utf-8"))
+    wiki_vety, wiki_redir = wd["vety"], wd["presmerovania"]
+WIKI_POS = {"noun", "name", "acronym", "phrase", "number"}
+
+def tidy(s):
+    s = re.sub(r"\(\s*[,;:\s]+", "(", s)          # „(,,,, ; do 1919…“ → „(do 1919…“
+    s = re.sub(r"[\s,;:]+\)", ")", s)
+    s = re.sub(r"\(\s*\)", "", s)
+    return re.sub(r"\s+", " ", s).replace(" ,", ",").strip()
+
+def wiki_for(w):
+    for title in (w[:1].upper() + w[1:], w):
+        for _ in range(2):
+            if title in wiki_vety:
+                return title, tidy(wiki_vety[title])
+            if title not in wiki_redir:
+                break
+            title = wiki_redir[title]
+    return None, None
+
 for e in entries:
     w = e["slovo"]
+    if e["slovny_druh"] in WIKI_POS:
+        title, veta = wiki_for(w)
+        if veta:
+            e["vyklad_wiki"] = veta
+            e["wiki_clanok"] = title
     abbr = len(w) > 1 and w.isupper()  # skratky (SA, OSN) nie
     n = 0 if abbr else round(lemma_freq.get(w, 0)) or freq.get(w.lower(), 0)
     nw = 0 if abbr else round(wiki_lemma_freq.get(w, 0)) or wfreq.get(w.lower(), 0)
@@ -206,15 +235,18 @@ with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newli
             continue
         flags = e.get("rod", "") + FLAG_ZIV.get(e.get("zivotnost"), "") + ("P" if e.get("pomnozne") else "") \
             + FLAG_VID.get(e.get("vid"), "") + ("N" if e.get("nevhodne") else "")
-        has_def = "vyklad_sk" in e or "vyklad_en" in e
-        if has_def: web_defs[w] = defs[w]
+        d = dict(defs.get(w, {}))
+        if "vyklad_wiki" in e:
+            d["wiki"] = [e["vyklad_wiki"], e["wiki_clanok"]]
+        has_def = bool(d)
+        if has_def: web_defs[w] = d
         f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\n")
 with open(os.path.join(a.out, "data", "vyklady.json"), "w", encoding="utf-8") as f:
     json.dump(web_defs, f, ensure_ascii=False, separators=(",", ":"))
 with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:
     json.dump(entries, f, ensure_ascii=False, indent=1)
 with open(os.path.join(a.out, "slova_s_vykladom.json"), "w", encoding="utf-8") as f:
-    json.dump([e for e in entries if "vyklad_sk" in e or "vyklad_en" in e], f, ensure_ascii=False, indent=1)
+    json.dump([e for e in entries if "vyklad_sk" in e or "vyklad_en" in e or "vyklad_wiki" in e], f, ensure_ascii=False, indent=1)
 with open(os.path.join(a.out, "slova.txt"), "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(e["slovo"] for e in entries) + "\n")
 

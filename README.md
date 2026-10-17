@@ -15,11 +15,12 @@ Obsahuje ~90 000 slov v **základnom tvare** s gramatickými vlastnosťami z mor
 - **dĺžka slova** od–do
 - **slovný druh** – podstatné mená, prídavné mená, slovesá, príslovky, zámená, číslovky, predložky, spojky, častice, citoslovcia
 - **rod** (mužský / ženský / stredný), **životnosť** (životné / neživotné) a **pomnožné** podstatné mená
-- **zoradenie podľa častosti používania** (predvolené), abecedne alebo podľa dĺžky
+- **zoradenie podľa častosti používania** – spolu, v hovorovej reči (titulky) alebo vo Wikipédii; abecedne alebo podľa dĺžky
 - **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách
 - **vhodné pre deti** – skryje vulgarizmy a nadávky (značky z Wiktionary + zoznam `skripty/nevhodne.txt`)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
-- po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, frekvencia a výklad (slovensky a/alebo anglicky)
+- po kliknutí na slovo sa zobrazí slovný druh, rod, životnosť, frekvencia a výklad (Wikislovník, anglický Wiktionary
+  a prvá veta článku slovenskej Wikipédie s odkazom na celý článok)
 
 ## Spustenie
 
@@ -59,7 +60,7 @@ Značky sú v schéme [UniMorph](https://unimorph.github.io/schema/), napr. `N;G
 ### Obnovenie dát
 
 ```bash
-python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
+python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt --freq-wiki zdroje/sk_wiki_freq.txt --wiki-vety zdroje/sk_wiki_vety.json --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
 ```
 
 Postup a odkazy na zdrojové súbory sú v `skripty/README.md`.
@@ -72,7 +73,8 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
 - Zámená, spojky, predložky, častice, číslovky a overenie slov: [hunspell-sk](https://github.com/sk-spell/hunspell-sk) – MPL 2.0 (`LICENSE-hunspell-sk.txt`)
 - Slovenské výklady: [Wikislovník](https://sk.wiktionary.org) – CC BY-SA 4.0
 - Anglické výklady: [Wiktionary](https://en.wiktionary.org) cez [kaikki.org](https://kaikki.org/dictionary/Slovak/) – CC BY-SA 4.0
-- Frekvencia: [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.
+- Frekvencia a výklady zo [slovenskej Wikipédie](https://sk.wikipedia.org) (dump článkov, `skripty/wiki_freq.py`) – CC BY-SA 4.0
+- Frekvencia hovorovej reči: [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.
   Frekvencia slova je súčet výskytov všetkých jeho tvarov; jazyk titulkov je hovorový.
 
 Keďže dáta obsahujú MorfFlex SK, celok je určený **iba na nekomerčné použitie** (CC BY-NC-SA 4.0).

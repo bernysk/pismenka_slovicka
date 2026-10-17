@@ -210,6 +210,20 @@ async function openDetail(e) {
       for (const t of d[key]) { const li = document.createElement("li"); li.textContent = t; ol.appendChild(li); }
       body.append(h, ol);
     }
+    if (d.wiki) {
+      const [veta, clanok] = d.wiki;
+      const h = document.createElement("h4");
+      h.textContent = "Z Wikipédie";
+      const p = document.createElement("p");
+      p.textContent = veta + " ";
+      const a = document.createElement("a");
+      a.href = "https://sk.wikipedia.org/wiki/" + encodeURIComponent(clanok.replace(/ /g, "_"));
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "Celý článok ↗";
+      p.appendChild(a);
+      body.append(h, p);
+    }
   } else {
     const p = document.createElement("p");
     p.className = "muted";
