@@ -4,6 +4,7 @@
 # Výstupy:
 #   data/slova.tsv    – slovo <TAB> slovný druh <TAB> 1 ak má výklad <TAB> frekvencia (titulky) <TAB> príznaky
 #                       <TAB> frekvencia (Wikipédia) <TAB> frekvencia (Slovenský národný korpus)
+#                       <TAB> frekvencia (hovorená reč, SNK s-hovor) <TAB> frekvencia (slovenská beletria, SNK img-sk)
 #                       príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
 #                                 P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
 #   data/vyklady.json – {slovo: {"sk": [...], "en": [...]}}
@@ -69,6 +70,7 @@ SNK_POS = {"S": "noun", "A": "adjective", "G": "adjective", "V": "verb", "D": "a
 snk_freq = collections.Counter()      # (lema, náš slovný druh) -> počet
 snk_any = collections.Counter()       # lema -> počet (všetky slovné druhy)
 snk_morph = {}                        # lema -> [Counter slovných druhov, rody, životnosť, SG?, PL?]
+snk_hovor, snk_knihy = collections.Counter(), collections.Counter()
 if a.snk:
     import bz2, glob, lzma
     for path in glob.glob(os.path.join(a.snk, "prim-*-lemma-frequency.bz2")):
@@ -82,6 +84,18 @@ if a.snk:
                     lemma, n = p[1].strip(), int(p[0])
                     snk_freq[(lemma, SNK_POS[letter])] += n
                     snk_any[lemma] += n
+    # špecializované korpusy (lema <TAB> počet): hovorená reč s-hovor, pôvodná slovenská beletria img-sk
+    def load_lemma_tsv(pattern):
+        out = collections.Counter()
+        for path in glob.glob(os.path.join(a.snk, pattern)):
+            with bz2.open(path, "rt", encoding="utf-8") as f:
+                for line in f:
+                    p = line.rstrip("\n").split("\t")
+                    if len(p) == 2 and p[1].isdigit():
+                        out[p[0]] += int(p[1])
+        return out
+    snk_hovor = load_lemma_tsv("s-hovor-*-lemma_frequency.txt.bz2")
+    snk_knihy = load_lemma_tsv("prim-*-public-img-sk-lemma_frequency.txt.bz2")
     morph_files = glob.glob(os.path.join(a.snk, "ma-*.txt.xz"))
     if morph_files:
         with lzma.open(morph_files[0], "rt", encoding="utf-8") as f:
@@ -300,6 +314,8 @@ for e in entries:
     if nw: e["frekvencia_wiki"] = nw
     ns = 0 if abbr else snk_count(w, e["slovny_druh"])
     if ns: e["frekvencia_snk"] = ns
+    if not abbr and snk_hovor.get(w): e["frekvencia_hovorena"] = snk_hovor[w]
+    if not abbr and snk_knihy.get(w): e["frekvencia_knihy"] = snk_knihy[w]
     if is_vulgar(w): e["nevhodne"] = True
     if w in defs:
         if "sk" in defs[w]: e["vyklad_sk"] = defs[w]["sk"]
@@ -323,7 +339,8 @@ with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newli
             d["wiki"] = [e["vyklad_wiki"], e["wiki_clanok"]]
         has_def = bool(d)
         if has_def: web_defs[w] = d
-        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\t{e.get('frekvencia_snk', '')}\n")
+        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\t{e.get('frekvencia_snk', '')}"
+                f"\t{e.get('frekvencia_hovorena', '')}\t{e.get('frekvencia_knihy', '')}\n")
 with open(os.path.join(a.out, "data", "vyklady.json"), "w", encoding="utf-8") as f:
     json.dump(web_defs, f, ensure_ascii=False, separators=(",", ":"))
 with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:

@@ -10,6 +10,8 @@ Zdroje (stiahnuť do priečinka `zdroje/`, ktorý sa necommituje):
 - Frekvencie (CC BY-SA): https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/sk/sk_full.txt
 - **Slovenský národný korpus** do `zdroje/snk/` (https://korpus.sk):
   - frekvencie lem: `https://korpus.juls.savba.sk/files/prim-11.0/tag/prim-11.0-public-all-{S,A,G,V,D,P,R,N,E,O,T,J,W}-lemma-frequency.bz2`
+  - beletria a hovorená reč: https://korpus.juls.savba.sk/files/prim-11.0/prim-11.0-public-img-sk-lemma_frequency.txt.bz2,
+    https://korpus.juls.savba.sk/files/s-hovor-6.0/s-hovor-6.0-lemma_frequency.txt.bz2 (prehľad: https://korpus.sk/frekvencne-zoznamy/)
   - morfologická databáza: https://korpus.sk/wp-content/uploads/uploaded/documents/databases/morfologicka_databaza/ma-2015-02-05.txt.xz
   - Slovenský WordNet: https://korpus.sk/wp-content/uploads/uploaded/documents/databases/wordnet/sk-wn-2013-01-23.txt.gz
 - OpenThesaurus-SK (voľná licencia): https://raw.githubusercontent.com/LibreOffice/dictionaries/master/sk_SK/th_sk_SK_v2.dat

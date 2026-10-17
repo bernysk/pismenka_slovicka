@@ -26,11 +26,12 @@ const enc = (s) => s.replace(/ch/g, CH);
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
-    const [w, pos, def, freq, flags = "", wfreq, snk] = line.split("\t");
+    // stĺpce: slovo, druh, výklad, titulky, príznaky, Wikipédia, SNK, hovorená reč (s-hovor), knihy (img-sk)
+    const [w, pos, def, freq, flags = "", wfreq, snk, hovor, knihy] = line.split("\t");
     const lower = w.toLowerCase();
     const t = enc(lower);
     return {
-      w, pos, def: def === "1", freq: +freq || 0, wfreq: +wfreq || 0, snk: +snk || 0, lower, t, tp: enc(strip(lower)), len: [...t].length,
+      w, pos, def: def === "1", freq: +freq || 0, wfreq: +wfreq || 0, snk: +snk || 0, hovor: +hovor || 0, knihy: +knihy || 0, lower, t, tp: enc(strip(lower)), len: [...t].length,
       rod: flags.replace(/[^mfs]/g, ""),                                  // m/f/s, môže byť aj viac (napr. „mf“)
       ziv: flags.includes("A") ? "A" : flags.includes("I") ? "I" : "",
       pomn: flags.includes("P"), bad: flags.includes("N"),
@@ -152,7 +153,8 @@ function run() {
   const sort = $("sort").value;
   const by = (k) => (a, b) => b[k] - a[k] || a.lower.localeCompare(b.lower, "sk");
   if (sort === "freq") results.sort((a, b) => b.snk - a.snk || b.score - a.score || a.lower.localeCompare(b.lower, "sk"));
-  else if (sort === "freq-sub") results.sort(by("freq"));
+  else if (sort === "freq-sub") results.sort(by("hovor"));
+  else if (sort === "freq-books") results.sort(by("knihy"));
   else if (sort === "freq-wiki") results.sort(by("wfreq"));
   else if (sort === "len") results.sort((a, b) => a.len - b.len || a.lower.localeCompare(b.lower, "sk"));
   else if (sort === "len-desc") results.sort((a, b) => b.len - a.len || a.lower.localeCompare(b.lower, "sk"));
@@ -187,7 +189,8 @@ function renderMore() {
 async function openDetail(e) {
   $("detail-word").textContent = e.w;
   const n = (x) => x.toLocaleString("sk");
-  const freqText = `výskyty: Slovenský národný korpus ${n(e.snk)}×, titulky ${n(e.freq)}×, Wikipédia ${n(e.wfreq)}×`;
+  const freqText = `výskyty: Slovenský národný korpus ${n(e.snk)}× (z toho knihy ${n(e.knihy)}×), ` +
+    `hovorená reč ${n(e.hovor)}×, Wikipédia ${n(e.wfreq)}×`;
   const gram = [
     POS_SK[e.pos] || e.pos,
     [...e.rod].map((r) => GENDER_SK[r]).join(" / "),

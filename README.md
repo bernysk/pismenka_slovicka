@@ -18,8 +18,8 @@ Slovenského národného korpusu (SNK) a s frekvenciou zo SNK.
 - **ako bežné slovo** – všetky / aj zriedkavé (10+) / bežné (1 000+, predvolené) / veľmi bežné (10 000+)
   výskytov v Slovenskom národnom korpuse; zmiznú napr. „fiťfiriť“ či „kresťanskosť“
 - **rod** (mužský / ženský / stredný), **životnosť** (životné / neživotné) a **pomnožné** podstatné mená
-- **zoradenie podľa častosti používania** – podľa Slovenského národného korpusu (predvolené), v hovorovej reči (titulky)
-  alebo vo Wikipédii; abecedne alebo podľa dĺžky
+- **zoradenie podľa častosti používania** – podľa Slovenského národného korpusu (predvolené), v knihách (pôvodná
+  slovenská beletria), v hovorenej reči (korpus hovorenej slovenčiny) alebo vo Wikipédii; abecedne alebo podľa dĺžky
 - **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách
 - **vhodné pre deti** – skryje vulgarizmy a nadávky (značky z Wiktionary + zoznam `skripty/nevhodne.txt`)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
@@ -75,7 +75,8 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
 ## Zdroje a licencie
 
 - **Slovenský národný korpus, JÚĽŠ SAV** ([korpus.sk](https://korpus.sk)):
-  - frekvenčné zoznamy lem korpusu prim-11.0-public-all (hlavná frekvencia)
+  - frekvenčné zoznamy lem korpusu prim-11.0-public-all (hlavná frekvencia), prim-11.0-public-img-sk (slovenská
+    beletria – „v knihách“) a s-hovor-6.0 (hovorená reč)
   - Morfologická databáza SNK 2015-02-05 – overenie slov, doplnenie lem, rodu a životnosti (CC BY-SA 4.0 / GNU AGPL 3 / GNU FDL 1.3; podľa SNK len na vedecko-výskumné ciele)
   - Slovenský WordNet 2013-01-23 – synonymá, antonymá, nadradené a podradené pojmy (CC BY-SA 3.0 / GNU AGPL 3 / ODbL 1.0)
 - Základné tvary a gramatika: **MorfFlex SK 170914** – Jan Hajič, Jan Hric, ÚFAL MFF UK ([LINDAT](http://hdl.handle.net/11234/1-3277)),
@@ -86,7 +87,7 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
 - Synonymá: [OpenThesaurus-SK](https://github.com/LibreOffice/dictionaries/tree/master/sk_SK) (Tibor Bako, Zdenko Podobný) – voľná licencia typu MIT;
   synonymá a antonymá aj z Wikislovníka a Wiktionary (CC BY-SA); antonymá so záporom ne- (pekný ↔ nepekný) sú odvodené automaticky
 - Frekvencia a výklady zo [slovenskej Wikipédie](https://sk.wikipedia.org) (dump článkov, `skripty/wiki_freq.py`) – CC BY-SA 4.0
-- Frekvencia hovorovej reči: [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.
+- Frekvencia z filmových titulkov (už sa v aplikácii nezobrazuje, ostáva v dátach): [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.
   Frekvencia slova je súčet výskytov všetkých jeho tvarov; jazyk titulkov je hovorový.
 
 Keďže dáta obsahujú MorfFlex SK, celok je určený **iba na nekomerčné použitie** (CC BY-NC-SA 4.0).
