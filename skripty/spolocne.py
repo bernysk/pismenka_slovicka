@@ -14,6 +14,17 @@ def kluc_shardu(slovo):
     ch = unicodedata.normalize("NFD", slovo[:1].lower())[:1]
     return ch if "a" <= ch <= "z" else "_"
 
+def zapis_jsonl(path, zaznamy):
+    """Zapíše záznamy ako JSON Lines – jeden kompaktný JSON objekt na riadok (export/*.jsonl).
+    Oproti jednému veľkému JSON: menší súbor, dá sa čítať po riadkoch a git ukazuje zmeny po záznamoch."""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    n = 0
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        for z in zaznamy:
+            f.write(json.dumps(z, ensure_ascii=False, separators=(",", ":")) + "\n")
+            n += 1
+    return n
+
 def zapis_shardy(data, priecinok):
     """Rozdelí {slovo: hodnota} do priecinok/<kľúč>.json, aby aplikácia načítala len malý súbor."""
     os.makedirs(priecinok, exist_ok=True)

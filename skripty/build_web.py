@@ -9,7 +9,7 @@
 #                          príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
 #                                    P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
 #   data/vyklady/<x>.json – {slovo: {"sk": [...], "en": [...], "wiki": [veta, článok]}}, x = prvé písmeno bez diakritiky
-#   slova.json, slova_s_vykladom.json, slova.txt – úplný export
+#   export/slova.jsonl, export/slova.txt – úplný export (formát v export/README.md)
 #
 # python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt
 #        --freq-wiki zdroje/sk_wiki_freq.txt --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
@@ -366,11 +366,9 @@ spolocne.zapis_shardy(web_defs, os.path.join(a.out, "data", "vyklady"))
 old = os.path.join(a.out, "data", "vyklady.json")
 if os.path.exists(old):
     os.remove(old)
-with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:
-    json.dump(entries, f, ensure_ascii=False, indent=1)
-with open(os.path.join(a.out, "slova_s_vykladom.json"), "w", encoding="utf-8") as f:
-    json.dump([e for e in entries if "vyklad_sk" in e or "vyklad_en" in e or "vyklad_wiki" in e], f, ensure_ascii=False, indent=1)
-with open(os.path.join(a.out, "slova.txt"), "w", encoding="utf-8", newline="\n") as f:
+# úplný export na ďalšie použitie: export/slova.jsonl (jedno slovo na riadok) a export/slova.txt (len slová)
+spolocne.zapis_jsonl(os.path.join(a.out, "export", "slova.jsonl"), entries)
+with open(os.path.join(a.out, "export", "slova.txt"), "w", encoding="utf-8", newline="\n") as f:
     f.write("\n".join(e["slovo"] for e in entries) + "\n")
 
 c = collections.Counter(e["slovny_druh"] for e in entries)

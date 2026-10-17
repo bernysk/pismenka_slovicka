@@ -10,7 +10,7 @@ a v akom formáte, aby sa dalo pokračovať bez ďalšieho prieskumu.
 | A1 | Tabuľka tvarov (skloňovanie, časovanie) v detaile slova – **hotové** | `morfflex/morfflex-sk.tsv.xz` | detail slova (`renderForms` v `app.js`) |
 | A2 | Hľadanie v tvaroch slov („slová, ktoré majú tvar na -ami“) – **odložené**, kým nebude konkrétne cvičenie | to isté | nový prepínač pri filtroch |
 | A3 | Anglický ekvivalent z WordNetu – **zamietnuté** (nesprávne významy) | `zdroje/snk/sk-wn-2013-01-23.txt.gz` (druhý záznam každého riadku) | detail slova, sekcia „Po anglicky“ |
-| A4 | Označenia synoným (hovorovo, archaizmus, nesprávne…) – **hotové** | `synonyma.json` – pole `zdroj` a text v zátvorke | detail slova, prípadne skrytie „nesprávne“ |
+| A4 | Označenia synoným (hovorovo, archaizmus, nesprávne…) – **hotové** | `export/synonyma.jsonl` – pole `zdroj` a text v zátvorke | detail slova, prípadne skrytie „nesprávne“ |
 
 ## A1 – tabuľka tvarov (hotové)
 
@@ -100,13 +100,13 @@ Pôvodný návrh:
 ## A4 – označenia synoným (hotové)
 
 **Výsledok:** `skripty/synonyma.py` oddelí označenie od slova (`fáro (hovorovo)` → slovo + označenie); v
-`synonyma.json` je v skupine pole `oznacenia`, v `data/synonyma/` je položka `[slovo, označenie]`. Aplikácia
+`export/synonyma.jsonl` je v skupine pole `oznacenia`, v `data/synonyma/` je položka `[slovo, označenie]`. Aplikácia
 zobrazí označenie sivou kurzívou, „nesprávne“ slovo prečiarkne a v režime pre deti skryje „nesprávne“ aj
 „vulgarizmus“. Označení: hovorovo 656, term. 359, nesprávne 217, poeticky 172, archaizmus 165, vulgarizmus 52.
 
 Pôvodný návrh:
 
-- `synonyma.json` už obsahuje pri každej skupine pole `zdroj`; OpenThesaurus má označenie priamo v texte
+- `export/synonyma.jsonl` (predtým `synonyma.json`) už obsahuje pri každej skupine pole `zdroj`; OpenThesaurus má označenie priamo v texte
   („fáro (hovorovo)“). V `skripty/synonyma.py` ho vyňať do samostatného poľa a v `data/synonyma/` posielať
   ako `[slovo, označenie]`.
 - V aplikácii: zobraziť označenie sivou farbou; „nesprávne“ skryť v režime pre deti.

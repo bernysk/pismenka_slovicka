@@ -44,16 +44,19 @@ python -I skripty/synonyma.py --wordnet zdroje/snk/sk-wn-2013-01-23.txt.gz --the
    obsahuje veľa umelo odvodených slov). Zámená, spojky, predložky, častice a číslovky doplní z Hunspell.
    Frekvencia lemy = súčet výskytov všetkých jej tvarov (zvlášť titulky a Wikipédia); tvar patriaci viacerým lemám sa rozdelí
    v pomere ich frekvencií. So `--snk`: frekvencia lem zo SNK (hlavná), overenie slov a doplnenie lem, rodu a
-   životnosti z morfologickej databázy SNK. Podstatným a vlastným menám priradí prvú vetu článku Wikipédie s rovnakým názvom. Zapíše `data/`, `slova.json`, `slova_s_vykladom.json`, `slova.txt`.
+   životnosti z morfologickej databázy SNK. Podstatným a vlastným menám priradí prvú vetu článku Wikipédie s rovnakým názvom. Zapíše `data/`, `export/slova.jsonl` a `export/slova.txt`.
 5. `morfflex_zbal.py` – zbalí tvary overených lem do `morfflex/morfflex-sk.tsv.xz`; `morfflex_rozbal.py` ich rozbalí späť.
 
 6. `synonyma.py` – synonymá, antonymá, nadradené a podradené pojmy zo Slovenského WordNetu (prednosť), OpenThesaurus-SK, Wikislovníka a Wiktionary + dvojice so záporom ne-
-   → `synonyma.json` (úplné, so zdrojmi) a `data/synonyma.json` (pre aplikáciu).
+   → `export/synonyma.jsonl` (úplné, so zdrojmi a označeniami) a `data/synonyma/<písmeno>.json` (pre aplikáciu).
 
 7. `tvary_web.py` – z `morfflex/morfflex-sk.tsv.xz` vyberie tvary bežných slov (SNK ≥ 1 000, `--min-snk`) pre tabuľku
    v detaile slova: podstatné mená 6 pádov × 2 čísla, prídavné mená 1. stupeň v pádoch + nominatív 2. a 3. stupňa,
    slovesá neurčitok, prítomný čas, jednoslovný budúci čas (budem), minulý čas (robil, robila…), rozkazovací spôsob;
    bez záporu. Homonymné lemy (`obor-1`, ``tisíc`1000-2``) zlúči, varianty zoradí podľa hlavného rodu a frekvencie tvaru
    (`--freq`). Zapíše `data/tvary/znacky.json` a `data/tvary/<písmeno>.json` (~28 000 slov, 670 000 tvarov, ~0,4 MB gzip).
+
+`migracia_export.py` – jednorazová migrácia z októbra 2026: presunula exporty z koreňa do `export/` (JSON → JSON Lines)
+a licencie zdrojov do `licenses/`. Je idempotentná; nové zostavenie ju nepotrebuje.
 
 `nevhodne.txt` – regulárne výrazy slov nevhodných pre deti; riadky s `!` sú výnimky.

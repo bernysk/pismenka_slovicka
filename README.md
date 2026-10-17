@@ -50,12 +50,12 @@ a otvor http://localhost:8765.
 | `data/slova.tsv` | slová pre aplikáciu (formát 2, popis v hlavičke `app.js` a `skripty/build_web.py`): slovo, kód slovného druhu, príznak výkladu, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné), frekvencie (SNK, knihy, hovorená reč, Wikipédia), počet slabík |
 | `data/vyklady/<písmeno>.json`, `data/synonyma/<písmeno>.json` | výklady a významové vzťahy rozdelené podľa prvého písmena – detail slova načíta len jeden malý súbor |
 | `data/tvary/<písmeno>.json`, `data/tvary/znacky.json` | tvary bežných slov pre tabuľku skloňovania a časovania (`skripty/tvary_web.py`, spolu ~0,4 MB po gzip) |
-| `slova.json`, `slova_s_vykladom.json`, `slova.txt` | úplný zoznam slov s vlastnosťami na ďalšie použitie |
-| `synonyma.json` | synonymá, antonymá, nadradené a podradené pojmy ~45 000 slov so zdrojom každej položky (aj slová mimo aplikácie) |
+| `export/` | **úplné dáta na ďalšie použitie** vo formáte JSON Lines (jeden záznam na riadok): `slova.jsonl` (slová s vlastnosťami, frekvenciami a výkladmi), `synonyma.jsonl` (synonymá, antonymá, nadradené a podradené pojmy so zdrojom), `slova.txt` – popis polí v [`export/README.md`](export/README.md) |
 | `morfflex/morfflex-sk.tsv.xz` | **všetky tvary** overených slov z MorfFlex SK s gramatickými značkami (zbalené, pozri nižšie) |
 | `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`); všetko naraz: `skripty/zostav.py` |
 | `docs/plan-tvary.md` | plán ďalšieho rozvoja: tabuľka tvarov (hotové), hľadanie v tvaroch, anglické ekvivalenty z WordNetu |
 | `LICENSE` | licencie: kód MIT, dáta CC BY-NC-SA 4.0 |
+| `licenses/` | licenčné texty zdrojov (hunspell-sk, OpenThesaurus-SK) |
 
 ### Tvary slov (MorfFlex SK)
 
@@ -90,10 +90,10 @@ Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy
   - Slovenský WordNet 2013-01-23 – synonymá, antonymá, nadradené a podradené pojmy (CC BY-SA 3.0 / GNU AGPL 3 / ODbL 1.0)
 - Základné tvary a gramatika: **MorfFlex SK 170914** – Jan Hajič, Jan Hric, ÚFAL MFF UK ([LINDAT](http://hdl.handle.net/11234/1-3277)),
   cez [UniMorph slk](https://github.com/unimorph/slk) – **CC BY-NC-SA 4.0 (iba nekomerčne)**
-- Zámená, spojky, predložky, častice, číslovky a overenie slov: [hunspell-sk](https://github.com/sk-spell/hunspell-sk) – MPL 2.0 (`LICENSE-hunspell-sk.txt`)
+- Zámená, spojky, predložky, častice, číslovky a overenie slov: [hunspell-sk](https://github.com/sk-spell/hunspell-sk) – MPL 2.0 (`licenses/hunspell-sk.txt`)
 - Slovenské výklady: [Wikislovník](https://sk.wiktionary.org) – CC BY-SA 4.0
 - Anglické výklady: [Wiktionary](https://en.wiktionary.org) cez [kaikki.org](https://kaikki.org/dictionary/Slovak/) – CC BY-SA 4.0
-- Synonymá: [OpenThesaurus-SK](https://github.com/LibreOffice/dictionaries/tree/master/sk_SK) (Tibor Bako, Zdenko Podobný) – voľná licencia typu MIT;
+- Synonymá: [OpenThesaurus-SK](https://github.com/LibreOffice/dictionaries/tree/master/sk_SK) (Tibor Bako, Zdenko Podobný) – voľná licencia typu MIT (`licenses/openthesaurus-sk.txt`);
   synonymá a antonymá aj z Wikislovníka a Wiktionary (CC BY-SA); antonymá so záporom ne- (pekný ↔ nepekný) sú odvodené automaticky
 - Frekvencia a výklady zo [slovenskej Wikipédie](https://sk.wikipedia.org) (dump článkov, `skripty/wiki_freq.py`) – CC BY-SA 4.0
 - Frekvencia z filmových titulkov (už sa v aplikácii nezobrazuje, ostáva v dátach): [FrequencyWords](https://github.com/hermitdave/FrequencyWords) (`content/2018/sk/sk_full.txt`, z titulkov OpenSubtitles) – CC BY-SA 4.0.

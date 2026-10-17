@@ -6,9 +6,9 @@
 #   záporné dvojice ne-: pekný ↔ nepekný (len ak sú obe slová v zozname)
 #
 # Výstupy:
-#   synonyma.json        – úplné dáta so zdrojmi: {slovo: {"synonyma": [{"slova": [...], "zdroj": "...",
-#                                                                  "oznacenia": {"fáro": "hovorovo"}}],
-#                                                   "antonyma": [{"slovo": "...", "zdroj": "..."}]}}
+#   export/synonyma.jsonl – úplné dáta so zdrojmi, jeden záznam na riadok:
+#                          {"slovo": "auto", "synonyma": [{"slova": [...], "zdroj": "...", "oznacenia": {"fáro": "hovorovo"}}],
+#                           "antonyma": [{"slovo": "...", "zdroj": "..."}], "nadradene": [...], "podradene": [...]}
 #   data/synonyma/<x>.json – pre aplikáciu, len slová z data/slova.tsv, rozdelené podľa prvého písmena:
 #                          {slovo: {"s": [[…], […]], "a": [...], "h": nadradené, "d": podradené}}
 #                          položka synoným je "slovo" alebo ["slovo", "označenie"] (hovorovo, nesprávne, archaizmus…)
@@ -199,8 +199,13 @@ for w in sorted(set(syn) | set(ant) | set(hyper) | set(hypo), key=lambda s: (s.l
     if hyper.get(w): d["nadradene"] = hyper[w]
     if hypo.get(w): d["podradene"] = hypo[w][:30]
     if d: full[w] = d
-with open(os.path.join(a.out, "synonyma.json"), "w", encoding="utf-8") as f:
-    json.dump(full, f, ensure_ascii=False, indent=1)
+
+import importlib.util  # spoločné funkcie (python -I → načítanie podľa cesty)
+_spec = importlib.util.spec_from_file_location("spolocne", os.path.join(os.path.dirname(os.path.abspath(__file__)), "spolocne.py"))
+spolocne = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(spolocne)
+# úplný export: export/synonyma.jsonl – jeden záznam {"slovo": …, "synonyma": …, …} na riadok
+spolocne.zapis_jsonl(os.path.join(a.out, "export", "synonyma.jsonl"), ({"slovo": w, **d} for w, d in full.items()))
 
 web = {}
 for w, d in full.items():
@@ -215,10 +220,6 @@ for w, d in full.items():
     if "nadradene" in d: e["h"] = d["nadradene"]
     if "podradene" in d: e["d"] = d["podradene"][:15]
     web[w] = e
-import importlib.util  # spoločné funkcie (python -I → načítanie podľa cesty)
-_spec = importlib.util.spec_from_file_location("spolocne", os.path.join(os.path.dirname(os.path.abspath(__file__)), "spolocne.py"))
-spolocne = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(spolocne)
 spolocne.zapis_shardy(web, os.path.join(a.out, "data", "synonyma"))  # data/synonyma/<písmeno>.json
 if os.path.exists(os.path.join(a.out, "data", "synonyma.json")):
     os.remove(os.path.join(a.out, "data", "synonyma.json"))

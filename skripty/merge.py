@@ -92,8 +92,6 @@ entries = sorted(words.values(), key=lambda e: (e["slovo"].lower(), e["slovo"]))
 with open(outdir + "/slova.json", "w", encoding="utf-8") as f:
     json.dump(entries, f, ensure_ascii=False, indent=1)
 withdef = [e for e in entries if "vyklad_sk" in e or "vyklad_en" in e]
-with open(outdir + "/slova_s_vykladom.json", "w", encoding="utf-8") as f:
-    json.dump(withdef, f, ensure_ascii=False, indent=1)
 with open(outdir + "/slova.txt", "w", encoding="utf-8") as f:
     f.write("\n".join(e["slovo"] for e in entries) + "\n")
 print("spolu slov:", len(entries), "| nove z Wiktionary:", added)
