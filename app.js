@@ -28,15 +28,16 @@ const POS_SK = {
 const GENDER_SK = { m: "mužský rod", f: "ženský rod", s: "stredný rod" };
 
 const $ = (id) => document.getElementById(id);
+const COLLATOR = new Intl.Collator("sk");  // slovenské abecedné poradie (ch za h), jeden porovnávač na všetko
 let words = [];   // všetky slová (pozri parseLine)
 let results = [];  // slová, ktoré vyhovujú filtrom, už zoradené
 let shown = 0;     // koľko z results je vykreslených
 
-const strip = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");  // odstráni diakritiku
+const strip = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");  // odstráni diakritiku
 
 // „ch“ je v slovenčine jedno písmeno: pri porovnávaní ho nahradíme jedným znakom (súkromná oblasť Unicode),
 // takže sa počíta ako jedno písmeno a „c“ ani „h“ sa s ním nezhodujú.
-const CH = "";
+const CH = "\uE000";
 const enc = (s) => s.replace(/ch/g, CH);
 
 // ---------- načítanie ----------
@@ -62,7 +63,9 @@ function parseLine(line) {
 }
 
 async function load() {
-  const text = await (await fetch("data/slova.tsv")).text();
+  const res = await fetch("data/slova.tsv");
+  if (!res.ok) throw new Error(`data/slova.tsv: HTTP ${res.status}`);  // inak by sa chybová stránka spracovala ako slová
+  const text = await res.text();
   words = text.split("\n").filter((l) => l && !l.startsWith("#")).map(parseLine);
   addRule();
   run();
@@ -110,8 +113,8 @@ function matchRule(word, r) {
       if (i === -1 || i + k >= L) return false;
       break;
     }
-    case "pos":
-      if (Number.isFinite(r.pos) && word.substr(r.pos - 1, k) !== r.s) return false;
+    case "pos":  // pozícia sa počíta od 1; 0 a záporné čísla sa ignorujú (substr by inak počítal od konca)
+      if (Number.isFinite(r.pos) && r.pos >= 1 && word.substring(r.pos - 1, r.pos - 1 + k) !== r.s) return false;
       break;
   }
   const c = countOf(word, r.s);
@@ -180,7 +183,7 @@ function run() {
   });
 
   const sort = $("sort").value;
-  const alpha = (a, b) => a.lower.localeCompare(b.lower, "sk");
+  const alpha = (a, b) => COLLATOR.compare(a.lower, b.lower);
   const by = (k) => (a, b) => b[k] - a[k] || alpha(a, b);
   const sorters = {
     freq: by("snk"), "freq-books": by("knihy"), "freq-sub": by("hovor"), "freq-wiki": by("wiki"),
@@ -195,13 +198,14 @@ function run() {
 
 function renderMore() {
   const frag = document.createDocumentFragment();
-  for (const e of results.slice(shown, shown + PAGE)) {
+  for (let i = shown; i < Math.min(results.length, shown + PAGE); i++) {
+    const e = results[i];
     const li = document.createElement("li");
     const b = document.createElement("button");
     b.type = "button";
     b.textContent = e.w;
+    b.dataset.i = i;  // index do results – klik rieši jeden spoločný poslucháč na #list
     if (e.def) { b.className = "has-def"; b.title = "má výklad"; }
-    b.addEventListener("click", () => openDetail(e));
     li.appendChild(b);
     frag.appendChild(li);
   }
@@ -220,12 +224,32 @@ function shardKey(w) {
   return ch >= "a" && ch <= "z" ? ch : "_";
 }
 const shardCache = new Map();  // "vyklady/p" → Promise<{slovo: …}>
+let loadFailed = false;        // nastaví sa pri chybe siete; detail potom zobrazí upozornenie
+
+// Načíta JSON; chýbajúci súbor (404) = prázdne dáta, chyba siete = prázdne dáta + upozornenie.
+// Neúspešný pokus sa z cache vyhodí, aby sa pri ďalšom otvorení skúsil znova (napr. po výpadku Wi-Fi).
+function fetchJson(url, cache, key, empty) {
+  if (!cache.has(key)) {
+    const p = fetch(url)
+      .then((r) => {
+        if (r.status === 404) return empty;
+        if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+        return r.json();
+      })
+      .catch((err) => {
+        console.error(err);
+        loadFailed = true;
+        cache.delete(key);
+        return empty;
+      });
+    cache.set(key, p);
+  }
+  return cache.get(key);
+}
+
 function loadShard(dir, w) {
   const key = `${dir}/${shardKey(w)}`;
-  if (!shardCache.has(key)) {
-    shardCache.set(key, fetch(`data/${key}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
-  }
-  return shardCache.get(key);
+  return fetchJson(`data/${key}.json`, shardCache, key, {});
 }
 
 // ---------- detail slova ----------
@@ -256,12 +280,16 @@ async function openDetail(e) {
   if (!$("detail").open) $("detail").showModal();  // pri preklikaní na synonymum je okno už otvorené
   $("detail").scrollTop = 0;
   body.textContent = "Načítavam…";
+  loadFailed = false;
   const [defs, rels, forms] = await Promise.all([
     e.def ? loadShard("vyklady", e.w) : {}, loadShard("synonyma", e.w),
     FORM_POS.has(e.pos) ? loadForms(e.w) : null,
   ]);
   if ($("detail-word").textContent !== e.w) return;  // medzitým sa otvorilo iné slovo
   body.replaceChildren();
+  if (loadFailed) {
+    body.appendChild(el("p", "muted", "Časť údajov sa nepodarilo načítať (skontroluj pripojenie a otvor slovo znova)."));
+  }
 
   const d = defs[e.w] || {};
   for (const [key, title] of [["sk", "Výklad"], ["en", "Po anglicky"]]) {
@@ -301,9 +329,10 @@ function renderRelations(e, r, body) {
   if (!r) return;
   byWord ??= new Map(words.map((x) => [x.w, x]));
   const kids = $("kids").checked;
-  const ok = (s) => !(kids && (s.includes("vulgarizmus") || byWord.get(s)?.bad));
+  const bare = (s) => s.replace(/\s*\(.*\)$/, "");  // „fáro (hovorovo)“ → „fáro“
+  const ok = (s) => !(kids && (s.includes("vulgarizmus") || byWord.get(bare(s))?.bad));
   const chipFor = (s) => {
-    const target = byWord.get(s.replace(/\s*\(.*\)$/, ""));  // „fáro (hovorovo)“ → „fáro“
+    const target = byWord.get(bare(s));
     if (!target) { const span = document.createElement("span"); span.className = "rel-word"; span.textContent = s; return span; }
     const b = document.createElement("button");
     b.type = "button";
@@ -344,15 +373,19 @@ function renderRelations(e, r, body) {
 // Rozdiel: "=" rovnaký tvar ako slovo, "2sa" = odober 2 posledné znaky a pridaj „sa“ (pes → psa).
 // Viac tvarov s rovnakou značkou sú varianty (psi, psy), prvý je hlavný.
 const FORM_POS = new Set(["noun", "adjective", "verb", "name"]);
-let formTags = null;  // Promise<["N;NOM;SG", …]>
 async function loadForms(w) {
-  formTags ??= fetch("data/tvary/znacky.json").then((r) => (r.ok ? r.json() : [])).catch(() => []);
-  const [tags, shard] = await Promise.all([formTags, loadShard("tvary", w)]);
+  const [tags, shard] = await Promise.all([
+    fetchJson("data/tvary/znacky.json", shardCache, "tvary/znacky", []),  // Promise<["N;NOM;SG", …]>
+    loadShard("tvary", w),
+  ]);
   const rows = shard[w];
-  if (!rows || !tags.length) return null;
+  if (!Array.isArray(rows) || !tags.length) return null;
   const m = new Map();  // značka → [tvar, …]
-  for (const [id, d] of rows) {
+  for (const row of rows) {
+    if (!Array.isArray(row) || typeof row[1] !== "string" || tags[row[0]] === undefined) continue;  // poškodené dáta
+    const [id, d] = row;
     const [, cut, add] = d === "=" ? [, "", ""] : d.match(/^(\d*)(.*)$/);
+    if (+cut > w.length) continue;
     const form = (cut ? w.slice(0, w.length - +cut) : w) + add;
     if (!m.has(tags[id])) m.set(tags[id], []);
     m.get(tags[id]).push(form);
@@ -488,6 +521,10 @@ $("filters").addEventListener("change", schedule);
 $("filters").addEventListener("submit", (ev) => ev.preventDefault());
 $("add-rule").addEventListener("click", () => addRule().querySelector(".r-letter").focus());
 $("more").addEventListener("click", renderMore);
+$("list").addEventListener("click", (ev) => {  // jeden poslucháč namiesto 500 (results sa mení len spolu so zoznamom)
+  const b = ev.target.closest("button[data-i]");
+  if (b && results[+b.dataset.i]) openDetail(results[+b.dataset.i]);
+});
 $("clear-filters").addEventListener("click", () => {
   $("filters").reset();
   $("rules").replaceChildren();

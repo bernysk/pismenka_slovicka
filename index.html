@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Ochrana do hĺbky: povolené sú len vlastné skripty, štýly a dáta z tej istej domény (bez vložených skriptov). -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Hľadač slov</title>
   <meta name="description" content="Vyhľadávanie slovenských slov podľa písmen, ich polohy a počtu výskytov.">
   <link rel="stylesheet" href="style.css">

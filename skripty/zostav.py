@@ -43,22 +43,37 @@ ZDROJE = [
 ] + [(os.path.join(SNK, f"prim-11.0-public-all-{p}-lemma-frequency.bz2"), SNK_FREQ.format(p), None)
      for p in "SAGVDPRNEOTJW"]
 
+TIMEOUT = 60  # s – bez neho by sa sťahovanie pri zaseknutom spojení nikdy neukončilo
+
 def stiahni(ciel, url, rozbal):
+    """Stiahne url do ciel (a prípadne rozbalí). Do cieľa sa zapíše až úplný súbor, takže prerušené
+    stiahnutie alebo rozbalenie po sebe nenechá polovičný súbor, ktorý by ďalšie spustenie považovalo za hotový."""
     if os.path.exists(ciel):
         return
+    if not url.startswith("https://"):
+        raise ValueError(f"povolené je len https: {url}")
     os.makedirs(os.path.dirname(ciel), exist_ok=True)
-    tmp = ciel + ".part"
+    tmp, unpacked = ciel + ".part", ciel + ".rozbaluje"
     print(f"  sťahujem {url}", flush=True)
     req = urllib.request.Request(url, headers={"User-Agent": "pismenka-slovicka/1.0"})
-    with urllib.request.urlopen(req) as r, open(tmp, "wb") as f:
-        shutil.copyfileobj(r, f, 1 << 20)
-    if rozbal:
-        opener = {"bz2": bz2.open, "xz": lzma.open}[rozbal]
-        with opener(tmp, "rb") as src, open(ciel, "wb") as dst:
-            shutil.copyfileobj(src, dst, 1 << 20)
-        os.remove(tmp)
-    else:
-        os.replace(tmp, ciel)
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as r, open(tmp, "wb") as f:
+            expected = r.headers.get("Content-Length")
+            shutil.copyfileobj(r, f, 1 << 20)
+        if expected and os.path.getsize(tmp) != int(expected):
+            raise IOError(f"neúplné stiahnutie {url}: {os.path.getsize(tmp)} z {expected} B")
+        if rozbal:
+            opener = {"bz2": bz2.open, "xz": lzma.open}[rozbal]
+            with opener(tmp, "rb") as src, open(unpacked, "wb") as dst:
+                shutil.copyfileobj(src, dst, 1 << 20)
+            os.replace(unpacked, ciel)
+            os.remove(tmp)
+        else:
+            os.replace(tmp, ciel)
+    finally:
+        for leftover in (tmp, unpacked):
+            if os.path.exists(leftover):
+                os.remove(leftover)
 
 # --- kroky: (názov, popis, príkaz)
 KROKY = [
