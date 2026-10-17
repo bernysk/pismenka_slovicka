@@ -36,7 +36,7 @@ a otvor http://localhost:8765.
 | Súbor | Obsah |
 |---|---|
 | `index.html`, `style.css`, `app.js` | aplikácia |
-| `data/slova.tsv` | slová pre aplikáciu (slovo, slovný druh, príznak výkladu, počet výskytov) |
+| `data/slova.tsv` | slová pre aplikáciu (slovo, slovný druh, príznak výkladu, počet výskytov, príznaky T = tvar, N = nevhodné) |
 | `data/vyklady.json` | výklady, načítajú sa až pri prvom otvorení detailu |
 | `slova.json`, `slova_s_vykladom.json`, `slova.txt` | úplný zoznam slov na ďalšie použitie |
 | `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`) |
@@ -44,7 +44,7 @@ a otvor http://localhost:8765.
 Dáta pre aplikáciu sa obnovia príkazom:
 
 ```bash
-python -I skripty/build_web.py slova.json data --freq zdroje/sk_full.txt   --dic zdroje/sk_SK.dic --aff zdroje/sk_SK.aff   --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt
+python -I skripty/build_web.py slova.json data --freq zdroje/sk_full.txt --dic zdroje/sk_SK.dic --aff zdroje/sk_SK.aff --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt
 ```
 
 Odkazy na zdrojové súbory sú v `skripty/README.md`.
