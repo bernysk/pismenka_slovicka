@@ -1,5 +1,6 @@
-# Regulárne výrazy (Python, celé slovo malými písmenami) pre slová nevhodné pre deti.
-# Riadok začínajúci "!" je výnimka – zhodné slovo sa NEoznačí.
+# Slová nevhodné pre deti – regulárne výrazy (Python), porovnávajú sa s celým slovom malými písmenami.
+#
+# ====== NEVHODNÉ: slovo, ktoré sa zhoduje, sa v režime „vhodné pre deti“ skryje ======
 (^|.*)jeb.*
 ^pič[aeiouyí].*|^pičov.*
 ^pizd.*
@@ -24,6 +25,9 @@
 ^idiot.*
 ^skurven.*
 ^ojeb.*
+#
+# ====== VÝNIMKY (začínajú „!“): tieto slová sú v poriadku a NEskryjú sa ======
+# Sú tu preto, lebo by ich inak omylom zachytil niektorý vzor vyššie alebo značka vo Wiktionary.
 !^serie[sm].*
 !^serial.*
 !^seriál.*
