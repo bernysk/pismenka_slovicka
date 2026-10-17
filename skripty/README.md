@@ -1,5 +1,8 @@
 # Skripty na zostavenie slovníka
 
+Prehľad zdrojov (verzie, licencie, kontrolné súčty) a toku dát zdroj → skript → cieľový súbor:
+[`docs/zdroje.md`](../docs/zdroje.md).
+
 **Všetko naraz:** `python -I skripty/zostav.py` – stiahne chýbajúce zdroje (nižšie) a spustí kroky 1–7 v poradí
 (`--bez-stahovania`, `--od <krok>`, `--len <krok>`; kroky: hunspell, vyklady, wiki, web, synonyma, morfflex, tvary).
 Pomocné moduly: `spolocne.py` (kódy slovných druhov, rozdelenie dát podľa písmen), `slabiky.py` (počet slabík,

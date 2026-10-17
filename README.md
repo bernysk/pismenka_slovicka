@@ -53,6 +53,7 @@ a otvor http://localhost:8765.
 | `export/` | **úplné dáta na ďalšie použitie** vo formáte JSON Lines (jeden záznam na riadok): `slova.jsonl` (slová s vlastnosťami, frekvenciami a výkladmi), `synonyma.jsonl` (synonymá, antonymá, nadradené a podradené pojmy so zdrojom), `slova.txt` – popis polí v [`export/README.md`](export/README.md) |
 | `morfflex/morfflex-sk.tsv.xz` | **všetky tvary** overených slov z MorfFlex SK s gramatickými značkami (zbalené, pozri nižšie) |
 | `skripty/` | skripty, ktoré dáta zostavia zo zdrojov (pozri `skripty/README.md`); všetko naraz: `skripty/zostav.py` |
+| `docs/zdroje.md` | **odkiaľ sú dáta**: názvy a URL zdrojových súborov, verzie, licencie a ktorý skript vytvára ktorý súbor; `docs/zdroje.sha256` = kontrolné súčty použitých zdrojov |
 | `docs/plan-tvary.md` | plán ďalšieho rozvoja: tabuľka tvarov (hotové), hľadanie v tvaroch, anglické ekvivalenty z WordNetu |
 | `LICENSE` | licencie: kód MIT, dáta CC BY-NC-SA 4.0 |
 | `licenses/` | licenčné texty zdrojov (hunspell-sk, OpenThesaurus-SK) |
@@ -78,7 +79,7 @@ python -I skripty/zostav.py
 ```
 
 Ďalšie možnosti: `--bez-stahovania`, `--od web` (začať od kroku), `--len synonyma` (len jeden krok).
-Jednotlivé kroky a zdroje sú popísané v `skripty/README.md`.
+Zdroje, ich verzie a tok dát sú v [`docs/zdroje.md`](docs/zdroje.md), jednotlivé skripty v `skripty/README.md`.
 Nevhodné slová sa dajú doplniť do `skripty/nevhodne.txt` (regulárne výrazy, `!` = výnimka).
 
 ## Zdroje a licencie
