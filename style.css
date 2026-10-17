@@ -132,6 +132,8 @@ dialog ol { margin: 0; padding-left: 22px; }
   text-decoration: underline; text-decoration-color: var(--accent-soft); text-underline-offset: 2px;
 }
 .rel-word.link:hover { text-decoration-color: var(--accent); }
+.rel-label { color: var(--muted); font-size: .8em; font-style: italic; }
+.rel-wrong .rel-word { text-decoration: line-through; text-decoration-color: var(--muted); }
 .close { float: right; border: none; background: transparent; font-size: 1.4rem; line-height: 1; padding: 0 4px; }
 
 footer { color: var(--muted); font-size: .85rem; padding-top: 24px; padding-bottom: 32px; }

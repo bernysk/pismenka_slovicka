@@ -1,6 +1,6 @@
 # Plán: sekcia A – tvary slov a ďalšie využitie stiahnutých dát
 
-Stav: **A1 hotové** (2026-10-17), A2–A4 zatiaľ neimplementované. Dokument popisuje, čo sa má spraviť, z akých dát
+Stav: **A1 a A4 hotové** (2026-10-17), **A3 zamietnuté** (pozri nižšie), A2 odložené. Dokument popisuje, čo sa má spraviť, z akých dát
 a v akom formáte, aby sa dalo pokračovať bez ďalšieho prieskumu.
 
 ## Prehľad
@@ -8,9 +8,9 @@ a v akom formáte, aby sa dalo pokračovať bez ďalšieho prieskumu.
 | # | Funkcia | Dáta, ktoré už máme | Kde sa prejaví |
 |---|---|---|---|
 | A1 | Tabuľka tvarov (skloňovanie, časovanie) v detaile slova – **hotové** | `morfflex/morfflex-sk.tsv.xz` | detail slova (`renderForms` v `app.js`) |
-| A2 | Hľadanie v tvaroch slov („slová, ktoré majú tvar na -ami“) | to isté | nový prepínač pri filtroch |
-| A3 | Anglický ekvivalent z WordNetu | `zdroje/snk/sk-wn-2013-01-23.txt.gz` (druhý záznam každého riadku) | detail slova, sekcia „Po anglicky“ |
-| A4 | Označenia synoným (hovorovo, archaizmus, nesprávne…) | `synonyma.json` – pole `zdroj` a text v zátvorke | detail slova, prípadne skrytie „nesprávne“ |
+| A2 | Hľadanie v tvaroch slov („slová, ktoré majú tvar na -ami“) – **odložené**, kým nebude konkrétne cvičenie | to isté | nový prepínač pri filtroch |
+| A3 | Anglický ekvivalent z WordNetu – **zamietnuté** (nesprávne významy) | `zdroje/snk/sk-wn-2013-01-23.txt.gz` (druhý záznam každého riadku) | detail slova, sekcia „Po anglicky“ |
+| A4 | Označenia synoným (hovorovo, archaizmus, nesprávne…) – **hotové** | `synonyma.json` – pole `zdroj` a text v zátvorke | detail slova, prípadne skrytie „nesprávne“ |
 
 ## A1 – tabuľka tvarov (hotové)
 
@@ -82,14 +82,29 @@ znaky lemy a pridaj „sa“ (pes → psa). Dekódovanie v JS je pár riadkov (p
      („tvar na -ami“), malý súbor.
 - Odporúčanie: začať možnosťou 2.
 
-## A3 – anglický ekvivalent z WordNetu
+## A3 – anglický ekvivalent z WordNetu (zamietnuté)
+
+Overené 2026-10-17: z WordNetu by anglický výklad pribudol 11 827 slovám, ale práve slová, ktoré ho z Wiktionary
+nemajú, sú často viacvýznamové a WordNet nevie, ktorý význam je myslený. Napríklad: „v“ → písmeno V, „ale“ → druh
+piva (ale), „zápas“ → vojenská bitka, „zákon“ → canon. Slová, ktoré anglický výklad majú (mačka → cat), by sa
+nezmenili. Prínos je malý a pridával by chyby, preto sa A3 nerobí. Ak by sa predsa robil: len pri zhode slovného
+druhu, len anglické slová bez definícií, ako nenápadný riadok „anglické ekvivalenty (WordNet)“.
+
+Pôvodný návrh:
 
 - Riadok WordNetu: `id ⇥ druh ⇥ slovenské slová ⇥ glosa ␞ záznam Princeton WordNet`. Anglické slová sú v
   zázname Princeton za počtom slov (`01 abnormal 0`), anglická definícia za znakom `|`.
 - Doplniť v `skripty/build_web.py` do výkladov kľúč `"wn": [["dog", "domestic dog"], "a member of the genus Canis…"]`
   len pre slová, ktoré nemajú `"en"` z Wiktionary. Zobraziť v sekcii „Po anglicky“.
 
-## A4 – označenia synoným
+## A4 – označenia synoným (hotové)
+
+**Výsledok:** `skripty/synonyma.py` oddelí označenie od slova (`fáro (hovorovo)` → slovo + označenie); v
+`synonyma.json` je v skupine pole `oznacenia`, v `data/synonyma/` je položka `[slovo, označenie]`. Aplikácia
+zobrazí označenie sivou kurzívou, „nesprávne“ slovo prečiarkne a v režime pre deti skryje „nesprávne“ aj
+„vulgarizmus“. Označení: hovorovo 656, term. 359, nesprávne 217, poeticky 172, archaizmus 165, vulgarizmus 52.
+
+Pôvodný návrh:
 
 - `synonyma.json` už obsahuje pri každej skupine pole `zdroj`; OpenThesaurus má označenie priamo v texte
   („fáro (hovorovo)“). V `skripty/synonyma.py` ho vyňať do samostatného poľa a v `data/synonyma/` posielať

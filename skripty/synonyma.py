@@ -6,10 +6,12 @@
 #   záporné dvojice ne-: pekný ↔ nepekný (len ak sú obe slová v zozname)
 #
 # Výstupy:
-#   synonyma.json        – úplné dáta so zdrojmi: {slovo: {"synonyma": [{"slova": [...], "zdroj": "..."}],
+#   synonyma.json        – úplné dáta so zdrojmi: {slovo: {"synonyma": [{"slova": [...], "zdroj": "...",
+#                                                                  "oznacenia": {"fáro": "hovorovo"}}],
 #                                                   "antonyma": [{"slovo": "...", "zdroj": "..."}]}}
 #   data/synonyma/<x>.json – pre aplikáciu, len slová z data/slova.tsv, rozdelené podľa prvého písmena:
 #                          {slovo: {"s": [[…], […]], "a": [...], "h": nadradené, "d": podradené}}
+#                          položka synoným je "slovo" alebo ["slovo", "označenie"] (hovorovo, nesprávne, archaizmus…)
 #
 # python -I skripty/synonyma.py --thesaurus zdroje/th_sk_SK_v2.dat --wikt zdroje/skwiktionary-latest-pages-articles.xml
 #        --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --slova data/slova.tsv --out .
@@ -165,6 +167,30 @@ for w, pos in words.items():
         ne_pairs += 1
 
 # --- zápis
+# --- štylistické označenia z OpenThesaurus: „fáro (hovorovo)“ → slovo „fáro“ + označenie „hovorovo“
+OZNACENIA = {"hovorovo", "term.", "nesprávne", "poeticky", "archaizmus", "vulgarizmus", "výrobný"}
+LABEL_RE = re.compile(r"^(.*?)\s*\(([^()]*)\)\s*$")
+
+def split_label(s):
+    m = LABEL_RE.match(s)
+    if m and m.group(2) in OZNACENIA:
+        return m.group(1), m.group(2)
+    return s, None
+
+for w, groups in syn.items():
+    for g in groups:
+        bare, labels = [], {}
+        for s in g["slova"]:
+            b, lab = split_label(s)
+            if b in bare:
+                continue  # „kľudný“ aj „kľudný (nesprávne)“ v jednej skupine
+            bare.append(b)
+            if lab:
+                labels[b] = lab
+        g["slova"] = bare
+        if labels:
+            g["oznacenia"] = labels
+
 full = {}
 for w in sorted(set(syn) | set(ant) | set(hyper) | set(hypo), key=lambda s: (s.lower(), s)):
     d = {}
@@ -181,7 +207,10 @@ for w, d in full.items():
     if w not in words:
         continue
     e = {}
-    if "synonyma" in d: e["s"] = [g["slova"] for g in d["synonyma"]]
+    # synonymum je reťazec, alebo [slovo, označenie] ak má štylistické označenie (hovorovo, nesprávne…)
+    if "synonyma" in d:
+        e["s"] = [[[s, g["oznacenia"][s]] if s in g.get("oznacenia", {}) else s for s in g["slova"]]
+                  for g in d["synonyma"]]
     if "antonyma" in d: e["a"] = [x["slovo"] for x in d["antonyma"]]
     if "nadradene" in d: e["h"] = d["nadradene"]
     if "podradene" in d: e["d"] = d["podradene"][:15]

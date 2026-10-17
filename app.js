@@ -329,17 +329,30 @@ function renderRelations(e, r, body) {
   if (!r) return;
   byWord ??= new Map(words.map((x) => [x.w, x]));
   const kids = $("kids").checked;
-  const bare = (s) => s.replace(/\s*\(.*\)$/, "");  // „fáro (hovorovo)“ → „fáro“
-  const ok = (s) => !(kids && (s.includes("vulgarizmus") || byWord.get(bare(s))?.bad));
-  const chipFor = (s) => {
+  // položka synoným je "slovo" alebo ["slovo", "označenie"] – označenie je štylistický štítok z OpenThesaurus-SK
+  const KIDS_HIDE = new Set(["vulgarizmus", "nesprávne"]);
+  const parts = (item) => (Array.isArray(item) ? item : [item, ""]);
+  const bare = (s) => s.replace(/\s*\(.*\)$/, "");  // staršie dáta: „fáro (hovorovo)“ → „fáro“
+  const ok = (item) => {
+    const [s, label] = parts(item);
+    return !(kids && (KIDS_HIDE.has(label) || s.includes("vulgarizmus") || byWord.get(bare(s))?.bad));
+  };
+  const chipFor = (item) => {
+    const [s, label] = parts(item);
     const target = byWord.get(bare(s));
-    if (!target) { const span = document.createElement("span"); span.className = "rel-word"; span.textContent = s; return span; }
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "rel-word link";
-    b.textContent = s;
-    b.addEventListener("click", () => openDetail(target));
-    return b;
+    let node;
+    if (target) {
+      node = el("button", "rel-word link", s);
+      node.type = "button";
+      node.addEventListener("click", () => openDetail(target));
+    } else {
+      node = el("span", "rel-word", s);
+    }
+    if (!label) return node;
+    const wrap = el("span", "rel-item" + (label === "nesprávne" ? " rel-wrong" : ""));
+    wrap.append(node, " ", el("small", "rel-label", label));
+    wrap.title = label === "nesprávne" ? "nesprávny alebo nespisovný tvar" : `štylistické označenie: ${label}`;
+    return wrap;
   };
   const groups = (r.s || []).map((g) => g.filter(ok)).filter((g) => g.length);
   const ants = (r.a || []).filter(ok);
