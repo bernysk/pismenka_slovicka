@@ -40,7 +40,6 @@
         </div>
         <div class="checks">
           <label class="check"><input type="checkbox" id="kids" checked> vhodné pre deti (bez vulgarizmov a nadávok)</label>
-          <label class="check"><input type="checkbox" id="only-base" checked> iba základné tvary <small>(približne)</small></label>
           <label class="check"><input type="checkbox" id="ignore-diacritics"> ignorovať diakritiku (a = á = ä)</label>
           <label class="check"><input type="checkbox" id="only-lower" checked> bez vlastných mien a skratiek</label>
           <label class="check"><input type="checkbox" id="only-defs"> iba slová s výkladom</label>
@@ -48,9 +47,58 @@
         </div>
       </section>
 
+      <section class="card">
+        <h2>Slovný druh <small>(žiadny vybraný = všetky)</small></h2>
+        <div class="chips" id="pos-chips">
+          <label class="chip"><input type="checkbox" name="pos" value="noun"> podstatné mená</label>
+          <label class="chip"><input type="checkbox" name="pos" value="adjective"> prídavné mená</label>
+          <label class="chip"><input type="checkbox" name="pos" value="verb"> slovesá</label>
+          <label class="chip"><input type="checkbox" name="pos" value="adverb"> príslovky</label>
+          <label class="chip"><input type="checkbox" name="pos" value="pronoun"> zámená</label>
+          <label class="chip"><input type="checkbox" name="pos" value="number"> číslovky</label>
+          <label class="chip"><input type="checkbox" name="pos" value="preposition"> predložky</label>
+          <label class="chip"><input type="checkbox" name="pos" value="conjunction"> spojky</label>
+          <label class="chip"><input type="checkbox" name="pos" value="particle"> častice</label>
+          <label class="chip"><input type="checkbox" name="pos" value="interjection"> citoslovcia</label>
+        </div>
+        <div class="chip-quick">
+          <button type="button" class="ghost small" data-pos="noun,adjective,verb,adverb,number">plnovýznamové</button>
+          <button type="button" class="ghost small" data-pos="pronoun,preposition,conjunction,particle,interjection">neplnovýznamové</button>
+          <button type="button" class="ghost small" data-pos="">všetky</button>
+        </div>
+
+        <div class="grid2 sub-filters">
+          <div>
+            <h2>Rod <small>(iba podstatné mená)</small></h2>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="rod" value="m"> mužský</label>
+              <label class="chip"><input type="checkbox" name="rod" value="f"> ženský</label>
+              <label class="chip"><input type="checkbox" name="rod" value="s"> stredný</label>
+            </div>
+          </div>
+          <div>
+            <h2>Životnosť <small>(mužský rod)</small></h2>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="ziv" value="A"> životné</label>
+              <label class="chip"><input type="checkbox" name="ziv" value="I"> neživotné</label>
+            </div>
+          </div>
+          <div>
+            <h2>Číslo</h2>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="pomn" value="" checked> všetky</label>
+              <label class="chip"><input type="radio" name="pomn" value="P"> iba pomnožné</label>
+              <label class="chip"><input type="radio" name="pomn" value="-P"> bez pomnožných</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="actions">
         <select id="sort" aria-label="Zoradenie">
-          <option value="freq">najčastejšie</option>
+          <option value="freq">najčastejšie (spolu)</option>
+          <option value="freq-sub">najčastejšie v hovorovej reči</option>
+          <option value="freq-wiki">najčastejšie vo Wikipédii</option>
           <option value="alpha">abecedne</option>
           <option value="len">od najkratších</option>
           <option value="len-desc">od najdlhších</option>

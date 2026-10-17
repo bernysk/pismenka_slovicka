@@ -1,114 +1,123 @@
-# Z slova.json vytvorí kompaktné dáta pre webovú aplikáciu:
-#   data/slova.tsv    – slovo <TAB> slovný druh <TAB> 1 ak má výklad <TAB> počet výskytov <TAB> príznaky
-#                       príznaky: T = nie je základný tvar (vyskloňovaný/vyčasovaný tvar iného slova)
-#                                 N = nevhodné pre deti (vulgárne, urážlivé)
-#   data/vyklady.json – {slovo: {"sk": [...], "en": [...]}}
+# Zostaví zoznam základných tvarov (lem) s vlastnosťami z morfologického slovníka MorfFlex SK
+# a doplní výklady, frekvencie a príznak nevhodnosti.
 #
-# python -I skripty/build_web.py slova.json data --freq sk_full.txt --dic sk_SK.dic --aff sk_SK.aff
-#        --kaikki kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt
-import argparse, json, os, re
+# Výstupy:
+#   data/slova.tsv    – slovo <TAB> slovný druh <TAB> 1 ak má výklad <TAB> frekvencia (titulky) <TAB> príznaky
+#                       <TAB> frekvencia (Wikipédia)
+#                       príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
+#                                 P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
+#   data/vyklady.json – {slovo: {"sk": [...], "en": [...]}}
+#   slova.json, slova_s_vykladom.json, slova.txt – úplný export
+#
+# python -I skripty/build_web.py --morfflex zdroje/slk --slovnik zdroje/slova.json --freq zdroje/sk_full.txt
+#        --freq-wiki zdroje/sk_wiki_freq.txt --kaikki zdroje/kaikki.org-dictionary-Slovak.jsonl --blocklist skripty/nevhodne.txt --out .
+import argparse, json, os, re, collections
 
 ap = argparse.ArgumentParser()
-ap.add_argument("src")
-ap.add_argument("outdir")
-ap.add_argument("--freq", help="frekvenčný zoznam 'slovo počet' (FrequencyWords sk_full.txt)")
-ap.add_argument("--dic", help="Hunspell sk_SK.dic – na rozpoznanie tvarov")
-ap.add_argument("--aff", help="Hunspell sk_SK.aff – na rozpoznanie tvarov")
-ap.add_argument("--kaikki", help="kaikki.org JSONL – tvary slov a značky vulgar/offensive")
-ap.add_argument("--blocklist", help="regulárne výrazy nevhodných slov (skripty/nevhodne.txt)")
+ap.add_argument("--morfflex", required=True, help="UniMorph slk (MorfFlex SK): lema, tvar, značky, rod/vid")
+ap.add_argument("--slovnik", required=True, help="slova.json z merge.py (Hunspell + výklady z Wiktionary)")
+ap.add_argument("--freq", help="frekvenčný zoznam tvarov 'slovo počet' (FrequencyWords sk_full.txt, titulky)")
+ap.add_argument("--freq-wiki", help="frekvenčný zoznam tvarov zo slovenskej Wikipédie (wiki_freq.py)")
+ap.add_argument("--kaikki", help="kaikki.org JSONL – značky vulgar/offensive")
+ap.add_argument("--blocklist", help="skripty/nevhodne.txt")
+ap.add_argument("--out", default=".")
 a = ap.parse_args()
 
-# --- frekvencie
-freq = {}
-if a.freq:
-    with open(a.freq, encoding="utf-8") as f:
-        for line in f:
-            parts = line.split()
-            if len(parts) == 2 and parts[1].isdigit():
-                freq[parts[0].lower()] = freq.get(parts[0].lower(), 0) + int(parts[1])
+# Slovné druhy, ktoré MorfFlex nemá – doplnia sa z Hunspell/Wiktionary
+CLOSED = {"pronoun", "number", "preposition", "conjunction", "particle", "interjection"}
+POS_MF = {"N": "noun", "V": "verb", "V.PTCP": "verb", "ADJ": "adjective", "ADV": "adverb"}
+PRIORITY = ["noun", "verb", "adjective", "adverb"]
 
-# --- tvary: rozvinutie pravidiel Hunspell (jedna úroveň, bez kombinácií predpôn a prípon)
-lemmas, forms, tagged_forms = set(), set(), set()
-if a.dic and a.aff:
-    rules = {}
-    with open(a.aff, encoding="utf-8") as f:
-        for line in f:
-            p = line.split("#")[0].split()
-            if len(p) >= 5 and p[0] in ("SFX", "PFX"):
-                kind, flag, strip, add, cond = p[:5]
-                strip = "" if strip == "0" else strip
-                add = add.split("/")[0]
-                add = "" if add == "0" else add
-                rx = re.compile((cond + "$") if kind == "SFX" else ("^" + cond)) if cond != "." else None
-                rules.setdefault(flag, []).append((kind, strip, add, rx))
-    # riadky s „st:iné_slovo“ alebo s pádom/časom (je, som, bol, mňa, jej) sú tvary; slovo je tvarom,
-    # ak sú tvarom všetky jeho riadky (si = zámeno aj tvar slovesa byť → ponechá sa)
-    FORM_TAGS = {"is:genitive", "is:dative", "is:accusative", "is:locative", "is:instrumental",
-                 "is:past", "is:future", "is:imperative", "is:plural"}
-    line_kinds = {}
-    with open(a.dic, encoding="utf-8") as f:
-        next(f)
-        for line in f:
-            if not line.strip():
-                continue
-            parts = line.split()
-            word, _, flags = parts[0].partition("/")
-            tags = set(parts[1:])
-            st = next((t[3:] for t in tags if t.startswith("st:")), None)
-            is_form = (st is not None and st != word) or bool(tags & FORM_TAGS)
-            line_kinds.setdefault(word, []).append(is_form)
-            if not flags:
-                continue
-            lemmas.add(word)
-            for fl in flags:
-                for kind, strip, add, rx in rules.get(fl, ()):
-                    if rx and not rx.search(word):
-                        continue
-                    if kind == "SFX":
-                        if strip and not word.endswith(strip): continue
-                        forms.add(word[: len(word) - len(strip)] + add)
-                    else:
-                        if strip and not word.startswith(strip): continue
-                        forms.add(add + word[len(strip):])
-    tagged_forms = {w for w, kinds in line_kinds.items() if all(kinds)}
-    lemmas -= tagged_forms
+POS_NORM = {"adj": "adjective", "adv": "adverb", "intj": "interjection", "pron": "pronoun", "prep": "preposition",
+            "conj": "conjunction", "num": "number", "abbrev": "acronym", "proverb": "phrase"}
+SKIP_POS = {"suffix", "prefix", "character", "combining_form", "interfix", "symbol", "punct"}
 
-# Nepravidelné tvary sú v .dic zapísané samostatne bez príznakov (achátmi, leptmi). Slovo bez príznakov
-# považujeme za tvar, ak je to kmeň známeho slova (bez 0–3 posledných písmen) + koncovka z .aff.
-endings, stems = set(), set()
-if a.dic and a.aff:
-    for rl in rules.values():
-        for kind, strip, add, rx in rl:
-            if kind == "SFX" and add: endings.add(add)
-    for w in lemmas:
-        for k in range(0, 4):
-            if len(w) - k >= 3: stems.add(w[: len(w) - k])
+# --- slovník z merge.py: výklady, slovné druhy, overenie existencie slova
+known, defs, hun_pos = set(), {}, {}
+for e in json.load(open(a.slovnik, encoding="utf-8")):
+    w = e["slovo"]
+    known.add(w)
+    d = {}
+    if e.get("vyklad_sk"): d["sk"] = e["vyklad_sk"]
+    if e.get("vyklad_en"): d["en"] = e["vyklad_en"]
+    if d: defs[w] = d
+    pos = POS_NORM.get(e.get("slovny_druh"), e.get("slovny_druh"))
+    if pos and pos not in SKIP_POS and not w.startswith("-") and not w.endswith("-"):
+        hun_pos.setdefault(w, (pos, e.get("rod")))
 
-def looks_like_form(w):
-    if w in forms or any(w[:i] in stems and w[i:] in endings for i in range(3, len(w))):
-        return True
-    # záporné tvary: nezaštíti, nepancime…
-    return w.startswith("ne") and w[2:] not in lemmas and len(w) > 5 and looks_like_form(w[2:])
+def load_freq(path):
+    out = {}
+    if path:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                p = line.split()
+                if len(p) == 2 and p[1].isdigit():
+                    out[p[0].lower()] = out.get(p[0].lower(), 0) + int(p[1])
+    return out
 
-# --- kaikki: ďalšie tvary a slová, ktorých všetky významy sú vulgárne/urážlivé
+freq = load_freq(a.freq)        # titulky (hovorová reč)
+wfreq = load_freq(a.freq_wiki)  # Wikipédia (spisovná, encyklopedická)
+
+closed_words = {w.lower() for w, (pos, _) in hun_pos.items() if pos in CLOSED}
+LEMMA_MARK = re.compile(r"(`\d+|-\d+)+$")  # aj kombinácie: tisíc`1000-2
+
+# --- MorfFlex: jeden prechod cez ~28 mil. riadkov
+lem = {}                                   # lema -> [pos Counter, rody NOM SG, rody NOM PL, vid, SG?, PL?]
+form_lemmas = collections.defaultdict(set)  # tvar (len tie, čo sú vo frekvenčnom zozname) -> lemy
+hun_lower = {w.lower() for w in hun_pos}
+morf_forms = set()
+with open(a.morfflex, encoding="utf-8") as f:
+    for line in f:
+        lemma, form, tag, extra = line.rstrip("\n").split("\t")
+        lemma = LEMMA_MARK.sub("", lemma)  # sto`100 → sto, obor-1 → obor
+        t = tag.split(";")
+        d = lem.get(lemma)
+        if d is None:
+            d = lem[lemma] = [collections.Counter(), set(), set(), set(), False, False]
+        d[0][POS_MF[t[0]]] += 1
+        if t[0] == "N":
+            if "NOM" in t:
+                d[1 if "SG" in t else 2].add(extra)
+            d[4] |= "SG" in t
+            d[5] |= "PL" in t
+        elif t[0] == "V" and "NFIN" in t and extra:
+            d[3].add(extra)
+        lf = form.lower()
+        if lf != lemma.lower() and lf in hun_lower:
+            morf_forms.add(lf)  # slovo z Hunspellu, ktoré je v MorfFlex tvarom iného slova (absurdít, predispozíciu)
+        if (lf in freq or lf in wfreq) and (lf not in closed_words or lf == lemma.lower()):  # aby, mi, ho patria spojke/zámenu, nie slovám aba, mať…
+            form_lemmas[lf].add(lemma)
+
+# Frekvencia lemy = súčet výskytov jej tvarov. Tvar patriaci viacerým lemám (je: byť, jesť) sa rozdelí
+# v pomere frekvencií, ktoré lemy majú z jednoznačných tvarov (byť dostane takmer všetko).
+def lemma_freqs(src):
+    base = collections.Counter()
+    for form, ls in form_lemmas.items():
+        if len(ls) == 1 and form in src:
+            base[next(iter(ls))] += src[form]
+    res = collections.Counter(base)
+    for form, ls in form_lemmas.items():
+        if len(ls) > 1 and form in src:
+            # lema zhodná s tvarom dostane bonus 10 % výskytov tvaru: potom → príslovka „potom“, nie „pot“;
+            # bola → stále takmer celé sloveso byť (má obrovskú frekvenciu z iných tvarov), nie „bola“ (zbraň)
+            weight = {l: base[l] + (0.1 * src[form] if l.lower() == form else 0) for l in ls}
+            total = sum(weight.values())
+            for l in ls:
+                res[l] += src[form] * (weight[l] / total if total else 1 / len(ls))
+    return res
+
+lemma_freq = lemma_freqs(freq)
+wiki_lemma_freq = lemma_freqs(wfreq)
+
+# --- nevhodné slová
 vulgar = set()
 BAD_TAGS = {"vulgar", "offensive", "slur", "obscene"}
 if a.kaikki:
-    with open(a.kaikki, encoding="utf-8") as f:
-        for line in f:
-            e = json.loads(line)
-            w = e["word"]
-            senses = [s for s in e.get("senses", []) if s.get("glosses") and "form_of" not in s]
-            if senses and all(BAD_TAGS & set(s.get("tags", [])) for s in senses):
-                vulgar.add(w)
-            if senses:
-                lemmas.add(w)
-            for fm in e.get("forms", []):
-                t = fm.get("form", "")
-                if fm.get("source") in ("declension", "conjugation", "inflection") and " " not in t and t != w \
-                        and not set(fm.get("tags", [])) & {"table-tags", "inflection-template", "class"}:
-                    forms.add(t)
-
+    for line in open(a.kaikki, encoding="utf-8"):
+        e = json.loads(line)
+        senses = [s for s in e.get("senses", []) if s.get("glosses") and "form_of" not in s]
+        if senses and all(BAD_TAGS & set(s.get("tags", [])) for s in senses):
+            vulgar.add(e["word"])
 block, allow = [], []
 if a.blocklist:
     for line in open(a.blocklist, encoding="utf-8"):
@@ -121,29 +130,99 @@ def is_vulgar(w):
     if any(r.fullmatch(lw) for r in allow): return False
     return w in vulgar or any(r.fullmatch(lw) for r in block)
 
-os.makedirs(a.outdir, exist_ok=True)
-entries = json.load(open(a.src, encoding="utf-8"))
-defs = {}
-stats = {"freq": 0, "T": 0, "N": 0}
-with open(os.path.join(a.outdir, "slova.tsv"), "w", encoding="utf-8", newline="\n") as f:
+GENDER = {"MASC": "m", "FEM": "f", "NEUT": "s"}
+entries = []
+dropped = 0
+for w, (pc, g_sg, g_pl, aspect, has_sg, has_pl) in lem.items():
+    f = round(lemma_freq.get(w, 0)) + round(wiki_lemma_freq.get(w, 0))
+    # MorfFlex obsahuje aj veľa umelo odvodených slov – ponecháme len tie, ktoré pozná aj iný zdroj
+    if w not in known and f == 0:
+        dropped += 1
+        continue
+    pos = max(pc, key=lambda p: (pc[p], -PRIORITY.index(p)))
+    if hun_pos.get(w, ("",))[0] in CLOSED:
+        pos = hun_pos[w][0]  # sto, tisíc → číslovka (MorfFlex ich má ako podstatné meno)
+    e = {"slovo": w, "slovny_druh": pos}
+    if pos == "noun":
+        g = g_sg or g_pl
+        rody = sorted({GENDER[x.split(";")[0]] for x in g if x.split(";")[0] in GENDER})
+        if rody: e["rod"] = "".join(rody)
+        anim = {x.split(";")[1] for x in g if ";" in x}
+        if anim == {"ANIM"}: e["zivotnost"] = "životné"
+        elif anim == {"INAN"}: e["zivotnost"] = "neživotné"
+        if has_pl and not has_sg: e["pomnozne"] = True
+    if pos == "verb" and len(aspect) == 1:
+        e["vid"] = "dokonavé" if aspect == {"PFV"} else "nedokonavé"
+    entries.append(e)
+
+# --- slová mimo MorfFlex (z Hunspell / Wiktionary):
+#   zámená, číslovky, spojky… vždy; podstatné/prídavné mená, slovesá a príslovky (trambulína, baseball),
+#   ak nie sú v MorfFlex tvarom iného slova; vlastné mená, skratky a spojenia len s výkladom vo Wiktionary
+OPEN = {"noun", "adjective", "verb", "adverb"}
+HUN_GENDER = {"masculine": "m", "feminine": "f", "neuter": "s"}
+have = {e["slovo"] for e in entries}
+added_open = 0
+for w, (pos, rod) in hun_pos.items():
+    if w in have:
+        continue
+    lw = w.lower()
+    is_form = lw in morf_forms or lw in form_lemmas  # (je, som – tvary slova byť)
+    if pos in CLOSED:
+        pass
+    elif pos in OPEN and not is_form:
+        added_open += 1
+    elif w in defs and not is_form:
+        pass
+    else:
+        continue
+    e = {"slovo": w, "slovny_druh": pos}
+    if pos == "noun" and rod in HUN_GENDER:
+        e["rod"] = HUN_GENDER[rod]
+    entries.append(e)
+    have.add(w)
+
+for e in entries:
+    w = e["slovo"]
+    abbr = len(w) > 1 and w.isupper()  # skratky (SA, OSN) nie
+    n = 0 if abbr else round(lemma_freq.get(w, 0)) or freq.get(w.lower(), 0)
+    nw = 0 if abbr else round(wiki_lemma_freq.get(w, 0)) or wfreq.get(w.lower(), 0)
+    if n: e["frekvencia"] = n
+    if nw: e["frekvencia_wiki"] = nw
+    if is_vulgar(w): e["nevhodne"] = True
+    if w in defs:
+        if "sk" in defs[w]: e["vyklad_sk"] = defs[w]["sk"]
+        if "en" in defs[w]: e["vyklad_en"] = defs[w]["en"]
+entries.sort(key=lambda e: (e["slovo"].lower(), e["slovo"]))
+
+# --- zápis
+os.makedirs(os.path.join(a.out, "data"), exist_ok=True)
+FLAG_ZIV = {"životné": "A", "neživotné": "I"}
+FLAG_VID = {"dokonavé": "D", "nedokonavé": "E"}
+web_defs = {}
+with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newline="\n") as f:
     for e in entries:
         w = e["slovo"]
-        if not w or "\t" in w or "\n" in w or w.startswith("-") or w.endswith("-") \
-                or not any(ch.isalpha() for ch in w) or e.get("slovny_druh") in ("character", "symbol", "punct"):
+        if "\t" in w or "\n" in w or not any(ch.isalpha() for ch in w):
             continue
-        d = {}
-        if e.get("vyklad_sk"): d["sk"] = e["vyklad_sk"]
-        if e.get("vyklad_en"): d["en"] = e["vyklad_en"]
-        if d: defs[w] = d
-        n = 0 if len(w) > 1 and w.isupper() else freq.get(w.lower(), 0)  # skratky (SA, OSN) nie
-        flags = ""
-        if w in tagged_forms or (not e.get("slovny_druh") and w not in lemmas and looks_like_form(w.lower())):
-            flags += "T"
-        if is_vulgar(w): flags += "N"
-        stats["freq"] += n > 0
-        for k in flags: stats[k] += 1
-        f.write(f"{w}\t{e.get('slovny_druh') or ''}\t{1 if d else ''}\t{n or ''}\t{flags}\n")
-with open(os.path.join(a.outdir, "vyklady.json"), "w", encoding="utf-8") as f:
-    json.dump(defs, f, ensure_ascii=False, separators=(",", ":"))
-print(len(entries), "slov,", len(defs), "s výkladom,", stats["freq"], "s frekvenciou,",
-      stats["T"], "tvarov (nie základný tvar),", stats["N"], "nevhodných")
+        flags = e.get("rod", "") + FLAG_ZIV.get(e.get("zivotnost"), "") + ("P" if e.get("pomnozne") else "") \
+            + FLAG_VID.get(e.get("vid"), "") + ("N" if e.get("nevhodne") else "")
+        has_def = "vyklad_sk" in e or "vyklad_en" in e
+        if has_def: web_defs[w] = defs[w]
+        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\n")
+with open(os.path.join(a.out, "data", "vyklady.json"), "w", encoding="utf-8") as f:
+    json.dump(web_defs, f, ensure_ascii=False, separators=(",", ":"))
+with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:
+    json.dump(entries, f, ensure_ascii=False, indent=1)
+with open(os.path.join(a.out, "slova_s_vykladom.json"), "w", encoding="utf-8") as f:
+    json.dump([e for e in entries if "vyklad_sk" in e or "vyklad_en" in e], f, ensure_ascii=False, indent=1)
+with open(os.path.join(a.out, "slova.txt"), "w", encoding="utf-8", newline="\n") as f:
+    f.write("\n".join(e["slovo"] for e in entries) + "\n")
+
+c = collections.Counter(e["slovny_druh"] for e in entries)
+print(f"lem v MorfFlex: {len(lem)}, vyradených neoverených: {dropped}, doplnených z Hunspellu: {added_open}, "
+      f"spolu slov: {len(entries)}")
+print("slovné druhy:", c.most_common())
+print("s výkladom:", len(web_defs), "| s frekvenciou:", sum("frekvencia" in e for e in entries),
+      "| nevhodné:", sum("nevhodne" in e for e in entries))
+print("vid:", collections.Counter(e.get("vid") for e in entries if e["slovny_druh"] == "verb"))
+print("životnosť:", collections.Counter(e.get("zivotnost") for e in entries if e.get("rod") == "m"))

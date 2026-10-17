@@ -8,7 +8,7 @@ const POS_SK = {
   particle: "častica", participle: "príčastie", acronym: "skratka", abbrev: "skratka",
   name: "vlastné meno", phrase: "slovné spojenie", proverb: "príslovie", character: "písmeno",
 };
-const GENDER_SK = { masculine: "mužský rod", feminine: "ženský rod", neuter: "stredný rod" };
+const GENDER_SK = { m: "mužský rod", f: "ženský rod", s: "stredný rod" };
 
 const $ = (id) => document.getElementById(id);
 let words = [];        // [{w, pos, def, freq, lower, t, tp, len}]
@@ -26,11 +26,20 @@ const enc = (s) => s.replace(/ch/g, CH);
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
-    const [w, pos, def, freq, flags = ""] = line.split("\t");
+    const [w, pos, def, freq, flags = "", wfreq] = line.split("\t");
     const lower = w.toLowerCase();
     const t = enc(lower);
-    return { w, pos, def: def === "1", freq: +freq || 0, form: flags.includes("T"), bad: flags.includes("N"), lower, t, tp: enc(strip(lower)), len: [...t].length };
+    return {
+      w, pos, def: def === "1", freq: +freq || 0, wfreq: +wfreq || 0, lower, t, tp: enc(strip(lower)), len: [...t].length,
+      rod: flags.replace(/[^mfs]/g, ""),                                  // m/f/s, môže byť aj viac (napr. „mf“)
+      ziv: flags.includes("A") ? "A" : flags.includes("I") ? "I" : "",
+      pomn: flags.includes("P"), bad: flags.includes("N"),
+    };
   });
+  // spoločné skóre: priemer relatívnej frekvencie v titulkoch a vo Wikipédii (každý zdroj má inú veľkosť)
+  const sumSub = words.reduce((s, e) => s + e.freq, 0) || 1;
+  const sumWiki = words.reduce((s, e) => s + e.wfreq, 0) || 1;
+  for (const e of words) e.score = e.freq / sumSub + e.wfreq / sumWiki;
   addRule();
   run();
 }
@@ -113,14 +122,22 @@ function run() {
   const onlyDefs = $("only-defs").checked;
   const noSpaces = $("no-spaces").checked;
   const kids = $("kids").checked;
-  const onlyBase = $("only-base").checked;
+  const checked = (name) => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map((i) => i.value);
+  const posSet = new Set(checked("pos"));
+  const rodSet = checked("rod");
+  const zivSet = checked("ziv");
+  const pomn = checked("pomn")[0] || "";
 
   results = words.filter((e) => {
     if (onlyLower && (e.w !== e.lower || e.pos === "acronym" || e.pos === "name" || e.w.includes("."))) return false;
     if (noSpaces && /[\s-]/.test(e.w)) return false;
     if (onlyDefs && !e.def) return false;
     if (kids && e.bad) return false;
-    if (onlyBase && e.form) return false;
+    if (posSet.size && !posSet.has(e.pos)) return false;
+    if (rodSet.length && !rodSet.some((r) => e.rod.includes(r))) return false;
+    if (zivSet.length && !zivSet.includes(e.ziv)) return false;
+    if (pomn === "P" && !e.pomn) return false;
+    if (pomn === "-P" && e.pomn) return false;
     const word = ignore ? e.tp : e.t;
     if (min && e.len < min) return false;
     if (max && e.len > max) return false;
@@ -131,7 +148,10 @@ function run() {
   });
 
   const sort = $("sort").value;
-  if (sort === "freq") results.sort((a, b) => b.freq - a.freq || a.lower.localeCompare(b.lower, "sk"));
+  const by = (k) => (a, b) => b[k] - a[k] || a.lower.localeCompare(b.lower, "sk");
+  if (sort === "freq") results.sort(by("score"));
+  else if (sort === "freq-sub") results.sort(by("freq"));
+  else if (sort === "freq-wiki") results.sort(by("wfreq"));
   else if (sort === "len") results.sort((a, b) => a.len - b.len || a.lower.localeCompare(b.lower, "sk"));
   else if (sort === "len-desc") results.sort((a, b) => b.len - a.len || a.lower.localeCompare(b.lower, "sk"));
   else results.sort((a, b) => a.lower.localeCompare(b.lower, "sk"));
@@ -164,8 +184,14 @@ function renderMore() {
 // ---------- detail ----------
 async function openDetail(e) {
   $("detail-word").textContent = e.w;
-  const freqText = e.freq ? `${e.freq.toLocaleString("sk")}× v korpuse titulkov` : "v korpuse titulkov sa nevyskytuje";
-  $("detail-pos").textContent = [POS_SK[e.pos] || e.pos, freqText].filter(Boolean).join(" · ");
+  const freqText = `výskyty (všetky tvary): titulky ${e.freq.toLocaleString("sk")}×, Wikipédia ${e.wfreq.toLocaleString("sk")}×`;
+  const gram = [
+    POS_SK[e.pos] || e.pos,
+    [...e.rod].map((r) => GENDER_SK[r]).join(" / "),
+    e.ziv === "A" ? "životné" : e.ziv === "I" ? "neživotné" : "",
+    e.pomn ? "pomnožné" : "",
+  ];
+  $("detail-pos").textContent = [...gram, freqText].filter(Boolean).join(" · ");
   const body = $("detail-body");
   body.replaceChildren();
   $("detail").showModal();
@@ -215,6 +241,11 @@ $("clear-filters").addEventListener("click", () => {
   run();
 });
 $("detail").addEventListener("click", (ev) => { if (ev.target === $("detail")) $("detail").close(); });
+document.querySelectorAll("[data-pos]").forEach((b) => b.addEventListener("click", () => {
+  const want = new Set(b.dataset.pos.split(",").filter(Boolean));
+  document.querySelectorAll('input[name="pos"]').forEach((i) => { i.checked = want.has(i.value); });
+  run();
+}));
 
 load().catch((err) => {
   $("count").textContent = "Slovník sa nepodarilo načítať. Otvor stránku cez webový server (napr. GitHub Pages), nie ako súbor.";
