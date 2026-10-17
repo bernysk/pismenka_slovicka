@@ -1,4 +1,5 @@
-# Zostaví synonymá a antonymá zo štyroch zdrojov:
+# Zostaví synonymá, antonymá a nadradené/podradené pojmy z piatich zdrojov:
+#   Slovenský WordNet (SNK) – synonymá, antonymá, nadradené a podradené pojmy
 #   OpenThesaurus-SK (th_sk_SK_v2.dat z LibreOffice) – skupiny synoným s označením (hovorovo, archaizmus…)
 #   slovenský Wikislovník – sekcie „Synonymá“ a „Antonymá“
 #   anglický Wiktionary cez kaikki.org – polia synonyms / antonyms
@@ -18,6 +19,7 @@ ap.add_argument("--thesaurus", required=True)
 ap.add_argument("--wikt", required=True)
 ap.add_argument("--kaikki", required=True)
 ap.add_argument("--slova", required=True)
+ap.add_argument("--wordnet", help="Slovenský WordNet zo SNK (sk-wn-2013-01-23.txt.gz)")
 ap.add_argument("--out", default=".")
 a = ap.parse_args()
 
@@ -44,6 +46,53 @@ def add_syn(w, group, src):
 def add_ant(w, x, src):
     if x and x != w and x not in {e["slovo"] for e in ant[w]}:
         ant[w].append({"slovo": x, "zdroj": src})
+
+# --- Slovenský WordNet (SNK, JÚĽŠ SAV) – má prednosť: odborne zostavené synsety napojené na Princeton WordNet.
+#   riadok: id <TAB> slovný druh <TAB> slová (;) <TAB> glosa ␞ záznam Princeton WordNet so vzťahmi:
+#   @ / @i nadradený pojem, ~ / ~i podradený pojem, ! antonymum
+hyper = collections.defaultdict(list)   # slovo -> nadradené pojmy
+hypo = collections.defaultdict(list)    # slovo -> podradené pojmy
+if a.wordnet:
+    import gzip
+    WN_POINTER = re.compile(r"(@i?|~i?|!) (\d{8}) ([nvasr])")
+    synsets, links = collections.defaultdict(list), []
+    with gzip.open(a.wordnet, "rt", encoding="utf-8") as f:
+        for line in f:
+            if "␞" not in line:
+                continue
+            sk_part, pwn = line.rstrip("\n").split("␞", 1)
+            cols = sk_part.split("\t")
+            if len(cols) < 3:
+                continue
+            ws = []
+            for raw in cols[2].split(";"):
+                t = re.sub(r"\(.*?\)", "", raw).strip(" +-?\t")  # „+“ hlavné slovo, „-“ nepresný, „?“ nejasný ekvivalent
+                if t and not t.startswith(("-", "?")):
+                    ws.append(t)
+            pp = pwn.split()
+            if len(pp) < 3 or not ws:
+                continue
+            pos = "a" if pp[2] == "s" else pp[2]
+            key = (pp[0], pos)
+            synsets[key].extend(w for w in ws if w not in synsets[key])
+            links.append((ws, [(m.group(1), (m.group(2), "a" if m.group(3) == "s" else m.group(3)))
+                               for m in WN_POINTER.finditer(pwn.split("|", 1)[0])]))
+    for ws, ptrs in links:
+        for w in ws:
+            add_syn(lower_to_word.get(w, w), ws, "Slovenský WordNet")
+        for sym, target in ptrs:
+            tw = synsets.get(target)
+            if not tw:
+                continue
+            for w in ws:
+                w = lower_to_word.get(w, w)
+                if sym.startswith("@"):
+                    hyper[w] += [x for x in tw[:3] if x not in hyper[w] and x != w]
+                elif sym.startswith("~"):
+                    hypo[w] += [x for x in tw[:2] if x not in hypo[w] and x != w]
+                elif sym == "!":
+                    for x in tw[:3]:
+                        add_ant(w, x, "Slovenský WordNet")
 
 # --- OpenThesaurus-SK: „heslo|počet“ a pod ním riadky „-|syn1|syn2 (hovorovo)|…“
 lines = open(a.thesaurus, encoding="utf-8").read().split("\n")
@@ -113,10 +162,12 @@ for w, pos in words.items():
 
 # --- zápis
 full = {}
-for w in sorted(set(syn) | set(ant), key=lambda s: (s.lower(), s)):
+for w in sorted(set(syn) | set(ant) | set(hyper) | set(hypo), key=lambda s: (s.lower(), s)):
     d = {}
     if syn.get(w): d["synonyma"] = syn[w]
     if ant.get(w): d["antonyma"] = ant[w]
+    if hyper.get(w): d["nadradene"] = hyper[w]
+    if hypo.get(w): d["podradene"] = hypo[w][:30]
     if d: full[w] = d
 with open(os.path.join(a.out, "synonyma.json"), "w", encoding="utf-8") as f:
     json.dump(full, f, ensure_ascii=False, indent=1)
@@ -128,6 +179,8 @@ for w, d in full.items():
     e = {}
     if "synonyma" in d: e["s"] = [g["slova"] for g in d["synonyma"]]
     if "antonyma" in d: e["a"] = [x["slovo"] for x in d["antonyma"]]
+    if "nadradene" in d: e["h"] = d["nadradene"]
+    if "podradene" in d: e["d"] = d["podradene"][:15]
     web[w] = e
 with open(os.path.join(a.out, "data", "synonyma.json"), "w", encoding="utf-8") as f:
     json.dump(web, f, ensure_ascii=False, separators=(",", ":"))
@@ -136,5 +189,6 @@ src_count = collections.Counter(g["zdroj"] for d in full.values() for g in d.get
 ant_count = collections.Counter(x["zdroj"] for d in full.values() for x in d.get("antonyma", []))
 print("slov so synonymami:", sum("synonyma" in d for d in full.values()), dict(src_count))
 print("slov s antonymami:", sum("antonyma" in d for d in full.values()), dict(ant_count), "| dvojíc ne-:", ne_pairs)
+print("nadradené pojmy:", len(hyper), "| podradené:", len(hypo))
 print("v aplikácii:", len(web), "slov | so synonymami:", sum("s" in d for d in web.values()),
       "| s antonymami:", sum("a" in d for d in web.values()))

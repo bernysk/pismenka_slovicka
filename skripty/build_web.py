@@ -3,7 +3,7 @@
 #
 # Výstupy:
 #   data/slova.tsv    – slovo <TAB> slovný druh <TAB> 1 ak má výklad <TAB> frekvencia (titulky) <TAB> príznaky
-#                       <TAB> frekvencia (Wikipédia)
+#                       <TAB> frekvencia (Wikipédia) <TAB> frekvencia (Slovenský národný korpus)
 #                       príznaky: m/f/s = rod (mužský/ženský/stredný), A/I = životné/neživotné,
 #                                 P = pomnožné, D/E = dokonavé/nedokonavé, N = nevhodné pre deti
 #   data/vyklady.json – {slovo: {"sk": [...], "en": [...]}}
@@ -21,6 +21,8 @@ ap.add_argument("--freq-wiki", help="frekvenčný zoznam tvarov zo slovenskej Wi
 ap.add_argument("--kaikki", help="kaikki.org JSONL – značky vulgar/offensive")
 ap.add_argument("--blocklist", help="skripty/nevhodne.txt")
 ap.add_argument("--wiki-vety", help="prvé vety článkov Wikipédie (wiki_freq.py, tretí argument)")
+ap.add_argument("--snk", help="priečinok s dátami Slovenského národného korpusu: prim-11.0-public-all-*-lemma-frequency.bz2 "
+                              "a ma-2015-02-05.txt.xz (morfologická databáza)")
 ap.add_argument("--out", default=".")
 a = ap.parse_args()
 
@@ -58,6 +60,55 @@ def load_freq(path):
 
 freq = load_freq(a.freq)        # titulky (hovorová reč)
 wfreq = load_freq(a.freq_wiki)  # Wikipédia (spisovná, encyklopedická)
+
+# --- Slovenský národný korpus (SNK, JÚĽŠ SAV)
+#   frekvencia základných tvarov z korpusu prim-11.0-public-all, zvlášť pre každý slovný druh
+#   morfologická databáza: lema, tvar, značka (SSis1 = podstatné meno, neživotný mužský rod, jedn. číslo, nominatív)
+SNK_POS = {"S": "noun", "A": "adjective", "G": "adjective", "V": "verb", "D": "adverb", "P": "pronoun", "R": "pronoun",
+           "N": "number", "E": "preposition", "O": "conjunction", "T": "particle", "J": "interjection", "W": "acronym"}
+snk_freq = collections.Counter()      # (lema, náš slovný druh) -> počet
+snk_any = collections.Counter()       # lema -> počet (všetky slovné druhy)
+snk_morph = {}                        # lema -> [Counter slovných druhov, rody, životnosť, SG?, PL?]
+if a.snk:
+    import bz2, glob, lzma
+    for path in glob.glob(os.path.join(a.snk, "prim-*-lemma-frequency.bz2")):
+        letter = re.search(r"-([A-Z0-9])-lemma-frequency", path).group(1)
+        if letter not in SNK_POS:
+            continue
+        with bz2.open(path, "rt", encoding="utf-8") as f:
+            for line in f:
+                p = line.split(None, 1)
+                if len(p) == 2 and p[0].isdigit():
+                    lemma, n = p[1].strip(), int(p[0])
+                    snk_freq[(lemma, SNK_POS[letter])] += n
+                    snk_any[lemma] += n
+    morph_files = glob.glob(os.path.join(a.snk, "ma-*.txt.xz"))
+    if morph_files:
+        with lzma.open(morph_files[0], "rt", encoding="utf-8") as f:
+            for line in f:
+                p = line.rstrip("\n").split("\t")
+                if len(p) < 3 or not p[2] or p[2][0] not in SNK_POS:
+                    continue
+                lemma, form, tag = p[0], p[1], p[2]
+                d = snk_morph.get(lemma)
+                if d is None:
+                    d = snk_morph[lemma] = [collections.Counter(), set(), set(), False, False]
+                d[0][SNK_POS[tag[0]]] += 1
+                if tag[0] == "S" and len(tag) >= 5:  # SSis1: rod (m/i/f/n), číslo (s/p), pád
+                    g = tag[2]
+                    if g in "mi": d[1].add("m"); d[2].add("A" if g == "m" else "I")
+                    elif g == "f": d[1].add("f")
+                    elif g == "n": d[1].add("s")
+                    d[3] |= tag[3] == "s"
+                    d[4] |= tag[3] == "p"
+    known |= set(snk_morph)
+    known |= {l for l, n in snk_any.items() if n >= 10}
+    print("SNK: frekvencie pre", len(snk_any), "lem, morfologická databáza", len(snk_morph), "lem")
+
+def snk_count(w, pos):
+    """Počet výskytov lemy v SNK pre daný slovný druh (vlastné mená a spojenia ako podstatné meno)."""
+    p = {"name": "noun", "phrase": "noun"}.get(pos, pos)
+    return snk_freq.get((w, p)) or snk_any.get(w, 0)
 
 closed_words = {w.lower() for w, (pos, _) in hun_pos.items() if pos in CLOSED}
 LEMMA_MARK = re.compile(r"(`\d+|-\d+)+$")  # aj kombinácie: tisíc`1000-2
@@ -182,6 +233,30 @@ for w, (pos, rod) in hun_pos.items():
     entries.append(e)
     have.add(w)
 
+# --- slová z morfologickej databázy SNK, ktoré ešte nemáme (lemy vybrané zo slovníkov SNK)
+added_snk = 0
+for w, (pc, rody, anim, has_sg, has_pl) in snk_morph.items():
+    if w in have or w.lower() in morf_forms or "\t" in w:
+        continue
+    pos = max(pc, key=pc.get)
+    if pos == "acronym":
+        continue
+    entries.append({"slovo": w, "slovny_druh": pos})
+    have.add(w)
+    added_snk += 1
+
+# --- rod, životnosť a pomnožnosť z SNK tam, kde ich MorfFlex/Hunspell nedali
+for e in entries:
+    m = snk_morph.get(e["slovo"])
+    if e["slovny_druh"] != "noun" or not m or not m[1]:
+        continue
+    if "rod" not in e:
+        e["rod"] = "".join(sorted(m[1]))
+    if "zivotnost" not in e and e["rod"] == "m" and len(m[2]) == 1:
+        e["zivotnost"] = "životné" if m[2] == {"A"} else "neživotné"
+    if "pomnozne" not in e and m[4] and not m[3]:
+        e["pomnozne"] = True
+
 # --- prvá veta článku Wikipédie s rovnakým názvom (Voda, Strom, Bratislava), aj cez presmerovanie
 wiki_vety, wiki_redir = {}, {}
 if a.wiki_vety:
@@ -223,6 +298,8 @@ for e in entries:
     nw = 0 if abbr else round(wiki_lemma_freq.get(w, 0)) or wfreq.get(w.lower(), 0)
     if n: e["frekvencia"] = n
     if nw: e["frekvencia_wiki"] = nw
+    ns = 0 if abbr else snk_count(w, e["slovny_druh"])
+    if ns: e["frekvencia_snk"] = ns
     if is_vulgar(w): e["nevhodne"] = True
     if w in defs:
         if "sk" in defs[w]: e["vyklad_sk"] = defs[w]["sk"]
@@ -246,7 +323,7 @@ with open(os.path.join(a.out, "data", "slova.tsv"), "w", encoding="utf-8", newli
             d["wiki"] = [e["vyklad_wiki"], e["wiki_clanok"]]
         has_def = bool(d)
         if has_def: web_defs[w] = d
-        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\n")
+        f.write(f"{w}\t{e['slovny_druh']}\t{1 if has_def else ''}\t{e.get('frekvencia', '')}\t{flags}\t{e.get('frekvencia_wiki', '')}\t{e.get('frekvencia_snk', '')}\n")
 with open(os.path.join(a.out, "data", "vyklady.json"), "w", encoding="utf-8") as f:
     json.dump(web_defs, f, ensure_ascii=False, separators=(",", ":"))
 with open(os.path.join(a.out, "slova.json"), "w", encoding="utf-8") as f:
@@ -257,7 +334,7 @@ with open(os.path.join(a.out, "slova.txt"), "w", encoding="utf-8", newline="\n")
     f.write("\n".join(e["slovo"] for e in entries) + "\n")
 
 c = collections.Counter(e["slovny_druh"] for e in entries)
-print(f"lem v MorfFlex: {len(lem)}, vyradených neoverených: {dropped}, doplnených z Hunspellu: {added_open}, "
+print(f"lem v MorfFlex: {len(lem)}, vyradených neoverených: {dropped}, doplnených z Hunspellu: {added_open}, zo SNK: {added_snk}, "
       f"spolu slov: {len(entries)}")
 print("slovné druhy:", c.most_common())
 print("s výkladom:", len(web_defs), "| s frekvenciou:", sum("frekvencia" in e for e in entries),

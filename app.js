@@ -26,11 +26,11 @@ const enc = (s) => s.replace(/ch/g, CH);
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
-    const [w, pos, def, freq, flags = "", wfreq] = line.split("\t");
+    const [w, pos, def, freq, flags = "", wfreq, snk] = line.split("\t");
     const lower = w.toLowerCase();
     const t = enc(lower);
     return {
-      w, pos, def: def === "1", freq: +freq || 0, wfreq: +wfreq || 0, lower, t, tp: enc(strip(lower)), len: [...t].length,
+      w, pos, def: def === "1", freq: +freq || 0, wfreq: +wfreq || 0, snk: +snk || 0, lower, t, tp: enc(strip(lower)), len: [...t].length,
       rod: flags.replace(/[^mfs]/g, ""),                                  // m/f/s, môže byť aj viac (napr. „mf“)
       ziv: flags.includes("A") ? "A" : flags.includes("I") ? "I" : "",
       pomn: flags.includes("P"), bad: flags.includes("N"),
@@ -134,7 +134,7 @@ function run() {
     if (noSpaces && /[\s-]/.test(e.w)) return false;
     if (onlyDefs && !e.def) return false;
     if (kids && e.bad) return false;
-    if (minFreq && e.freq + e.wfreq < minFreq) return false;
+    if (minFreq && e.snk < minFreq) return false;
     if (posSet.size && !posSet.has(e.pos)) return false;
     if (rodSet.length && !rodSet.some((r) => e.rod.includes(r))) return false;
     if (zivSet.length && !zivSet.includes(e.ziv)) return false;
@@ -151,7 +151,7 @@ function run() {
 
   const sort = $("sort").value;
   const by = (k) => (a, b) => b[k] - a[k] || a.lower.localeCompare(b.lower, "sk");
-  if (sort === "freq") results.sort(by("score"));
+  if (sort === "freq") results.sort((a, b) => b.snk - a.snk || b.score - a.score || a.lower.localeCompare(b.lower, "sk"));
   else if (sort === "freq-sub") results.sort(by("freq"));
   else if (sort === "freq-wiki") results.sort(by("wfreq"));
   else if (sort === "len") results.sort((a, b) => a.len - b.len || a.lower.localeCompare(b.lower, "sk"));
@@ -186,7 +186,8 @@ function renderMore() {
 // ---------- detail ----------
 async function openDetail(e) {
   $("detail-word").textContent = e.w;
-  const freqText = `výskyty (všetky tvary): titulky ${e.freq.toLocaleString("sk")}×, Wikipédia ${e.wfreq.toLocaleString("sk")}×`;
+  const n = (x) => x.toLocaleString("sk");
+  const freqText = `výskyty: Slovenský národný korpus ${n(e.snk)}×, titulky ${n(e.freq)}×, Wikipédia ${n(e.wfreq)}×`;
   const gram = [
     POS_SK[e.pos] || e.pos,
     [...e.rod].map((r) => GENDER_SK[r]).join(" / "),
@@ -269,7 +270,9 @@ async function renderRelations(e, body) {
   };
   const groups = (r.s || []).map((g) => g.filter(ok)).filter((g) => g.length);
   const ants = (r.a || []).filter(ok);
-  if (!groups.length && !ants.length) return;
+  const hyper = (r.h || []).filter(ok);
+  const hypo = (r.d || []).filter(ok);
+  if (!groups.length && !ants.length && !hyper.length && !hypo.length) return;
   const h = document.createElement("h4");
   h.textContent = "Významové vzťahy";
   body.appendChild(h);
@@ -287,6 +290,8 @@ async function renderRelations(e, body) {
   };
   if (groups.length) row("Synonymá", groups);
   if (ants.length) row("Antonymá", [ants]);
+  if (hyper.length) row("Nadradené pojmy", [hyper]);
+  if (hypo.length) row("Podradené pojmy", [hypo]);
   body.appendChild(dl);
 }
 
