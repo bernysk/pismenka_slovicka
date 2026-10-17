@@ -13,6 +13,7 @@ Malá webová aplikácia na hľadanie slovenských slov podľa písmen. Beží c
 - **vzor** – napr. `m??ka` (`?` = jedno ľubovoľné písmeno, `*` = čokoľvek)
 - **dĺžka slova** od–do
 - **zoradenie podľa častosti používania** (predvolené), abecedne alebo podľa dĺžky
+- **„ch“ sa počíta ako jedno písmeno** – pri polohe, počte, dĺžke, vzore aj nechcených písmenách („c“ ani „h“ sa s ním nezhodujú)
 - ignorovanie diakritiky, skrytie vlastných mien a skratiek, iba slová s výkladom
 - po kliknutí na slovo sa zobrazí výklad (slovensky a/alebo anglicky), ak existuje
 

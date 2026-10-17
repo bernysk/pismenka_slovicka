@@ -11,19 +11,25 @@ const POS_SK = {
 const GENDER_SK = { masculine: "mužský rod", feminine: "ženský rod", neuter: "stredný rod" };
 
 const $ = (id) => document.getElementById(id);
-let words = [];        // [{w, pos, def, lower, plain}]
+let words = [];        // [{w, pos, def, freq, lower, t, tp, len}]
 let defs = null;       // načítané až pri prvom otvorení výkladu
 let results = [];
 let shown = 0;
 
-const strip = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+const strip = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+// „ch“ je v slovenčine jedno písmeno: pri porovnávaní ho nahradíme jedným znakom,
+// takže počíta sa ako jedno písmeno a „c“ ani „h“ sa s ním nezhodujú.
+const CH = "\uE000";
+const enc = (s) => s.replace(/ch/g, CH);
 
 async function load() {
   const text = await (await fetch("data/slova.tsv")).text();
   words = text.split("\n").filter(Boolean).map((line) => {
     const [w, pos, def, freq] = line.split("\t");
     const lower = w.toLowerCase();
-    return { w, pos, def: def === "1", freq: +freq || 0, lower, plain: strip(lower) };
+    const t = enc(lower);
+    return { w, pos, def: def === "1", freq: +freq || 0, lower, t, tp: enc(strip(lower)), len: [...t].length };
   });
   addRule();
   run();
@@ -97,7 +103,7 @@ function patternRegex(raw, norm) {
 // ---------- filtrovanie ----------
 function run() {
   const ignore = $("ignore-diacritics").checked;
-  const norm = ignore ? strip : (s) => s;
+  const norm = ignore ? (s) => enc(strip(s)) : enc;
   const rules = readRules(norm);
   const excl = parseExclude($("exclude").value, norm);
   const pat = patternRegex($("pattern").value, norm);
@@ -111,10 +117,9 @@ function run() {
     if (onlyLower && (e.w !== e.lower || e.pos === "acronym" || e.pos === "name" || e.w.includes("."))) return false;
     if (noSpaces && /[\s-]/.test(e.w)) return false;
     if (onlyDefs && !e.def) return false;
-    const word = ignore ? e.plain : e.lower;
-    const len = [...word].length;
-    if (min && len < min) return false;
-    if (max && len > max) return false;
+    const word = ignore ? e.tp : e.t;
+    if (min && e.len < min) return false;
+    if (max && e.len > max) return false;
     for (const x of excl) if (word.includes(x)) return false;
     if (pat && !pat.test(word)) return false;
     for (const r of rules) if (!matchRule(word, r)) return false;
@@ -123,8 +128,8 @@ function run() {
 
   const sort = $("sort").value;
   if (sort === "freq") results.sort((a, b) => b.freq - a.freq || a.lower.localeCompare(b.lower, "sk"));
-  else if (sort === "len") results.sort((a, b) => a.w.length - b.w.length || a.lower.localeCompare(b.lower, "sk"));
-  else if (sort === "len-desc") results.sort((a, b) => b.w.length - a.w.length || a.lower.localeCompare(b.lower, "sk"));
+  else if (sort === "len") results.sort((a, b) => a.len - b.len || a.lower.localeCompare(b.lower, "sk"));
+  else if (sort === "len-desc") results.sort((a, b) => b.len - a.len || a.lower.localeCompare(b.lower, "sk"));
   else results.sort((a, b) => a.lower.localeCompare(b.lower, "sk"));
 
   $("list").replaceChildren();
