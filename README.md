@@ -1,6 +1,7 @@
 # Písmenká – hľadač slovenských slov
 
 **👉 Aplikácia: https://bernysk.github.io/pismenka_slovicka/**
+
 **🧩 Skladanie slov z písmen: https://bernysk.github.io/pismenka_slovicka/skladanie/**
 
 Malá webová aplikácia na hľadanie slovenských slov podľa písmen. Beží celá v prehliadači, bez servera.
