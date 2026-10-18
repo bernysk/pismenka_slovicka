@@ -1,0 +1,23 @@
+/* Doplnkové štýly pre podstránku Skladanie slov (základ je ../style.css). */
+.top-nav { text-align: left; }
+
+label.big { display: block; margin-bottom: 16px; }
+label.big input {
+  font-size: 1.4rem; letter-spacing: .12em; padding: 10px 14px; text-transform: lowercase;
+}
+.checks.inline { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 6px 18px; margin-top: 14px; }
+.freq-chips { margin-top: 14px; align-items: center; }
+.chips-label { color: var(--muted); font-size: .9rem; margin-right: 4px; }
+
+.group { margin: 18px 0; }
+.group h2 { font-size: 1rem; margin: 0 0 8px; }
+.group h2 small { font-weight: normal; }
+.words { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.words a {
+  display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--chip);
+  color: inherit; text-decoration: none; border: 1px solid transparent; letter-spacing: .02em;
+}
+.words a:hover { border-color: var(--accent); }
+.words a.has-def { background: var(--accent-soft); }
+.words .wild { color: var(--accent); font-weight: 700; text-decoration: underline dotted; }
+.more-btn { margin-top: 8px; }

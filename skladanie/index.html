@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Skladanie slov</title>
+  <meta name="description" content="Zadaj dostupné písmená a dĺžku slova – vypíšeme všetky slovenské slová, ktoré sa z nich dajú zložiť. Pomôcka pre Scrabble, Pixwords, Words of Wonders a slovný futbal.">
+  <link rel="stylesheet" href="../style.css?v=20261018">
+  <link rel="stylesheet" href="skladanie.css?v=20261018">
+</head>
+<body>
+  <header>
+    <nav class="top-nav"><a href="../">← Hľadač slov</a></nav>
+    <h1>Skladanie slov</h1>
+    <p class="sub">Zadaj písmená, ktoré máš k dispozícii, a dĺžku slova. Pomôcka pre Scrabble, Pixwords,
+      Words of Wonders, slovný futbal a podobné hry.</p>
+  </header>
+
+  <main>
+    <form id="form" autocomplete="off">
+      <section class="card">
+        <label class="big">
+          <span>Dostupné písmená <small>(nemusia sa použiť všetky; ? = žolík, ľubovoľné písmeno)</small></span>
+          <input id="letters" placeholder="napr. aepsmkr?" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+        </label>
+        <div class="grid2">
+          <div class="len">
+            <span>Dĺžka slova <small>(prázdne = všetky dĺžky)</small></span>
+            <div class="row">
+              <input id="len-min" type="number" min="2" placeholder="od" aria-label="Dĺžka od">
+              <span>–</span>
+              <input id="len-max" type="number" min="2" placeholder="do" aria-label="Dĺžka do">
+            </div>
+          </div>
+          <label>
+            <span>Známe písmená na pozíciách <small>(? = neznáme, napr. ?a??)</small></span>
+            <input id="pattern" placeholder="nepovinné" autocapitalize="off" spellcheck="false">
+          </label>
+        </div>
+        <div class="checks inline">
+          <label class="check"><input type="checkbox" id="repeat"> písmená sa môžu opakovať</label>
+          <label class="check"><input type="checkbox" id="ignore-diacritics"> ignorovať diakritiku (a = á = ä)</label>
+          <label class="check"><input type="checkbox" id="ch-one" checked> ch ako jedno písmeno</label>
+          <label class="check"><input type="checkbox" id="kids" checked> vhodné pre deti</label>
+          <label class="check"><input type="checkbox" id="names"> aj vlastné mená a skratky</label>
+        </div>
+        <div class="chips freq-chips">
+          <span class="chips-label">Slová:</span>
+          <label class="chip"><input type="radio" name="minfreq" value="0"> všetky</label>
+          <label class="chip"><input type="radio" name="minfreq" value="10" checked> aj zriedkavé</label>
+          <label class="chip"><input type="radio" name="minfreq" value="1000"> len bežné</label>
+        </div>
+      </section>
+    </form>
+
+    <section class="results">
+      <div class="results-head"><strong id="count">Načítavam slovník…</strong></div>
+      <div id="groups"></div>
+    </section>
+  </main>
+
+  <footer>
+    Slovník: rovnaký ako v <a href="../">Hľadači slov</a> (MorfFlex SK, Slovenský národný korpus, hunspell-sk, Wikislovník) –
+    pozri <a href="https://github.com/bernysk/pismenka_slovicka">zdrojový kód a licencie</a>.
+    Kliknutím na slovo otvoríš jeho výklad.
+  </footer>
+
+  <script src="skladanie.js?v=20261018"></script>
+</body>
+</html>

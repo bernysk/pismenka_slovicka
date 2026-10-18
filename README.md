@@ -1,6 +1,7 @@
 # Písmenká – hľadač slovenských slov
 
 **👉 Aplikácia: https://bernysk.github.io/pismenka_slovicka/**
+**🧩 Skladanie slov z písmen: https://bernysk.github.io/pismenka_slovicka/skladanie/**
 
 Malá webová aplikácia na hľadanie slovenských slov podľa písmen. Beží celá v prehliadači, bez servera.
 Obsahuje ~160 000 slov v **základnom tvare** s gramatickými vlastnosťami z MorfFlex SK a morfologickej databázy
@@ -30,6 +31,18 @@ Slovenského národného korpusu (SNK) a s frekvenciou zo SNK.
   prídavných mien (6 pádov s otázkami, čísla, rody, stupňovanie) a časovanie slovies (prítomný, minulý čas,
   rozkazovací spôsob)
 
+### Skladanie slov (`skladanie/`)
+
+Samostatná podstránka pre slovné hry (Scrabble, Pixwords, Words of Wonders, slovný futbal): zadáš písmená, ktoré máš
+k dispozícii, a dĺžku slova – vypíše všetky slová, ktoré sa z nich dajú zložiť (nemusia sa použiť všetky).
+
+- každé písmeno sa použije najviac toľkokrát, koľkokrát je zadané (alebo voľba „písmená sa môžu opakovať“)
+- `?` alebo `*` = žolík (prázdna kocka) – písmená, ktoré nahradil, sú vo výsledku zvýraznené
+- známe písmená na pozíciách (`ma???`) – písmená na hracej ploche, neodpočítavajú sa z dostupných
+- „ch“ ako jedno písmeno, ignorovanie diakritiky, režim pre deti, vlastné mená, len bežné slová
+- výsledky podľa dĺžky (najdlhšie prvé, v skupine od najbežnejších); klik na slovo otvorí jeho výklad v Hľadači
+  (`?slovo=…`); nastavenie je v adrese, takže sa dá poslať odkaz
+
 ## Spustenie
 
 Na GitHub Pages: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
@@ -46,7 +59,8 @@ a otvor http://localhost:8765.
 
 | Súbor | Obsah |
 |---|---|
-| `index.html`, `style.css`, `app.js` | aplikácia |
+| `index.html`, `style.css`, `app.js` | aplikácia Hľadač slov |
+| `skladanie/` | podstránka Skladanie slov (`index.html`, `skladanie.js`, `skladanie.css`; používa `../data/slova.tsv`) |
 | `data/slova.tsv` | slová pre aplikáciu (formát 2, popis v hlavičke `app.js` a `skripty/build_web.py`): slovo, kód slovného druhu, príznak výkladu, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné), frekvencie (SNK, knihy, hovorená reč, Wikipédia), počet slabík |
 | `data/vyklady/<písmeno>.json`, `data/synonyma/<písmeno>.json` | výklady a významové vzťahy rozdelené podľa prvého písmena – detail slova načíta len jeden malý súbor |
 | `data/tvary/<písmeno>.json`, `data/tvary/znacky.json` | tvary bežných slov pre tabuľku skloňovania a časovania (`skripty/tvary_web.py`, spolu ~0,4 MB po gzip) |

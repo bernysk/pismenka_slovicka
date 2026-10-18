@@ -69,6 +69,10 @@ async function load() {
   words = text.split("\n").filter((l) => l && !l.startsWith("#")).map(parseLine);
   addRule();
   run();
+  // ?slovo=pes otvorí detail slova (odkazy zo stránky Skladanie slov)
+  const asked = new URLSearchParams(location.search).get("slovo");
+  const target = asked && words.find((e) => e.w === asked);
+  if (target) openDetail(target);
 }
 
 // ---------- pravidlá „písmená, ktoré slovo musí obsahovať“ ----------
@@ -212,8 +216,9 @@ function renderMore() {
   $("list").appendChild(frag);
   shown = Math.min(results.length, shown + PAGE);
   const n = results.length;
+  const found = n === 1 ? "Našlo sa 1 slovo" : n < 5 ? `Našli sa ${n} slová` : `Nájdených ${n.toLocaleString("sk")} slov`;
   $("count").textContent = n === 0 ? "Žiadne slovo nevyhovuje filtrom."
-    : `Nájdených ${n.toLocaleString("sk")} slov` + (n > shown ? ` (zobrazených ${shown.toLocaleString("sk")})` : "");
+    : found + (n > shown ? ` (zobrazených ${shown.toLocaleString("sk")})` : "");
   $("more").hidden = shown >= n;
 }
 
