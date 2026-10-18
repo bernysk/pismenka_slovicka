@@ -8,8 +8,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Skladanie slov</title>
   <meta name="description" content="Zadaj dostupné písmená a dĺžku slova – vypíšeme všetky slovenské slová, ktoré sa z nich dajú zložiť. Pomôcka pre Scrabble, Pixwords, Words of Wonders a slovný futbal.">
-  <link rel="stylesheet" href="../style.css?v=20261018">
-  <link rel="stylesheet" href="skladanie.css?v=20261018">
+  <link rel="stylesheet" href="../style.css?v=20261018d">
+  <link rel="stylesheet" href="skladanie.css?v=20261018d">
 </head>
 <body>
   <header>
@@ -65,9 +65,19 @@
   <footer>
     Slovník: rovnaký ako v <a href="../">Hľadači slov</a> (MorfFlex SK, Slovenský národný korpus, hunspell-sk, Wikislovník) –
     pozri <a href="https://github.com/bernysk/pismenka_slovicka">zdrojový kód a licencie</a>.
-    Kliknutím na slovo otvoríš jeho výklad.
+    Kliknutím na slovo otvoríš jeho výklad, tvary a synonymá.
   </footer>
 
-  <script src="skladanie.js?v=20261018"></script>
+  <dialog id="detail">
+    <form method="dialog">
+      <button class="close" aria-label="Zavrieť">×</button>
+    </form>
+    <h3 id="detail-word"></h3>
+    <p id="detail-pos" class="muted"></p>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <script src="../slovnik.js?v=20261018d"></script>
+  <script src="skladanie.js?v=20261018d"></script>
 </body>
 </html>

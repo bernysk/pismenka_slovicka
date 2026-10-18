@@ -1,8 +1,8 @@
 /*
  * Skladanie slov – z dostupných písmen vypíše všetky slová, ktoré sa z nich dajú zložiť.
  *
- * Používa rovnaký slovník ako hlavná aplikácia (../data/slova.tsv, formát 2 – popis v ../app.js):
- *   0 slovo · 1 kód slovného druhu · 2 „1“ ak má výklad · 3 príznaky (N = nevhodné) · 4 frekvencia SNK …
+ * Používa rovnaký slovník ako hlavná aplikácia (../data/slova.tsv). Načítanie slov, konštanty (CH, strip, enc,
+ * COLLATOR, $) a okno so slovom (openDetail – výklad, tvary, synonymá) sú v ../slovnik.js.
  *
  * Pravidlá:
  *   - každé zadané písmeno sa dá použiť toľkokrát, koľkokrát je zadané (aaa = tri „a“), pokiaľ nie je
@@ -14,33 +14,18 @@
  */
 "use strict";
 
-const $ = (id) => document.getElementById(id);
-const PER_GROUP = 300;                          // koľko slov jednej dĺžky sa ukáže, kým nekliknete „ďalšie“
-const CH = String.fromCharCode(0xe000);         // „ch“ ako jeden znak (súkromná oblasť Unicode)
-const strip = (s) => s.normalize("NFD").replace(/\p{M}/gu, "");  // bez diakritiky
-const enc = (s) => s.replace(/ch/g, CH);
-const COLLATOR = new Intl.Collator("sk");
-let words = [];
-
-function parseLine(line) {
-  const [w, pos, def, flags = "", snk] = line.split("\t");
-  const lower = w.toLowerCase();
-  return {
-    w, lower, pos,
-    def: def === "1",
-    bad: flags.includes("N"),
-    snk: +snk || 0,
-    letters: /^\p{L}+$/u.test(w),                // len jedno slovo z písmen (bez medzier, spojovníkov, bodiek)
-    proper: w !== lower || pos === "m" || pos === "x",
-    plain: strip(lower),
-  };
-}
+DATA_BASE = "../data/";  // slovnik.js: podstránka je o priečinok nižšie
+const PER_GROUP = 300;   // koľko slov jednej dĺžky sa ukáže, kým nekliknete „ďalšie“
+let words = [];          // len jednoslovné slová z písmen (kandidáti na skladanie)
 
 async function load() {
-  const res = await fetch("../data/slova.tsv");
-  if (!res.ok) throw new Error(`../data/slova.tsv: HTTP ${res.status}`);
-  const text = await res.text();
-  words = text.split("\n").filter((l) => l && !l.startsWith("#")).map(parseLine).filter((e) => e.letters);
+  const all = await loadWords();  // slovnik.js – parseLine
+  setDetailWords(all);            // okno so slovom potrebuje všetky slová (preklik na synonymá)
+  words = all.filter((e) => /^\p{L}+$/u.test(e.w));  // bez medzier, spojovníkov a bodiek
+  for (const e of words) {
+    e.plain = strip(e.lower);
+    e.proper = e.w !== e.lower || e.pos === "name" || e.pos === "acronym";
+  }
   restoreFromUrl();
   run();
 }
@@ -109,7 +94,9 @@ function run() {
   if (pattern) lenMin = lenMax = pattern.length;
   saveToUrl();
 
-  const available = avail.counts.size + avail.wild;
+  // počet všetkých dostupných písmen (kokot = 5), nie rôznych (k, o, t = 3) – slúži na rýchle vyradenie dlhších slov
+  let available = avail.wild;
+  for (const n of avail.counts.values()) available += n;
   if (!available && !pattern) {
     $("count").textContent = "Napíš písmená, ktoré máš k dispozícii.";
     $("groups").replaceChildren();
@@ -117,8 +104,8 @@ function run() {
   }
 
   const found = [];
+  let hiddenKids = 0;  // zložiteľné slová skryté režimom pre deti – len na upozornenie
   for (const e of words) {
-    if (kids && e.bad) continue;
     if (!names && e.proper) continue;
     if (minFreq && e.snk < minFreq) continue;
     const s = ignore ? e.plain : e.lower;
@@ -126,7 +113,9 @@ function run() {
     if (tokens.length < lenMin || tokens.length > lenMax) continue;
     if (!repeat && !pattern && tokens.length > available) continue;
     const wildPos = compose(tokens, avail, pattern, repeat);
-    if (wildPos) found.push({ e, tokens, wildPos });
+    if (!wildPos) continue;
+    if (kids && e.bad) { hiddenKids++; continue; }
+    found.push({ e, tokens, wildPos });
   }
 
   // skupiny podľa dĺžky (najdlhšie prvé), v skupine najprv bežnejšie slová
@@ -143,8 +132,9 @@ function run() {
   }
   $("groups").replaceChildren(frag);
   const total = found.length;
-  $("count").textContent = total === 0 ? "Z týchto písmen sa nedá zložiť žiadne slovo."
-    : foundText(total) + (groups.size > 1 ? ` (${groups.size} ${groups.size < 5 ? "dĺžky" : "dĺžok"})` : "");
+  $("count").textContent = (total === 0 ? "Z týchto písmen sa nedá zložiť žiadne slovo."
+    : foundText(total) + (groups.size > 1 ? ` (${groups.size} ${groups.size < 5 ? "dĺžky" : "dĺžok"})` : ""))
+    + (hiddenKids ? ` · ${hiddenKids} ${hiddenKids === 1 ? "nevhodné slovo je skryté" : hiddenKids < 5 ? "nevhodné slová sú skryté" : "nevhodných slov je skrytých"} (vypni „vhodné pre deti“)` : "");
 }
 
 function letterWord(n) { return n === 1 ? "písmeno" : n < 5 ? "písmená" : "písmen"; }
@@ -187,7 +177,12 @@ function renderGroup(n, list) {
 function renderWord({ e, tokens, wildPos }) {
   const li = document.createElement("li");
   const a = document.createElement("a");
-  a.href = "../?slovo=" + encodeURIComponent(e.w);
+  a.href = "../?slovo=" + encodeURIComponent(e.w);  // otvorenie v novej karte (Ctrl/stredné tlačidlo) → Hľadač slov
+  a.addEventListener("click", (ev) => {           // bežný klik → okno so slovom priamo tu (slovnik.js)
+    if (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.button !== 0) return;
+    ev.preventDefault();
+    openDetail(e);
+  });
   if (e.def) a.className = "has-def";
   const wild = new Set(wildPos);
   if (!wild.size) {

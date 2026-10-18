@@ -40,8 +40,9 @@ k dispozícii, a dĺžku slova – vypíše všetky slová, ktoré sa z nich daj
 - `?` alebo `*` = žolík (prázdna kocka) – písmená, ktoré nahradil, sú vo výsledku zvýraznené
 - známe písmená na pozíciách (`ma???`) – písmená na hracej ploche, neodpočítavajú sa z dostupných
 - „ch“ ako jedno písmeno, ignorovanie diakritiky, režim pre deti, vlastné mená, len bežné slová
-- výsledky podľa dĺžky (najdlhšie prvé, v skupine od najbežnejších); klik na slovo otvorí jeho výklad v Hľadači
-  (`?slovo=…`); nastavenie je v adrese, takže sa dá poslať odkaz
+- výsledky podľa dĺžky (najdlhšie prvé, v skupine od najbežnejších); klik na slovo otvorí okno s výkladom, tvarmi
+  a synonymami priamo na stránke (Ctrl+klik ho otvorí v Hľadači); nastavenie je v adrese, takže sa dá poslať odkaz
+- v režime pre deti sa pod výsledkami ukáže, koľko nevhodných slov je skrytých
 
 ## Spustenie
 
@@ -60,7 +61,8 @@ a otvor http://localhost:8765.
 | Súbor | Obsah |
 |---|---|
 | `index.html`, `style.css`, `app.js` | aplikácia Hľadač slov |
-| `skladanie/` | podstránka Skladanie slov (`index.html`, `skladanie.js`, `skladanie.css`; používa `../data/slova.tsv`) |
+| `slovnik.js` | spoločný kód oboch stránok: načítanie `data/slova.tsv`, okno so slovom (výklad, významové vzťahy, tvary) |
+| `skladanie/` | podstránka Skladanie slov (`index.html`, `skladanie.js`, `skladanie.css`; používa `../slovnik.js` a `../data/`) |
 | `data/slova.tsv` | slová pre aplikáciu (formát 2, popis v hlavičke `app.js` a `skripty/build_web.py`): slovo, kód slovného druhu, príznak výkladu, príznaky (`m`/`f`/`s` rod, `A`/`I` životné/neživotné, `P` pomnožné, `N` nevhodné), frekvencie (SNK, knihy, hovorená reč, Wikipédia), počet slabík |
 | `data/vyklady/<písmeno>.json`, `data/synonyma/<písmeno>.json` | výklady a významové vzťahy rozdelené podľa prvého písmena – detail slova načíta len jeden malý súbor |
 | `data/tvary/<písmeno>.json`, `data/tvary/znacky.json` | tvary bežných slov pre tabuľku skloňovania a časovania (`skripty/tvary_web.py`, spolu ~0,4 MB po gzip) |
